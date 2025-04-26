@@ -6,6 +6,7 @@ services:
     depends_on:
       - redis
       - postgres
+      - webhook-service
     ports:
       - 8080:8080
     volumes:
@@ -16,6 +17,21 @@ services:
       - .env
     expose:
       - 8080
+
+  webhook-service:
+    container_name: webhook_service
+    build: ./webhook-service
+    restart: always
+    ports:
+      - 5001:5000
+    volumes:
+      - webhook_data:/app/data
+    networks:
+      - evolution-net
+    environment:
+      - PORT=5000
+    expose:
+      - 5000
 
   redis:
     image: redis:latest
@@ -52,7 +68,7 @@ volumes:
   evolution_instances:
   evolution_redis:
   postgres_data:
-
+  webhook_data:
 
 networks:
   evolution-net:

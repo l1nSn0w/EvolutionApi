@@ -1,0 +1,6 @@
+ssh -i docker_key.pem ec2-user@18.230.204.129 "docker logs -f webhook_service"
+
+Acompanhar em tempo real.
+
+
+ssh -i docker_key.pem ec2-user@18.230.204.129 "docker logs -f evolution_api"

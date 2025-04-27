@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Webhooks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        :root {
+            --primary-color: #4361ee;
+            --secondary-color: #3f37c9;
+            --success-color: #4cc9f0;
+            --info-color: #4895ef;
+            --warning-color: #f72585;
+            --danger-color: #f46036;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f5ff;
+            color: #495057;
+        }
+        
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .navbar-brand i {
+            margin-right: 8px;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-header {
+            font-weight: 600;
+            padding: 1rem 1.5rem;
+            border-bottom: none;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .form-label {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #495057;
+        }
+        
+        .form-control {
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e0e0e0;
+            font-size: 0.95rem;
+        }
+        
+        .form-control:focus {
+            box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.25);
+            border-color: var(--primary-color);
+        }
+        
+        .btn {
+            border-radius: 8px;
+            padding: 0.6rem 1.2rem;
+            font-weight: 500;
+            text-transform: none;
+            transition: all 0.2s;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+        }
+        
+        .btn-secondary {
+            background-color: #e9ecef;
+            border-color: #e9ecef;
+            color: #495057;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #dee2e6;
+            border-color: #dee2e6;
+            color: #212529;
+        }
+        
+        .stat-card {
+            border-radius: 12px;
+            padding: 20px;
+            color: white;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            pointer-events: none;
+        }
+        
+        .stat-card .text-xs {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.75rem;
+        }
+        
+        .stat-card .h5 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        .stat-card .icon-area {
+            font-size: 2.5rem;
+            opacity: 0.8;
+        }
+        
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 100%);
+        }
+        
+        .bg-gradient-success {
+            background: linear-gradient(135deg, #4cc9f0 0%, #4895ef 100%);
+        }
+        
+        .bg-gradient-info {
+            background: linear-gradient(135deg, #4895ef 0%, #3f37c9 100%);
+        }
+        
+        .bg-gradient-warning {
+            background: linear-gradient(135deg, #f72585 0%, #b5179e 100%);
+        }
+        
+        .table {
+            font-size: 0.95rem;
+        }
+        
+        .table thead th {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            border-top: none;
+            background-color: rgba(240, 245, 255, 0.5);
+        }
+        
+        .message-row {
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .message-row:hover {
+            background-color: rgba(67, 97, 238, 0.05);
+        }
+        
+        .badge {
+            padding: 0.5em 0.75em;
+            font-weight: 500;
+            border-radius: 6px;
+            font-size: 0.75rem;
+        }
+        
+        .badge-success {
+            background-color: #4cc9f0;
+        }
+        
+        .badge-danger {
+            background-color: #f72585;
+        }
+        
+        .badge-info {
+            background-color: #4895ef;
+        }
+        
+        .badge-secondary {
+            background-color: #6c757d;
+        }
+        
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255,255,255,0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        
+        .loading .spinner-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .loading .spinner-text {
+            margin-top: 1rem;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+        
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+            color: var(--primary-color);
+        }
+        
+        .modal-content {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .modal-header {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            background-color: #f8f9fa;
+        }
+        
+        .modal-footer {
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .modal-title {
+            font-weight: 600;
+        }
+        
+        .info-block {
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--primary-color);
+            background-color: rgba(67, 97, 238, 0.05);
+        }
+        
+        .info-block h6 {
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--primary-color);
+        }
+        
+        .info-block h6 i {
+            margin-right: 8px;
+        }
+        
+        .info-block p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .info-block p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .ad-info {
+            border-left-color: var(--info-color);
+            background-color: rgba(72, 149, 239, 0.05);
+        }
+        
+        .ad-info h6 {
+            color: var(--info-color);
+        }
+        
+        .campaign-info {
+            border-left-color: var(--success-color);
+            background-color: rgba(76, 201, 240, 0.05);
+        }
+        
+        .campaign-info h6 {
+            color: var(--success-color);
+        }
+        
+        .message-box {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1rem;
+            white-space: pre-wrap;
+            font-family: monospace;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        .stat-trend {
+            display: flex;
+            align-items: center;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+        
+        .stat-trend i {
+            margin-right: 4px;
+        }
+        
+        .trend-up {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .trend-down {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Placeholder para gráficos */
+        .chart-container {
+            height: 300px;
+            background-color: white;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border: 1px dashed rgba(0, 0, 0, 0.1);
+        }
+        
+        .chart-placeholder {
+            color: #adb5bd;
+            text-align: center;
+        }
+        
+        .chart-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .flatpickr-input {
+            background-color: white !important;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .stat-card .h5 {
+                font-size: 1.6rem;
+            }
+            
+            .stat-card .icon-area {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .card-body {
+                padding: 1.25rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading" id="loadingIndicator">
+        <div class="spinner-container">
+            <div class="spinner-border" role="status"></div>
+            <div class="spinner-text">Carregando dados...</div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-lightning-charge-fill"></i> Webhook Dashboard
+            </a>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        <!-- Gráfico de Visão Geral -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="chart-container">
+                    <div class="chart-placeholder">
+                        <i class="bi bi-bar-chart-line"></i>
+                        <h5>Visão Geral de Mensagens</h5>
+                        <p>Gráfico de mensagens recebidas nos últimos 30 dias</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cards de Estatísticas -->
+        <div class="row mb-4">
+            <div class="col-xl-3 col-md-6 mb-3">
+                <div class="card h-100">
+                    <div class="stat-card bg-gradient-primary">
+                        <div class="row align-items-center">
+                            <div class="col-8">
+                                <div class="text-xs font-weight-bold">Total de Mensagens</div>
+                                <div class="h5 mb-0" id="totalMessages">0</div>
+                                <div class="stat-trend trend-up">
+                                    <i class="bi bi-arrow-up-right"></i> 12% este mês
+                                </div>
+                            </div>
+                            <div class="col-4 text-end">
+                                <div class="icon-area">
+                                    <i class="bi bi-chat-dots"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-3">
+                <div class="card h-100">
+                    <div class="stat-card bg-gradient-success">
+                        <div class="row align-items-center">
+                            <div class="col-8">
+                                <div class="text-xs font-weight-bold">Encaminhadas</div>
+                                <div class="h5 mb-0" id="totalForwarded">0</div>
+                                <div class="stat-trend trend-up">
+                                    <i class="bi bi-arrow-up-right"></i> 8% este mês
+                                </div>
+                            </div>
+                            <div class="col-4 text-end">
+                                <div class="icon-area">
+                                    <i class="bi bi-arrow-right-circle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-3">
+                <div class="card h-100">
+                    <div class="stat-card bg-gradient-info">
+                        <div class="row align-items-center">
+                            <div class="col-8">
+                                <div class="text-xs font-weight-bold">Android</div>
+                                <div class="h5 mb-0" id="totalAndroid">0</div>
+                                <div class="stat-trend trend-up">
+                                    <i class="bi bi-arrow-up-right"></i> 15% este mês
+                                </div>
+                            </div>
+                            <div class="col-4 text-end">
+                                <div class="icon-area">
+                                    <i class="bi bi-android2"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-3">
+                <div class="card h-100">
+                    <div class="stat-card bg-gradient-warning">
+                        <div class="row align-items-center">
+                            <div class="col-8">
+                                <div class="text-xs font-weight-bold">iOS</div>
+                                <div class="h5 mb-0" id="totalIOS">0</div>
+                                <div class="stat-trend trend-down">
+                                    <i class="bi bi-arrow-down-right"></i> 3% este mês
+                                </div>
+                            </div>
+                            <div class="col-4 text-end">
+                                <div class="icon-area">
+                                    <i class="bi bi-apple"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filtros -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0"><i class="bi bi-funnel me-2"></i>Filtrar Mensagens</h5>
+                            <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#filterCollapse">
+                                <i class="bi bi-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="collapse show" id="filterCollapse">
+                        <div class="card-body">
+                            <form id="filterForm" class="row g-3">
+                                <div class="col-md-4">
+                                    <label class="form-label">Data única</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-calendar3"></i></span>
+                                        <input type="text" class="form-control" id="singleDate" placeholder="Selecione uma data">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Data inicial</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-calendar3"></i></span>
+                                        <input type="text" class="form-control" id="startDate" placeholder="Data inicial">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Data final</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="bi bi-calendar3"></i></span>
+                                        <input type="text" class="form-control" id="endDate" placeholder="Data final">
+                                    </div>
+                                </div>
+                                <div class="col-12 text-end">
+                                    <button type="button" class="btn btn-secondary" id="resetFilters">
+                                        <i class="bi bi-x-circle me-1"></i> Limpar Filtros
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="bi bi-search me-1"></i> Aplicar Filtros
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabela de Mensagens -->
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0"><i class="bi bi-envelope me-2"></i>Mensagens Recebidas</h5>
+                            <span class="badge bg-primary" id="messagesCount">0 mensagens</span>
+                        </div>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-hover mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Data/Hora</th>
+                                        <th>Telefone</th>
+                                        <th>Nome</th>
+                                        <th>Dispositivo</th>
+                                        <th>Encaminhada</th>
+                                        <th>Anúncio</th>
+                                        <th class="text-center">Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="messagesTable">
+                                    <!-- As mensagens serão inseridas aqui via JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Detalhes da Mensagem -->
+    <div class="modal fade" id="messageDetailModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-chat-left-text me-2"></i>Detalhes da Mensagem</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="info-block">
+                                <h6><i class="bi bi-person"></i>Informações do Usuário</h6>
+                                <p><strong>ID:</strong> <span id="modalId"></span></p>
+                                <p><strong>Telefone:</strong> <span id="modalTelefone"></span></p>
+                                <p><strong>Nome:</strong> <span id="modalNome"></span></p>
+                                <p><strong>Dispositivo:</strong> <span id="modalDispositivo"></span></p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="info-block">
+                                <h6><i class="bi bi-clock"></i>Informações de Tempo</h6>
+                                <p><strong>Data/Hora Webhook:</strong> <span id="modalDateTime"></span></p>
+                                <p><strong>Data/Hora Salvo:</strong> <span id="modalCreatedAt"></span></p>
+                                <p><strong>Encaminhada:</strong> <span id="modalEncaminhado"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <div class="info-block">
+                                <h6><i class="bi bi-chat-dots"></i>Conteúdo da Mensagem</h6>
+                                <div class="message-box" id="modalMensagem">
+                                    <!-- Conteúdo da mensagem -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-3" id="adSection">
+                        <div class="col-12">
+                            <div class="info-block">
+                                <h6><i class="bi bi-megaphone"></i>Dados do Anúncio</h6>
+                                <div class="d-flex justify-content-end mb-3">
+                                    <a href="#" id="modalFacebookLink" target="_blank" class="btn btn-sm btn-primary">
+                                        <i class="bi bi-facebook me-1"></i> Ver no Facebook
+                                    </a>
+                                </div>
+                                
+                                <p><strong>Source ID:</strong> <span id="modalSourceId"></span></p>
+                                <p><strong>Título:</strong> <span id="modalTitle"></span></p>
+                                <p><strong>URL:</strong> <a href="#" id="modalUrl" target="_blank"></a></p>
+                                
+                                <div class="ad-info mt-3">
+                                    <h6><i class="bi bi-megaphone"></i> Informações do Anúncio</h6>
+                                    <p><strong>Nome do Anúncio:</strong> <span id="modalAdName"></span></p>
+                                </div>
+                                
+                                <div class="ad-info mt-3">
+                                    <h6><i class="bi bi-collection"></i> Conjunto de Anúncios</h6>
+                                    <p><strong>ID do Conjunto:</strong> <span id="modalAdsetId"></span></p>
+                                    <p><strong>Nome do Conjunto:</strong> <span id="modalAdsetName"></span></p>
+                                </div>
+                                
+                                <div class="campaign-info mt-3">
+                                    <h6><i class="bi bi-bullseye"></i> Campanha</h6>
+                                    <p><strong>ID da Campanha:</strong> <span id="modalCampaignId"></span></p>
+                                    <p><strong>Nome da Campanha:</strong> <span id="modalCampaignName"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+    
+    <script>
+        // Configurar seletores de data
+        flatpickr("#singleDate", {
+            dateFormat: "Y-m-d",
+            locale: "pt"
+        });
+        flatpickr("#startDate", {
+            dateFormat: "Y-m-d",
+            locale: "pt"
+        });
+        flatpickr("#endDate", {
+            dateFormat: "Y-m-d",
+            locale: "pt"
+        });
+
+        // Elementos DOM
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const messagesTable = document.getElementById('messagesTable');
+        const messagesCount = document.getElementById('messagesCount');
+        const totalMessages = document.getElementById('totalMessages');
+        const totalForwarded = document.getElementById('totalForwarded');
+        const totalAndroid = document.getElementById('totalAndroid');
+        const totalIOS = document.getElementById('totalIOS');
+        const filterForm = document.getElementById('filterForm');
+        const resetFiltersBtn = document.getElementById('resetFilters');
+        
+        // Modal de detalhes
+        const messageDetailModal = new bootstrap.Modal(document.getElementById('messageDetailModal'));
+        
+        // Estado da aplicação
+        let currentMessages = [];
+
+        // Carregar mensagens ao iniciar
+        document.addEventListener('DOMContentLoaded', () => {
+            loadMessages();
+            
+            // Adicionar eventos
+            filterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                loadMessages();
+            });
+            
+            resetFiltersBtn.addEventListener('click', () => {
+                document.getElementById('singleDate').value = '';
+                document.getElementById('startDate').value = '';
+                document.getElementById('endDate').value = '';
+                loadMessages();
+            });
+        });
+
+        // Função para carregar mensagens
+        function loadMessages() {
+            loadingIndicator.style.display = 'flex';
+            
+            // Construir a URL com os filtros
+            const singleDate = document.getElementById('singleDate').value;
+            const startDate = document.getElementById('startDate').value;
+            const endDate = document.getElementById('endDate').value;
+            
+            let apiUrl = '/messages';
+            const params = new URLSearchParams();
+            
+            if (singleDate) {
+                params.append('date', singleDate);
+            } else if (startDate && endDate) {
+                params.append('start_date', startDate);
+                params.append('end_date', endDate);
+            }
+            
+            if (params.toString()) {
+                apiUrl += `?${params.toString()}`;
+            }
+            
+            // Simulação de dados para visualização da interface
+            // Em produção, descomentar o fetch abaixo
+            setTimeout(() => {
+                const mockData = {
+                    status: 'success',
+                    count: 15,
+                    messages: [
+                        {
+                            id: 1,
+                            telefone: '(41) 99999-8888',
+                            nome: 'João Silva',
+                            dispositivo: 'Android',
+                            date_time: '2025-04-25T14:30:00',
+                            created_at: '2025-04-25T14:32:00',
+                            encaminhado_make: true,
+                            mensagem: 'Gostaria de saber mais sobre o produto anunciado.',
+                            source_id: '123456789',
+                            title: 'Produto Especial - 30% OFF',
+                            url: 'https://exemplo.com/produto',
+                            ad_name: 'Campanha Abril 2025',
+                            adset_id: 'AS12345',
+                            adset_name: 'Público Interessado em Tecnologia',
+                            campaign_id: 'CA54321',
+                            campaign_name: 'Lançamento Verão 2025'
+                        },
+                        {
+                            id: 2,
+                            telefone: '(11) 98765-4321',
+                            nome: 'Maria Oliveira',
+                            dispositivo: 'iOS',
+                            date_time: '2025-04-25T15:45:00',
+                            created_at: '2025-04-25T

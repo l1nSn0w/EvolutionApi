@@ -111,13 +111,6 @@ def dashboard():
     """
     Página do dashboard para visualizar mensagens
     """
-    return render_template('dashboard2.html')
-
-@app.route('/dashboard-novo')
-def dashboard_novo():
-    """
-    Nova versão do dashboard para teste
-    """
     return render_template('dashboard.html')
 
 @app.route('/webhook', methods=['POST'])

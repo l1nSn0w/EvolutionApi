@@ -933,17 +933,43 @@
         function formatDate(dateString) {
             if (!dateString) return 'N/A';
             
-            const date = new Date(dateString);
-            if (isNaN(date.getTime())) return 'N/A';
-            
-            return date.toLocaleString('pt-BR', {
-                day: '2-digit',
-                month: '2-digit',
-                year: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit'
-            });
+            try {
+                // Se a data tiver 'Z' no final (UTC), queremos ignorar o 'Z' e mostrar como se 
+                // fosse um horário local (sem conversão), para ficar igual ao que está no banco
+                if (dateString.endsWith('Z')) {
+                    // Remover o 'Z' e tratar como se fosse uma data local
+                    const dateWithoutZ = dateString.slice(0, -1);
+                    
+                    // Parsear usando RegExp para garantir que a data fique no formato correto
+                    const match = dateWithoutZ.match(/(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.(\d+))?/);
+                    if (match) {
+                        const [_, year, month, day, hours, minutes, seconds] = match;
+                        
+                        // Criar string formatada manualmente
+                        return `${day}/${month}/${year}, ${hours}:${minutes}:${seconds}`;
+                    }
+                    
+                    // Fallback: se o regex não funcionar, use o Date sem conversão
+                    return dateWithoutZ.replace('T', ' ').replace(/-/g, '/');
+                } else {
+                    // Para datas sem Z (já no horário local), manter o comportamento atual
+                    const date = new Date(dateString);
+                    if (isNaN(date.getTime())) return 'N/A';
+                    
+                    return new Intl.DateTimeFormat('pt-BR', {
+                        day: '2-digit',
+                        month: '2-digit',
+                        year: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: '2-digit',
+                        timeZone: 'America/Sao_Paulo'
+                    }).format(date);
+                }
+            } catch (e) {
+                console.error("Erro ao formatar data:", e);
+                return dateString || 'N/A';
+            }
         }
 
         // Renderizar tabela de mensagens
@@ -1008,11 +1034,14 @@
                     </td>
                     <td>${adInfo}</td>
                     <td>
-                        <button type="button" class="btn btn-sm btn-primary view-details" data-id="${msg.id}">
+                        <button type="button" class="btn btn-sm btn-primary view-details" data-id="${msg.id}" title="Ver detalhes">
                             <i class="bi bi-eye"></i>
                         </button>
                         <button type="button" class="btn btn-sm btn-info sync-kommo" data-id="${msg.id}" data-telefone="${msg.telefone}" title="Sincronizar com Kommo">
                             <i class="bi bi-arrow-repeat"></i>
+                        </button>
+                        <button type="button" class="btn btn-sm btn-success track-lead" data-id="${msg.id}" data-telefone="${msg.telefone}" title="Rastreamento de Lead">
+                            <i class="bi bi-graph-up"></i>
                         </button>
                     </td>
                 `;
@@ -1030,22 +1059,19 @@
             
             // Adicionar eventos para botões de sincronização com Kommo
             document.querySelectorAll('.sync-kommo').forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.stopPropagation(); // Evitar que o evento propague para a linha
+                btn.addEventListener('click', function() {
                     const id = this.dataset.id;
                     const telefone = this.dataset.telefone;
                     syncWithKommo(id, telefone);
                 });
             });
             
-            // Adicionar evento para clique na linha
-            document.querySelectorAll('.message-row').forEach(row => {
-                row.addEventListener('click', function(e) {
-                    // Ignorar se clicou no botão de detalhes ou sincronização
-                    if (!e.target.closest('.view-details') && !e.target.closest('.sync-kommo')) {
-                        const id = this.dataset.messageId;
-                        showMessageDetails(id);
-                    }
+            // Adicionar eventos para botões de rastreamento de lead
+            document.querySelectorAll('.track-lead').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const id = this.dataset.id;
+                    const telefone = this.dataset.telefone;
+                    showLeadTracking(telefone);
                 });
             });
         }
@@ -1065,9 +1091,9 @@
             document.getElementById('modalNome').textContent = message.nome || 'Desconhecido';
             document.getElementById('modalDispositivo').textContent = message.dispositivo || 'Desconhecido';
             
-            // Datas
+            // Datas - Garantir que a data do webhook será tratada como UTC se tiver 'Z'
             document.getElementById('modalDateTime').textContent = formatDate(message.date_time);
-            document.getElementById('modalCreatedAt').textContent = message.created_at || 'N/A';
+            document.getElementById('modalCreatedAt').textContent = formatDate(message.created_at) || 'N/A';
             
             // Status de encaminhamento
             document.getElementById('modalEncaminhado').innerHTML = message.encaminhado_make 
@@ -1310,6 +1336,267 @@
             `;
             
             // Adicionar o modal ao corpo do documento
+            document.body.appendChild(modal);
+            
+            // Inicializar e exibir o modal
+            const modalInstance = new bootstrap.Modal(modal);
+            modalInstance.show();
+        }
+
+        // Função para exibir o rastreamento de um lead
+        function showLeadTracking(telefone) {
+            if (!telefone) {
+                showToast('Número de telefone não disponível', 'warning');
+                return;
+            }
+            
+            // Mostrar loading
+            loadingIndicator.style.display = 'flex';
+            
+            // Primeiro buscar dados de pipelines para ter as informações mais atualizadas
+            fetch('/kommo/pipelines')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Erro ao buscar pipelines: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(pipelinesData => {
+                    let pipelines = {};
+                    if (pipelinesData.status === 'success') {
+                        pipelines = pipelinesData.pipelines;
+                    }
+                    
+                    // Em seguida, buscar dados de rastreamento do lead
+                    return fetch(`/lead-tracking?phone=${encodeURIComponent(telefone)}`)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(`Erro ${response.status}: ${response.statusText}`);
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            if (data.status === 'success' && data.events && data.events.length > 0) {
+                                // Mostrar modal com os dados de rastreamento, incluindo as informações de pipelines
+                                showLeadTrackingModal(data.events, telefone, pipelines);
+                            } else {
+                                showToast('Nenhum registro de rastreamento encontrado para este número', 'warning');
+                            }
+                        });
+                })
+                .catch(error => {
+                    console.error('Erro ao buscar dados de rastreamento:', error);
+                    showToast('Erro ao buscar dados de rastreamento. Verifique o console para mais detalhes.', 'danger');
+                })
+                .finally(() => {
+                    loadingIndicator.style.display = 'none';
+                });
+        }
+
+        // Função para mostrar o modal de rastreamento
+        function showLeadTrackingModal(events, telefone, pipelines = {}) {
+            // Criar um novo modal dinamicamente
+            const modalId = 'leadTrackingModal';
+            
+            // Remover modal anterior se existir
+            const existingModal = document.getElementById(modalId);
+            if (existingModal) {
+                existingModal.remove();
+            }
+            
+            // Organizar eventos por data (mais recentes primeiro)
+            events.sort((a, b) => {
+                return new Date(b.event_time) - new Date(a.event_time);
+            });
+            
+            // Construir timeline do histórico
+            let timelineHtml = '';
+            events.forEach(event => {
+                // Determinar cor baseada no tipo de evento
+                let badgeClass = 'bg-info';
+                let iconClass = 'bi-info-circle';
+                
+                if (event.event_type === 'message_received') {
+                    badgeClass = 'bg-primary';
+                    iconClass = 'bi-chat-dots';
+                } else if (event.event_type === 'status_changed') {
+                    badgeClass = 'bg-success';
+                    iconClass = 'bi-arrow-right-circle';
+                }
+                
+                // Formatar data
+                const eventDate = formatDate(event.event_time);
+                
+                // Obter nomes atualizados de pipelines e estágios
+                // Dados anteriores
+                let previousPipelineName = event.previous_pipeline.name || `Pipeline ${event.previous_pipeline.id}`;
+                let previousStageName = event.previous_status.name || `Estágio ${event.previous_status.id}`;
+                
+                // Dados atuais
+                let currentPipelineName = event.current_pipeline.name || `Pipeline ${event.current_pipeline.id}`;
+                let currentStageName = event.current_status.name || `Estágio ${event.current_status.id}`;
+                
+                // Verificar se temos os dados mais atualizados de pipelines
+                if (pipelines) {
+                    // Atualizar nomes do pipeline e estágio anterior
+                    if (event.previous_pipeline.id && pipelines[event.previous_pipeline.id]) {
+                        previousPipelineName = pipelines[event.previous_pipeline.id].name;
+                        if (event.previous_status.id && 
+                            pipelines[event.previous_pipeline.id].stages && 
+                            pipelines[event.previous_pipeline.id].stages[event.previous_status.id]) {
+                            previousStageName = pipelines[event.previous_pipeline.id].stages[event.previous_status.id].name;
+                        }
+                    }
+                    
+                    // Atualizar nomes do pipeline e estágio atual
+                    if (event.current_pipeline.id && pipelines[event.current_pipeline.id]) {
+                        currentPipelineName = pipelines[event.current_pipeline.id].name;
+                        if (event.current_status.id && 
+                            pipelines[event.current_pipeline.id].stages && 
+                            pipelines[event.current_pipeline.id].stages[event.current_status.id]) {
+                            currentStageName = pipelines[event.current_pipeline.id].stages[event.current_status.id].name;
+                        }
+                    }
+                }
+                
+                // Determinar conteúdo baseado no tipo de evento
+                let eventContent = '';
+                if (event.event_type === 'message_received') {
+                    eventContent = `
+                        <p>Lead encontrado no Kommo ao receber mensagem.</p>
+                        <div class="mt-2">
+                            <p><strong>Pipeline:</strong> <span class="badge bg-primary">${currentPipelineName}</span></p>
+                            <p><strong>Estágio:</strong> <span class="badge bg-success">${currentStageName}</span></p>
+                            <p><strong>Situação:</strong> <span class="badge bg-info">${event.lead_situation || 'Não informada'}</span></p>
+                        </div>
+                    `;
+                    if (event.source_id) {
+                        eventContent += `<p><strong>Anúncio:</strong> <span class="badge bg-secondary">${event.source_id}</span></p>`;
+                    }
+                } else if (event.event_type === 'status_changed') {
+                    eventContent = `
+                        <p>Lead mudou de estágio no Kommo.</p>
+                        <div class="mt-2">
+                            <p><strong>De:</strong> <span class="badge bg-secondary">${previousPipelineName} / ${previousStageName}</span></p>
+                            <p><strong>Para:</strong> <span class="badge bg-success">${currentPipelineName} / ${currentStageName}</span></p>
+                            <p><strong>Situação:</strong> <span class="badge bg-info">${event.lead_situation || 'Não informada'}</span></p>
+                        </div>
+                    `;
+                }
+                
+                timelineHtml += `
+                    <div class="timeline-item">
+                        <div class="timeline-badge ${badgeClass}">
+                            <i class="bi ${iconClass}"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <h6 class="mb-1">${eventDate}</h6>
+                            <div class="timeline-body">
+                                ${eventContent}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            // Extrair ID do lead do primeiro evento
+            const leadId = events[0].lead_id;
+            
+            // Criar estrutura do modal
+            const modal = document.createElement('div');
+            modal.className = 'modal fade';
+            modal.id = modalId;
+            modal.tabIndex = '-1';
+            modal.setAttribute('aria-labelledby', `${modalId}Label`);
+            modal.setAttribute('aria-hidden', 'true');
+            
+            modal.innerHTML = `
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header bg-gradient-success text-white">
+                            <h5 class="modal-title" id="${modalId}Label">
+                                <i class="bi bi-graph-up me-2"></i>Rastreamento de Lead
+                            </h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-12 mb-4">
+                                    <h5 class="border-bottom pb-2"><i class="bi bi-info-circle me-2"></i>Informações do Lead</h5>
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <p><strong>ID do Lead:</strong> ${leadId}</p>
+                                            <p><strong>Telefone:</strong> ${telefone}</p>
+                                        </div>
+                                        <div>
+                                            <a href="https://dfixstore.kommo.com/leads/detail/${leadId}" target="_blank" class="btn btn-outline-primary btn-sm">
+                                                <i class="bi bi-box-arrow-up-right me-1"></i>Abrir no Kommo
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <h5 class="border-bottom pb-2"><i class="bi bi-clock-history me-2"></i>Histórico do Lead</h5>
+                                    <div class="timeline mt-3">
+                                        ${timelineHtml}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Adicionar estilos para timeline
+            const styleElement = document.createElement('style');
+            styleElement.textContent = `
+                .timeline {
+                    position: relative;
+                    padding: 20px 0;
+                }
+                .timeline:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 16px;
+                    width: 3px;
+                    background: #e9ecef;
+                }
+                .timeline-item {
+                    position: relative;
+                    margin-bottom: 30px;
+                    padding-left: 40px;
+                }
+                .timeline-badge {
+                    position: absolute;
+                    left: 0;
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: #fff;
+                    z-index: 2;
+                }
+                .timeline-content {
+                    padding: 15px;
+                    background: #f8f9fa;
+                    border-radius: 5px;
+                    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+                }
+                .timeline-body {
+                    padding-top: 10px;
+                }
+            `;
+            
+            // Adicionar os elementos ao corpo do documento
+            document.head.appendChild(styleElement);
             document.body.appendChild(modal);
             
             // Inicializar e exibir o modal

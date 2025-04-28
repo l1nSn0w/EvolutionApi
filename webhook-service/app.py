@@ -5,7 +5,7 @@ import os
 import sys
 import requests
 import datetime
-from sqlalchemy import create_engine, Column, Integer, String, DateTime, Text, Boolean, inspect
+from sqlalchemy import create_engine, Column, Integer, String, DateTime, Text, Boolean, inspect, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.sql import text
@@ -29,6 +29,15 @@ from kommo_utils import (
     search_lead_by_phone,
     get_pipeline_details
 )
+
+# Função para obter data/hora atual no fuso horário do Brasil
+def get_brazil_datetime():
+    """
+    Retorna a data e hora atual no fuso horário do Brasil (UTC-3)
+    """
+    from datetime import datetime, timedelta
+    # Obtém o UTC atual e subtrai 3 horas para o fuso do Brasil
+    return datetime.utcnow() - timedelta(hours=3)
 
 # URL do webhook do Make
 MAKE_WEBHOOK_URL = "https://hook.us2.make.com/cig25e7rx3x5xdf85vlyx35xx8xa931j"
@@ -54,8 +63,8 @@ DB_PORT = "5432"
 DB_NAME = "evolution"
 DB_URL = f"postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 
-# Configuração do SQLAlchemy
-engine = create_engine(DB_URL, connect_args={"options": "-c timezone=utc"})
+# Configuração do SQLAlchemy - Definindo o fuso horário para o Brasil
+engine = create_engine(DB_URL, connect_args={"options": "-c timezone=America/Sao_Paulo"})
 Session = sessionmaker(bind=engine)
 Base = declarative_base()
 
@@ -73,7 +82,7 @@ class WebhookMessage(Base):
     url = Column(String(255), nullable=True)
     encaminhado_make = Column(Boolean, default=False)
     date_time = Column(String(30), nullable=True)
-    created_at = Column(DateTime, default=datetime.utcnow)
+    created_at = Column(DateTime, default=get_brazil_datetime)
     ad_name = Column(String(255), nullable=True)
     adset_name = Column(String(255), nullable=True)
     adset_id = Column(String(50), nullable=True)
@@ -90,8 +99,30 @@ class KommoToken(Base):
     refresh_token = Column(Text)
     expires_at = Column(DateTime)
     domain = Column(String(100))
-    created_at = Column(DateTime, default=datetime.utcnow)
-    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    created_at = Column(DateTime, default=get_brazil_datetime)
+    updated_at = Column(DateTime, default=get_brazil_datetime, onupdate=get_brazil_datetime)
+
+# Modelo para rastreamento de leads
+class LeadTracking(Base):
+    __tablename__ = 'lead_tracking'
+    
+    id = Column(Integer, primary_key=True)
+    message_id = Column(Integer, ForeignKey('webhook_messages.id'), nullable=True)
+    lead_id = Column(String(50), nullable=False)
+    phone = Column(String(50))
+    event_type = Column(String(50), nullable=False)
+    source_id = Column(String(50), nullable=True)
+    previous_pipeline_id = Column(String(50), nullable=True)
+    previous_pipeline_name = Column(String(255), nullable=True)
+    previous_status_id = Column(String(50), nullable=True)
+    previous_status_name = Column(String(255), nullable=True)
+    current_pipeline_id = Column(String(50), nullable=True)
+    current_pipeline_name = Column(String(255), nullable=True)
+    current_status_id = Column(String(50), nullable=True)
+    current_status_name = Column(String(255), nullable=True)
+    lead_situation = Column(String(255), nullable=True)
+    event_time = Column(DateTime, default=get_brazil_datetime)
+    created_at = Column(DateTime, default=get_brazil_datetime)
 
 # Criar a tabela se não existir
 def init_db():
@@ -145,6 +176,13 @@ def init_db():
                     logger.info(f"Coluna {coluna} adicionada à tabela kommo_tokens!")
             
             logger.info("Tabela kommo_tokens já existe com todas as colunas necessárias.")
+        
+        # Verificar se a tabela lead_tracking existe
+        if not inspector.has_table('lead_tracking'):
+            Base.metadata.create_all(engine)
+            logger.info("Tabela lead_tracking criada com sucesso!")
+        else:
+            logger.info("Tabela lead_tracking já existe.")
             
     except Exception as e:
         logger.error(f"Erro ao inicializar banco de dados: {str(e)}")
@@ -319,6 +357,52 @@ def salvar_mensagem_db(telefone, nome, dispositivo, mensagem, source_id=None, ti
         if session:
             session.close()
 
+def registrar_rastreamento_lead(message_id, lead_id, phone, event_type, source_id=None,
+                              previous_pipeline_id=None, previous_pipeline_name=None,
+                              previous_status_id=None, previous_status_name=None,
+                              current_pipeline_id=None, current_pipeline_name=None,
+                              current_status_id=None, current_status_name=None,
+                              lead_situation=None):
+    """
+    Registra um evento de rastreamento de lead no banco de dados
+    """
+    try:
+        session = Session()
+        
+        # Criar novo evento de rastreamento
+        novo_rastreamento = LeadTracking(
+            message_id=message_id,
+            lead_id=lead_id,
+            phone=phone,
+            event_type=event_type,
+            source_id=source_id,
+            previous_pipeline_id=previous_pipeline_id,
+            previous_pipeline_name=previous_pipeline_name,
+            previous_status_id=previous_status_id,
+            previous_status_name=previous_status_name,
+            current_pipeline_id=current_pipeline_id,
+            current_pipeline_name=current_pipeline_name,
+            current_status_id=current_status_id,
+            current_status_name=current_status_name,
+            lead_situation=lead_situation,
+            event_time=get_brazil_datetime()  # Usar a função para o fuso do Brasil
+        )
+        
+        # Adicionar e commitar
+        session.add(novo_rastreamento)
+        session.commit()
+        
+        logger.info(f"✅ Rastreamento de lead salvo com ID: {novo_rastreamento.id}")
+        return novo_rastreamento.id
+    except Exception as e:
+        logger.error(f"❌ Erro ao salvar rastreamento de lead: {str(e)}")
+        if session:
+            session.rollback()
+        return None
+    finally:
+        if session:
+            session.close()
+
 def process_message(data):
     """
     Função para processar as mensagens recebidas
@@ -334,6 +418,23 @@ def process_message(data):
         # Extrair date_time do webhook, se disponível
         date_time = data.get('date_time')
         if date_time:
+            # Converter para o horário do Brasil se estiver em formato UTC
+            try:
+                from datetime import datetime, timedelta
+                date_format = "%Y-%m-%dT%H:%M:%S.%fZ"
+                # Se o formato for ISO 8601 com Z (UTC)
+                if date_time.endswith('Z'):
+                    # Remover o Z
+                    dt_obj = datetime.strptime(date_time[:-1], date_format[:-2])
+                    # Ajustar para o fuso horário do Brasil (UTC-3)
+                    dt_brasil = dt_obj - timedelta(hours=3)
+                    # Formatar no mesmo formato ISO 8601, mas sem o Z
+                    date_time = dt_brasil.strftime("%Y-%m-%dT%H:%M:%S.%f")[:-3]
+                    logger.info(f"⏰ Data/Hora convertida para fuso BR: {date_time}")
+                else:
+                    logger.info(f"⏰ Data/Hora original: {date_time}")
+            except Exception as e:
+                logger.warning(f"Erro ao converter data para BR: {str(e)}")
             logger.info(f"⏰ Data/Hora: {date_time}")
 
         # Debug da estrutura resumida
@@ -395,58 +496,103 @@ def process_message(data):
             if 'sourceId' in external_ad_reply:
                 source_id = external_ad_reply.get('sourceId', '')
                 
-                # Verificar se ambas as condições são verdadeiras
-                if is_from_me is False:
-                    # Condições satisfeitas - definir flag para salvar
+                # Verificar se ambas as condições são verdadeiras (fromMe é False e sourceId existe)
+                if not is_from_me and source_id:
                     should_save = True
+                    title = external_ad_reply.get('title', '')
                     
-                    # Log
-                    logger.info("\n--------------------------------------------")
-                    logger.info("🎯🎯🎯 CONDIÇÃO SATISFEITA! 🎯🎯🎯")
-                    logger.info(f"🔍 sourceId: {source_id}")
+                    # Corrigir extração da URL - verificar várias propriedades possíveis
+                    url = external_ad_reply.get('sourceUrl', '')
+                    if not url:
+                        url = external_ad_reply.get('canonicalUrl', '')
+                    if not url:
+                        url = external_ad_reply.get('matchedText', '')
+                    if not url:
+                        url = external_ad_reply.get('mediaUrl', '')
                     
-                    # Informações adicionais úteis
-                    title = external_ad_reply.get('title', 'Sem título')
-                    logger.info(f"📱 Título: {title}")
-                    url = external_ad_reply.get('sourceUrl', 'Sem URL')
+                    logger.info(f"📊 Anúncio: {source_id}")
+                    logger.info(f"📑 Título: {title}")
                     logger.info(f"🔗 URL: {url}")
                     
-                    # Buscar informações do anúncio no Facebook
-                    ad_info = get_facebook_ad_data(source_id)
-                    if ad_info:
-                        ad_name = ad_info.get('ad_name')
-                        adset_name = ad_info.get('adset_name')
-                        adset_id = ad_info.get('adset_id')
-                        campaign_name = ad_info.get('campaign_name')
-                        campaign_id = ad_info.get('campaign_id')
+                    # Se temos um source_id, vamos buscar detalhes do anúncio no Facebook
+                    if source_id:
+                        try:
+                            logger.info(f"Buscando informações do anúncio {source_id} no Facebook...")
+                            
+                            # URL da API Graph do Facebook
+                            fb_api_url = f"https://graph.facebook.com/v18.0/{source_id}?fields=name,adset_id,adset.fields(name),campaign_id,campaign.fields(name)&access_token={FB_ACCESS_TOKEN}"
+                            
+                            # Fazer a requisição para a API
+                            response = requests.get(fb_api_url)
+                            
+                            if response.status_code == 200:
+                                ad_info = response.json()
+                                logger.info(f"Informações do anúncio: {ad_info}")
+                                
+                                # Extrair informações
+                                ad_name = ad_info.get('name')
+                                
+                                # Extrair informações do adset
+                                if 'adset_id' in ad_info:
+                                    adset_id = ad_info.get('adset_id')
+                                if 'adset' in ad_info and isinstance(ad_info['adset'], dict):
+                                    adset_name = ad_info['adset'].get('name')
+                                
+                                # Extrair informações da campanha
+                                if 'campaign_id' in ad_info:
+                                    campaign_id = ad_info.get('campaign_id')
+                                if 'campaign' in ad_info and isinstance(ad_info['campaign'], dict):
+                                    campaign_name = ad_info['campaign'].get('name')
+                                
+                                logger.info(f"📢 Nome do anúncio: {ad_name}")
+                                logger.info(f"📑 Nome do conjunto de anúncios: {adset_name}")
+                                logger.info(f"📑 ID do conjunto de anúncios: {adset_id}")
+                                logger.info(f"📊 Nome da campanha: {campaign_name}")
+                                logger.info(f"📊 ID da campanha: {campaign_id}")
+                            else:
+                                logger.error(f"Erro ao buscar informações do anúncio: {response.status_code} - {response.text}")
+                        except Exception as e:
+                            logger.error(f"Erro ao buscar informações do anúncio: {str(e)}")
+                    
+                    # Também buscar informações no make.com
+                    try:
+                        # Encaminhar mensagem para o webhook do Make
+                        logger.info(f"Encaminhando mensagem para o Make...")
+                        make_payload = {
+                            "telefone": telefone,
+                            "nome": nome,
+                            "mensagem": mensagem,
+                            "dispositivo": source,
+                            "source_id": source_id,
+                            "title": title,
+                            "url": url,
+                            "ad_name": ad_name,
+                            "adset_name": adset_name,
+                            "adset_id": adset_id,
+                            "campaign_name": campaign_name,
+                            "campaign_id": campaign_id,
+                            "date_time": date_time
+                        }
                         
-                        logger.info(f"📊 Informações do anúncio:")
-                        logger.info(f"   - Nome do anúncio: {ad_name}")
-                        logger.info(f"   - Nome do conjunto: {adset_name}")
-                        logger.info(f"   - ID do conjunto: {adset_id}")
-                        logger.info(f"   - Nome da campanha: {campaign_name}")
-                        logger.info(f"   - ID da campanha: {campaign_id}")
-                    
-                    # Encaminhar o webhook original completo para o Make
-                    success = send_to_make(data)
-                    if success:
-                        encaminhado = True
-                        logger.info("✅ Encaminhado com sucesso para o Make!")
-                        logger.info(f"📞 Telefone: {telefone} | 👤 Nome: {nome} | 📱 Dispositivo: {source}")
-                    else:
-                        logger.error("⚠️ Falha ao encaminhar webhook para o Make")
-                    
-                    logger.info("--------------------------------------------\n")
-                else:
-                    logger.info("❌ fromMe é True, condição não satisfeita")
+                        # Fazer requisição para o webhook do Make
+                        make_response = requests.post(MAKE_WEBHOOK_URL, json=make_payload)
+                        
+                        if make_response.status_code == 200:
+                            logger.info(f"✅ Mensagem encaminhada para o Make com sucesso!")
+                            encaminhado = True
+                    except Exception as e:
+                        logger.error(f"❌ Erro ao encaminhar mensagem para o Make: {str(e)}")
             else:
-                logger.info("❌ Não encontrou sourceId em externalAdReply")
-        else:
-            logger.info("❌ Não encontrou externalAdReply no contextInfo")
-        
-        # Salvar a mensagem no banco de dados APENAS se as condições forem satisfeitas
+                # Se não é um anúncio, verificar apenas condição 1: fromMe é False
+                if not is_from_me:
+                    should_save = True
+                
+        # Se pelo menos uma das condições é verdadeira, vamos salvar no banco de dados
         if should_save:
-            mensagem_id = salvar_mensagem_db(
+            logger.info("Condições atendem aos critérios. Salvando no banco de dados...")
+            
+            # Salvar no banco de dados
+            message_id = salvar_mensagem_db(
                 telefone=telefone,
                 nome=nome,
                 dispositivo=source,
@@ -463,14 +609,98 @@ def process_message(data):
                 campaign_id=campaign_id
             )
             
-            if mensagem_id:
-                logger.info(f"📊 Mensagem registrada no banco de dados com ID: {mensagem_id}")
-        else:
-            logger.info("⏩ Mensagem não salva no banco de dados - não atende às condições necessárias")
-                
+            # Rastrear o lead no Kommo se for mensagem de anúncio
+            if message_id and source_id:
+                try:
+                    logger.info(f"Rastreando lead no Kommo para o telefone: {telefone}")
+                    
+                    # Buscar o primeiro token disponível
+                    session = Session()
+                    try:
+                        kommo_token = session.query(KommoToken).first()
+                        
+                        if kommo_token:
+                            # Verificar se o token está válido e renovar se necessário
+                            if kommo_token.expires_at <= datetime.utcnow():
+                                new_tokens = refresh_kommo_token(kommo_token.refresh_token, kommo_token.domain)
+                                
+                                if new_tokens:
+                                    # Atualizar o token
+                                    kommo_token.access_token = new_tokens['access_token']
+                                    kommo_token.refresh_token = new_tokens['refresh_token']
+                                    kommo_token.expires_at = new_tokens['expires_at']
+                                    session.commit()
+                                else:
+                                    logger.error("Falha ao renovar token de acesso para o Kommo.")
+                            
+                            # Construir o domínio completo
+                            domain = kommo_token.domain
+                            if not domain.startswith('http'):
+                                # Verificar se já termina com .kommo.com para evitar duplicação
+                                if not domain.endswith('.kommo.com'):
+                                    domain = f"{domain}.kommo.com"
+                            
+                            # Buscar lead no Kommo
+                            result = search_lead_by_phone(telefone, kommo_token.access_token, domain, logger)
+                            
+                            if result.get("status") == "success" and result.get("leads") and len(result["leads"]) > 0:
+                                # Lead encontrado, registrar no sistema de rastreamento
+                                lead = result["leads"][0]
+                                lead_id = lead.get("id")
+                                pipeline_id = lead.get("pipeline_id")
+                                status_id = lead.get("status_id")
+                                
+                                # Buscar detalhes do pipeline e status
+                                pipeline_info = get_pipeline_details(kommo_token.access_token, domain, pipeline_id)
+                                
+                                pipeline_name = pipeline_info.get("name", f"Pipeline {pipeline_id}")
+                                status_name = "Desconhecido"
+                                
+                                # Buscar o nome do status
+                                if pipeline_info.get("statuses"):
+                                    for status in pipeline_info.get("statuses", []):
+                                        if str(status.get("id")) == str(status_id):
+                                            status_name = status.get("name", f"Status {status_id}")
+                                            break
+                                
+                                # Buscar campo personalizado "Situação do lead"
+                                lead_situation = None
+                                if lead.get("custom_fields_values"):
+                                    for field in lead.get("custom_fields_values", []):
+                                        if field.get("field_name") in ["Situação do lead", "Situacao do lead", "Situação", "Situacao"]:
+                                            if field.get("values") and len(field["values"]) > 0:
+                                                lead_situation = field["values"][0].get("value")
+                                                break
+                                
+                                # Registrar rastreamento do lead
+                                registrar_rastreamento_lead(
+                                    message_id=message_id,
+                                    lead_id=lead_id,
+                                    phone=telefone,
+                                    event_type="message_received",
+                                    source_id=source_id,
+                                    current_pipeline_id=pipeline_id,
+                                    current_pipeline_name=pipeline_name,
+                                    current_status_id=status_id,
+                                    current_status_name=status_name,
+                                    lead_situation=lead_situation
+                                )
+                                
+                                logger.info(f"✅ Lead encontrado no Kommo e rastreamento registrado")
+                            else:
+                                logger.info(f"Nenhum lead encontrado no Kommo para o telefone {telefone}")
+                        else:
+                            logger.warning("Nenhum token de acesso para o Kommo configurado.")
+                    finally:
+                        session.close()
+                except Exception as e:
+                    logger.error(f"Erro ao rastrear lead no Kommo: {str(e)}")
+        
+        return {"status": "success", "message": "Mensagem processada com sucesso"}
+        
     except Exception as e:
-        logger.error(f"Erro ao processar mensagem: {str(e)}")
-        logger.error(f"Stack trace: {e.__traceback__}")
+        logger.error(f"❌ Erro ao processar mensagem: {str(e)}")
+        return {"status": "error", "message": str(e)}
 
 @app.route('/messages', methods=['GET'])
 def get_messages():
@@ -490,20 +720,31 @@ def get_messages():
         session = Session()
         query = session.query(WebhookMessage)
         
+        # Mostrar um exemplo de data armazenada para debug
+        sample = session.query(WebhookMessage.date_time).filter(WebhookMessage.date_time.isnot(None)).first()
+        logger.info(f"Exemplo de formato de data armazenada: {sample[0] if sample else 'Nenhuma data encontrada'}")
+        
         # Aplicar filtros de data se fornecidos
         if single_date:
-            # Filtrar por uma data específica (ignora hora)
+            # Para uma data específica, buscamos qualquer registro que comece com a data
+            # Já que o formato está como YYYY-MM-DDThh:mm:ss (ISO 8601 sem Z)
             query = query.filter(WebhookMessage.date_time.like(f"{single_date}%"))
             logger.info(f"Filtrando mensagens pela data: {single_date}")
         elif start_date and end_date:
-            # Filtrar entre duas datas
-            # Adicionar "T23:59:59.999Z" à end_date para incluir todo o dia
-            end_date_with_time = f"{end_date}T23:59:59.999Z"
+            # Para intervalo, consideramos o início do dia start_date até o fim do dia end_date
+            # Para garantir que incluímos todo o dia final, adicionamos 1 dia ao end_date
+            from datetime import datetime, timedelta
+            date_format = "%Y-%m-%d"
+            
+            # Converter end_date para o próximo dia para incluir todo o dia no filtro
+            end_dt = datetime.strptime(end_date, date_format) + timedelta(days=1)
+            next_day = end_dt.strftime(date_format)
+            
             query = query.filter(
-                WebhookMessage.date_time >= f"{start_date}T00:00:00.000Z",
-                WebhookMessage.date_time <= end_date_with_time
+                WebhookMessage.date_time >= start_date,
+                WebhookMessage.date_time < next_day
             )
-            logger.info(f"Filtrando mensagens entre as datas: {start_date} e {end_date}")
+            logger.info(f"Filtrando mensagens entre: {start_date} e {end_date} (até {next_day})")
         
         # Ordenar por data_time decrescente (mais recentes primeiro)
         # Usar created_at como fallback para mensagens sem date_time
@@ -512,10 +753,15 @@ def get_messages():
             WebhookMessage.created_at.desc()
         ).limit(100).all()
         
+        # Log para debug - mostrar as datas das mensagens encontradas
+        if messages:
+            logger.info(f"Datas das mensagens encontradas: {[msg.date_time for msg in messages[:5]]}")
+        
         result = []
         for msg in messages:
-            # Formatar created_at em UTC explicicamente
-            created_at_utc = msg.created_at.strftime('%Y-%m-%d %H:%M:%S UTC')
+            # Já que o PostgreSQL agora está configurado para o fuso horário do Brasil,
+            # não precisamos fazer ajustes adicionais
+            created_at_formatted = msg.created_at.strftime('%Y-%m-%d %H:%M:%S (Brasil)') if msg.created_at else None
             
             result.append({
                 'id': msg.id,
@@ -528,7 +774,7 @@ def get_messages():
                 'url': msg.url,
                 'encaminhado_make': msg.encaminhado_make,
                 'date_time': msg.date_time,
-                'created_at': created_at_utc,
+                'created_at': created_at_formatted,
                 'ad_name': msg.ad_name,
                 'adset_name': msg.adset_name,
                 'adset_id': msg.adset_id,
@@ -621,25 +867,25 @@ def kommo_callback():
             <style>
                 body {{
                     font-family: Arial, sans-serif;
-                        max-width: 600px;
+                    max-width: 600px;
                     margin: 0 auto;
                     padding: 20px;
-                        text-align: center;
+                    text-align: center;
                 }}
-                    .success {{
-                        color: #28a745;
+                .success {{
+                    color: #28a745;
                     padding: 20px;
-                        border: 1px solid #28a745;
-                        border-radius: 5px;
-                        margin: 20px 0;
+                    border: 1px solid #28a745;
+                    border-radius: 5px;
+                    margin: 20px 0;
                 }}
                 .btn {{
                     display: inline-block;
-                        background-color: #007bff;
+                    background-color: #007bff;
                     color: white;
                     padding: 10px 20px;
                     text-decoration: none;
-                        border-radius: 5px;
+                    border-radius: 5px;
                     margin-top: 20px;
                 }}
             </style>
@@ -659,16 +905,14 @@ def kommo_callback():
         </body>
         </html>
         """
-            
             return html_response
-        
         except Exception as e:
             session.rollback()
             logger.error(f"Erro ao salvar tokens: {str(e)}")
             return jsonify({"error": f"Erro ao salvar tokens: {str(e)}"}), 500
         finally:
             session.close()
-            
+    
     except Exception as e:
         logger.error(f"Erro no callback da Kommo: {str(e)}")
         return jsonify({"error": str(e)}), 500
@@ -734,7 +978,6 @@ def kommo_manual_auth():
             session.close()
         
         return redirect(url_for('dashboard'))
-            
     except Exception as e:
         flash(f'Erro: {str(e)}', 'error')
         return redirect(url_for('dashboard'))
@@ -859,7 +1102,6 @@ def get_token_info():
             "token_count": len(token_info),
             "tokens": token_info
         })
-        
     except Exception as e:
         logger.error(f"Erro ao obter informações dos tokens: {str(e)}")
         return jsonify({"error": str(e)}), 500
@@ -881,15 +1123,15 @@ def revoke_kommo_token():
         session = Session()
         try:
             token = session.query(KommoToken).filter_by(account_id=account_id).first()
-                
+            
             if not token:
                 flash(f"Token para a conta {account_id} não encontrado", "warning")
                 return redirect(url_for('dashboard'))
-                    
+                
             # Remover o token
             session.delete(token)
             session.commit()
-                
+            
             flash(f"Integração com a Kommo removida com sucesso!", "success")
             return redirect(url_for('dashboard'))
         finally:
@@ -1049,10 +1291,9 @@ def search_lead_by_phone_endpoint():
             
             # Caso contrário, retornar o resultado
             return jsonify(result)
-            
         finally:
             session.close()
-            
+    
     except Exception as e:
         logger.error(f"Erro ao buscar leads no Kommo: {str(e)}")
         return jsonify({"status": "error", "message": str(e)}), 500
@@ -1119,6 +1360,83 @@ def get_kommo_pipelines():
     except Exception as e:
         logger.error(f"Erro ao buscar pipelines no Kommo: {str(e)}")
         return jsonify({"status": "error", "message": str(e)}), 500
+
+@app.route('/lead-tracking', methods=['GET'])
+def get_lead_tracking():
+    """
+    Endpoint para listar os eventos de rastreamento de leads
+    Permite filtrar por lead_id ou telefone:
+    - /lead-tracking?lead_id=123  (eventos para um lead específico)
+    - /lead-tracking?phone=554199999999  (eventos para um telefone específico)
+    - /lead-tracking  (todos os eventos, limitados a 100 registros)
+    """
+    try:
+        # Obter parâmetros de consulta
+        lead_id = request.args.get('lead_id')
+        phone = request.args.get('phone')
+        
+        session = Session()
+        query = session.query(LeadTracking)
+        
+        # Aplicar filtros se fornecidos
+        if lead_id:
+            query = query.filter(LeadTracking.lead_id == lead_id)
+            logger.info(f"Filtrando eventos de lead pelo ID: {lead_id}")
+        elif phone:
+            # Formatar o telefone para busca
+            formatted_phone = ''.join(filter(str.isdigit, phone))
+            query = query.filter(LeadTracking.phone.like(f"%{formatted_phone}%"))
+            logger.info(f"Filtrando eventos de lead pelo telefone: {formatted_phone}")
+        
+        # Ordenar por data/hora (mais recentes primeiro)
+        events = query.order_by(LeadTracking.event_time.desc()).limit(100).all()
+        
+        result = []
+        for event in events:
+            event_data = {
+                "id": event.id,
+                "message_id": event.message_id,
+                "lead_id": event.lead_id,
+                "phone": event.phone,
+                "event_type": event.event_type,
+                "source_id": event.source_id,
+                "previous_pipeline": {
+                    "id": event.previous_pipeline_id,
+                    "name": event.previous_pipeline_name
+                },
+                "previous_status": {
+                    "id": event.previous_status_id,
+                    "name": event.previous_status_name
+                },
+                "current_pipeline": {
+                    "id": event.current_pipeline_id,
+                    "name": event.current_pipeline_name
+                },
+                "current_status": {
+                    "id": event.current_status_id,
+                    "name": event.current_status_name
+                },
+                "lead_situation": event.lead_situation,
+                "event_time": event.event_time.isoformat() if event.event_time else None,
+                "created_at": event.created_at.isoformat() if event.created_at else None
+            }
+            result.append(event_data)
+        
+        return jsonify({
+            "status": "success",
+            "count": len(result),
+            "events": result
+        })
+    
+    except Exception as e:
+        logger.error(f"Erro ao buscar eventos de rastreamento: {str(e)}")
+        return jsonify({
+            "status": "error",
+            "message": f"Erro ao buscar eventos de rastreamento: {str(e)}"
+        }), 500
+    finally:
+        if session:
+            session.close()
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))

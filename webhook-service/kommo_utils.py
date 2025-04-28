@@ -380,27 +380,42 @@ def process_kommo_webhook(data):
         
         logger.info(f"Tipo de webhook: {webhook_type}")
         
-        # Aqui você pode adicionar mais lógica para processar diferentes tipos de webhooks
+        # Evento de mudança de status
         if webhook_type == 'lead_status_changed':
+            # Extrair informações relevantes
             lead_id = None
-            status_id = None
+            previous_status_id = None
+            new_status_id = None
+            previous_pipeline_id = None
+            new_pipeline_id = None
             
-            # Tentar extrair informações em diferentes formatos
             if isinstance(data, dict):
-                if 'payload' in data and isinstance(data['payload'], dict):
-                    lead_id = data['payload'].get('id')
-                    status_id = data['payload'].get('status_id')
-                else:
-                    # Procurar em padrões de formulário
-                    for key in data.keys():
-                        if key.startswith('leads[status][0][id]'):
-                            lead_id = data.get(key)
-                        if key.startswith('leads[status][0][status_id]'):
-                            status_id = data.get(key)
+                # Buscar campos específicos para este tipo de evento
+                for key in data.keys():
+                    if key.startswith('leads[status][0][id]'):
+                        lead_id = data.get(key)
+                    if key.startswith('leads[status][0][status_id][old]'):
+                        previous_status_id = data.get(key)
+                    if key.startswith('leads[status][0][status_id]') and not key.endswith('[old]'):
+                        new_status_id = data.get(key)
+                    if key.startswith('leads[status][0][old_status_id]'):
+                        previous_status_id = data.get(key)
+                    if key.startswith('leads[status][0][status_id]'):
+                        new_status_id = data.get(key)
+                    if key.startswith('leads[status][0][pipeline_id][old]'):
+                        previous_pipeline_id = data.get(key)
+                    if key.startswith('leads[status][0][old_pipeline_id]'):
+                        previous_pipeline_id = data.get(key)
+                    if key.startswith('leads[status][0][pipeline_id]') and not key.endswith('[old]'):
+                        new_pipeline_id = data.get(key)
             
-            logger.info(f"Status do lead alterado: {lead_id} -> {status_id}")
+            logger.info(f"Lead ID: {lead_id}")
+            logger.info(f"Status anterior: {previous_status_id}")
+            logger.info(f"Novo status: {new_status_id}")
+            logger.info(f"Pipeline anterior: {previous_pipeline_id}")
+            logger.info(f"Novo pipeline: {new_pipeline_id}")
             
-            # Se temos um lead_id e account_id, vamos buscar detalhes do lead
+            # Se temos um lead_id e account_id, vamos buscar detalhes do lead e registrar a mudança
             if lead_id and account_id:
                 # Verificar se temos dados de sessão disponíveis
                 from sqlalchemy.orm import Session
@@ -411,6 +426,7 @@ def process_kommo_webhook(data):
                     app_module = importlib.import_module('app')
                     session_class = getattr(app_module, 'Session')
                     kommo_token_class = getattr(app_module, 'KommoToken')
+                    registrar_rastreamento_lead = getattr(app_module, 'registrar_rastreamento_lead')
                     
                     # Criar uma sessão
                     db_session = session_class()
@@ -420,225 +436,168 @@ def process_kommo_webhook(data):
                         # Buscar token de acesso para esta conta
                         kommo_token = db_session.query(kommo_token_class).filter_by(account_id=account_id).first()
                         
-                        if kommo_token:
-                            # Verificar se o token está válido
-                            if kommo_token.expires_at <= datetime.utcnow():
-                                # Token expirado, renovar
-                                logger.info(f"Token expirado para a conta {account_id}, renovando...")
-                                new_tokens = refresh_kommo_token(kommo_token.refresh_token, kommo_token.domain)
-                                
-                                if new_tokens:
-                                    # Atualizar o token
-                                    kommo_token.access_token = new_tokens['access_token']
-                                    kommo_token.refresh_token = new_tokens['refresh_token']
-                                    kommo_token.expires_at = datetime.utcnow() + timedelta(seconds=new_tokens.get('expires_in', 86400))
-                                    db_session.commit()
-                                    logger.info(f"Token renovado com sucesso para a conta {account_id}")
-                                    access_token = new_tokens['access_token']
-                                else:
-                                    logger.error(f"Falha ao renovar token para a conta {account_id}")
-                                    return {
-                                        "status": "error", 
-                                        "message": "Falha ao renovar token de acesso"
-                                    }
-                            else:
-                                # Token válido
-                                access_token = kommo_token.access_token
-                                
-                            # Buscar detalhes do lead
-                            logger.info(f"Buscando detalhes do lead {lead_id}")
-                            lead_details = get_lead_details(lead_id, full_domain, access_token)
-                            
-                            if lead_details:
-                                logger.info("==================== DETALHES DO LEAD ====================")
-                                logger.info(f"Lead ID: {lead_id}")
-                                
-                                # Extrair informações úteis do lead
-                                lead_name = lead_details.get("name", "Nome não disponível")
-                                lead_price = lead_details.get("price", 0)
-                                lead_status_id = lead_details.get("status_id")
-                                lead_pipeline_id = lead_details.get("pipeline_id")
-                                
-                                logger.info(f"Nome: {lead_name}")
-                                logger.info(f"Valor: {lead_price}")
-                                logger.info(f"Status ID: {lead_status_id}")
-                                logger.info(f"Pipeline ID: {lead_pipeline_id}")
-                                
-                                # Buscar contatos vinculados
-                                contacts = []
-                                if "_embedded" in lead_details and "contacts" in lead_details["_embedded"]:
-                                    contacts = lead_details["_embedded"]["contacts"]
-                                    logger.info(f"Contatos vinculados: {len(contacts)}")
-                                    
-                                    for i, contact in enumerate(contacts):
-                                        contact_id = contact.get("id")
-                                        is_main = contact.get("is_main", False)
-                                        logger.info(f"Contato {i+1}: ID={contact_id}, Principal={is_main}")
-                                        
-                                        # Buscar detalhes do contato
-                                        if contact_id:
-                                            logger.info(f"Buscando detalhes do contato {contact_id}")
-                                            contact_details = get_contact_details(contact_id, full_domain, access_token)
-                                            
-                                            if contact_details:
-                                                # Extrair informações úteis do contato
-                                                contact_name = contact_details.get("name", "Nome não disponível")
-                                                first_name = contact_details.get("first_name", "")
-                                                last_name = contact_details.get("last_name", "")
-                                                
-                                                logger.info(f"Detalhes do Contato {i+1}: {contact_name} ({first_name} {last_name})")
-                                                
-                                                # Procurar campos personalizados (telefone, email, etc.)
-                                                custom_fields = contact_details.get("custom_fields_values", [])
-                                                if custom_fields:
-                                                    logger.info("Campos personalizados do contato:")
-                                                    for field in custom_fields:
-                                                        field_id = field.get("field_id")
-                                                        field_name = field.get("field_name", "Campo sem nome")
-                                                        field_code = field.get("field_code", "")
-                                                        
-                                                        # Extrair valores
-                                                        values = field.get("values", [])
-                                                        if values:
-                                                            value = values[0].get("value", "Sem valor")
-                                                            logger.info(f"  - {field_name} ({field_code}): {value}")
-                                                            
-                                                            # Destacar telefones e emails
-                                                            if field_code == "PHONE":
-                                                                logger.info(f"  📞 Telefone encontrado: {value}")
-                                                            elif field_code == "EMAIL":
-                                                                logger.info(f"  📧 Email encontrado: {value}")
-                                            else:
-                                                logger.error(f"Falha ao buscar detalhes do contato {contact_id}")
-                                else:
-                                    # Log para identificar o problema
-                                    logger.warning("Não foram encontrados contatos associados ao lead")
-                                    logger.info(f"Estrutura do lead_details: {json.dumps(lead_details, indent=2)}")
-                                    
-                                    # Tentar buscar contatos de forma alternativa
-                                    try:
-                                        # Verificar se há contato principal
-                                        main_contact_id = lead_details.get('main_contact', {}).get('id')
-                                        if main_contact_id:
-                                            logger.info(f"Encontrado contato principal ID={main_contact_id}")
-                                            contact_details = get_contact_details(main_contact_id, full_domain, access_token)
-                                            
-                                            if contact_details:
-                                                # Extrair informações úteis do contato
-                                                contact_name = contact_details.get("name", "Nome não disponível")
-                                                first_name = contact_details.get("first_name", "")
-                                                last_name = contact_details.get("last_name", "")
-                                                
-                                                logger.info(f"Detalhes do Contato Principal: {contact_name} ({first_name} {last_name})")
-                                                
-                                                # Procurar campos personalizados (telefone, email, etc.)
-                                                custom_fields = contact_details.get("custom_fields_values", [])
-                                                if custom_fields:
-                                                    logger.info("Campos personalizados do contato principal:")
-                                                    for field in custom_fields:
-                                                        field_name = field.get("field_name", "Campo sem nome")
-                                                        field_code = field.get("field_code", "")
-                                                        
-                                                        # Extrair valores
-                                                        values = field.get("values", [])
-                                                        if values:
-                                                            value = values[0].get("value", "Sem valor")
-                                                            logger.info(f"  - {field_name} ({field_code}): {value}")
-                                                            
-                                                            # Destacar telefones e emails
-                                                            if field_code == "PHONE":
-                                                                logger.info(f"  📞 Telefone encontrado: {value}")
-                                                            elif field_code == "EMAIL":
-                                                                logger.info(f"  📧 Email encontrado: {value}")
-                                        else:
-                                            # Buscar contatos para o lead através da API separada
-                                            logger.info(f"Buscando contatos através da API separada para o lead {lead_id}")
-                                            contacts_api_url = f"https://{full_domain}/api/v4/leads/{lead_id}/contacts"
-                                            headers = {
-                                                "Authorization": f"Bearer {access_token}",
-                                                "Content-Type": "application/json"
-                                            }
-                                            
-                                            contacts_response = requests.get(contacts_api_url, headers=headers)
-                                            if contacts_response.status_code == 200:
-                                                contacts_data = contacts_response.json()
-                                                if "_embedded" in contacts_data and "contacts" in contacts_data["_embedded"]:
-                                                    contacts_list = contacts_data["_embedded"]["contacts"]
-                                                    logger.info(f"Contatos encontrados via API separada: {len(contacts_list)}")
-                                                    
-                                                    for i, contact in enumerate(contacts_list):
-                                                        contact_id = contact.get("id")
-                                                        if contact_id:
-                                                            logger.info(f"Processando contato {i+1}: ID={contact_id}")
-                                                            contact_details = get_contact_details(contact_id, full_domain, access_token)
-                                                            
-                                                            if contact_details:
-                                                                # Extrair informações úteis do contato
-                                                                contact_name = contact_details.get("name", "Nome não disponível")
-                                                                logger.info(f"Detalhes do Contato {i+1}: {contact_name}")
-                                                                
-                                                                # Procurar campos personalizados como telefone, email, etc.
-                                                                custom_fields = contact_details.get("custom_fields_values", [])
-                                                                if custom_fields:
-                                                                    logger.info("Campos personalizados do contato:")
-                                                                    for field in custom_fields:
-                                                                        field_name = field.get("field_name", "Campo sem nome")
-                                                                        field_code = field.get("field_code", "")
-                                                                        
-                                                                        values = field.get("values", [])
-                                                                        if values:
-                                                                            value = values[0].get("value", "Sem valor")
-                                                                            logger.info(f"  - {field_name} ({field_code}): {value}")
-                                                                            
-                                                                            if field_code == "PHONE":
-                                                                                logger.info(f"  📞 Telefone encontrado: {value}")
-                                                                            elif field_code == "EMAIL":
-                                                                                logger.info(f"  📧 Email encontrado: {value}")
-                                            else:
-                                                logger.warning(f"Não foi possível obter contatos via API separada: {contacts_response.status_code}")
-                                    except Exception as contact_err:
-                                        logger.error(f"Erro ao buscar contatos alternativamente: {str(contact_err)}")
-                                
-                                logger.info("==========================================================")
-                            else:
-                                logger.error(f"Falha ao buscar detalhes do lead {lead_id}")
-                        else:
+                        if not kommo_token:
                             logger.warning(f"Nenhum token encontrado para a conta {account_id}")
-                    finally:
-                        # Fechar a sessão
-                        db_session.close()
+                            return {"status": "error", "message": f"Token não encontrado para conta {account_id}"}
                         
+                        # Verificar se o token está válido
+                        if kommo_token.expires_at <= datetime.utcnow():
+                            logger.info("Token expirado, tentando renovar...")
+                            new_tokens = refresh_kommo_token(kommo_token.refresh_token, kommo_token.domain)
+                            
+                            if not new_tokens:
+                                logger.error("Falha ao renovar token")
+                                return {"status": "error", "message": "Falha ao renovar token"}
+                            
+                            # Atualizar token no banco de dados
+                            kommo_token.access_token = new_tokens['access_token']
+                            kommo_token.refresh_token = new_tokens['refresh_token']
+                            kommo_token.expires_at = new_tokens['expires_at']
+                            db_session.commit()
+                            
+                            access_token = new_tokens['access_token']
+                        else:
+                            access_token = kommo_token.access_token
+                        
+                        # Obter o domínio completo para as requisições
+                        domain_for_api = kommo_token.domain
+                        if not domain_for_api.endswith('.kommo.com'):
+                            domain_for_api = f"{domain_for_api}.kommo.com"
+                        
+                        # Buscar detalhes do lead
+                        lead_details = get_lead_details(lead_id, domain_for_api, access_token)
+                        
+                        if lead_details:
+                            logger.info("==================== DETALHES DO LEAD ====================")
+                            logger.info(f"Lead ID: {lead_id}")
+                            
+                            # Extrair informações úteis do lead
+                            lead_name = lead_details.get("name", "Nome não disponível")
+                            lead_price = lead_details.get("price", 0)
+                            lead_status_id = lead_details.get("status_id")
+                            lead_pipeline_id = lead_details.get("pipeline_id")
+                            
+                            logger.info(f"Nome: {lead_name}")
+                            logger.info(f"Valor: {lead_price}")
+                            logger.info(f"Status ID: {lead_status_id}")
+                            logger.info(f"Pipeline ID: {lead_pipeline_id}")
+                            
+                            # Buscar contatos vinculados
+                            contacts = []
+                            phone = None
+                            if "_embedded" in lead_details and "contacts" in lead_details["_embedded"]:
+                                contacts = lead_details["_embedded"]["contacts"]
+                                logger.info(f"Contatos vinculados: {len(contacts)}")
+                                
+                                for i, contact in enumerate(contacts):
+                                    contact_id = contact.get("id")
+                                    is_main = contact.get("is_main", False)
+                                    logger.info(f"Contato {i+1}: ID={contact_id}, Principal={is_main}")
+                                    
+                                    # Buscar detalhes do contato
+                                    if contact_id:
+                                        contact_details = get_contact_details(contact_id, domain_for_api, access_token)
+                                        if contact_details:
+                                            # Buscar telefones
+                                            if "custom_fields_values" in contact_details:
+                                                for field in contact_details["custom_fields_values"]:
+                                                    if field.get("field_code") in ["PHONE", "TELEFONE", "CELULAR", "MOBILE"]:
+                                                        if "values" in field and len(field["values"]) > 0:
+                                                            # Pegar o primeiro número de telefone
+                                                            for value in field["values"]:
+                                                                if "value" in value:
+                                                                    phone = value["value"]
+                                                                    logger.info(f"Telefone encontrado: {phone}")
+                                                                    break
+                                                            if phone:
+                                                                break
+                            
+                            # Buscar situação do lead (campo personalizado)
+                            lead_situation = "Não informada"
+                            if "custom_fields_values" in lead_details and lead_details["custom_fields_values"]:
+                                # Procurar pelo campo "Situação do lead"
+                                for field in lead_details["custom_fields_values"]:
+                                    if field.get("field_name") in ["Situação do lead", "Situação", "Situacao do lead", "Situacao"]:
+                                        if "values" in field and len(field["values"]) > 0:
+                                            lead_situation = field["values"][0].get("value", lead_situation)
+                                            break
+                            
+                            # Obter informações de pipelines para encontrar nomes
+                            pipelines = get_pipeline_details(domain_for_api, access_token)
+                            
+                            previous_pipeline_name = f"Pipeline {previous_pipeline_id}"
+                            previous_status_name = f"Estágio {previous_status_id}"
+                            current_pipeline_name = f"Pipeline {new_pipeline_id}"
+                            current_status_name = f"Estágio {new_status_id}"
+                            
+                            # Buscar nomes corretos se tivermos as informações dos pipelines
+                            if pipelines:
+                                if previous_pipeline_id in pipelines:
+                                    previous_pipeline_name = pipelines[previous_pipeline_id].get("name", previous_pipeline_name)
+                                    if "stages" in pipelines[previous_pipeline_id] and previous_status_id in pipelines[previous_pipeline_id]["stages"]:
+                                        previous_status_name = pipelines[previous_pipeline_id]["stages"][previous_status_id].get("name", previous_status_name)
+                                
+                                if new_pipeline_id in pipelines:
+                                    current_pipeline_name = pipelines[new_pipeline_id].get("name", current_pipeline_name)
+                                    if "stages" in pipelines[new_pipeline_id] and new_status_id in pipelines[new_pipeline_id]["stages"]:
+                                        current_status_name = pipelines[new_pipeline_id]["stages"][new_status_id].get("name", current_status_name)
+                            
+                            # Registrar no sistema de rastreamento
+                            if phone:
+                                tracking_id = registrar_rastreamento_lead(
+                                    message_id=None,  # Não está associado a uma mensagem específica
+                                    lead_id=lead_id,
+                                    phone=phone,
+                                    event_type="status_changed",
+                                    previous_pipeline_id=previous_pipeline_id,
+                                    previous_pipeline_name=previous_pipeline_name,
+                                    previous_status_id=previous_status_id,
+                                    previous_status_name=previous_status_name,
+                                    current_pipeline_id=new_pipeline_id,
+                                    current_pipeline_name=current_pipeline_name,
+                                    current_status_id=new_status_id,
+                                    current_status_name=current_status_name,
+                                    lead_situation=lead_situation
+                                )
+                                logger.info(f"✅ Mudança de status rastreada com sucesso! ID do rastreamento: {tracking_id}")
+                            else:
+                                logger.warning("Telefone do contato não encontrado, não foi possível registrar rastreamento")
+                        else:
+                            logger.error(f"Não foi possível obter detalhes do lead {lead_id}")
+                    finally:
+                        db_session.close()
+                except ImportError as e:
+                    logger.error(f"Erro ao importar módulos: {str(e)}")
+                except AttributeError as e:
+                    logger.error(f"Erro ao acessar atributos do módulo: {str(e)}")
                 except Exception as e:
-                    logger.error(f"Erro ao buscar detalhes de lead/contato: {str(e)}")
+                    logger.error(f"Erro ao processar mudança de status: {str(e)}")
             
-            # Retornar resposta de sucesso
             return {
                 "status": "success", 
-                "message": f"Alteração de status processada: {lead_id}"
+                "message": f"Mudança de status processada para o lead {lead_id}"
             }
-            
+        
+        # Evento de adição de lead
         elif webhook_type == 'lead_added':
+            # Extrair ID do lead
             lead_id = None
-            # Tentar extrair o ID do lead em diferentes formatos
+            
             if isinstance(data, dict):
-                if 'payload' in data and isinstance(data['payload'], dict):
-                    lead_id = data['payload'].get('id')
-                else:
-                    # Procurar em padrões de formulário
-                    for key in data.keys():
-                        if key.startswith('leads[add][0][id]'):
-                            lead_id = data.get(key)
-                            break
-                
+                for key in data.keys():
+                    if key.startswith('leads[add][0][id]'):
+                        lead_id = data.get(key)
+                        break
+            
             logger.info(f"Novo lead adicionado: {lead_id}")
             
-            # Lógica adicional semelhante ao lead_status_changed poderia ser adicionada aqui
+            # A lógica para processar um novo lead pode ser adicionada aqui
             
             return {
                 "status": "success", 
                 "message": f"Novo lead processado: {lead_id}"
             }
-            
+        
         elif webhook_type == 'contact_added':
             contact_id = None
             

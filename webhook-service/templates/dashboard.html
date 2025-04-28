@@ -329,122 +329,267 @@
     </nav>
 
     <div class="container-fluid py-4 px-4">
+        <!-- Mensagens Flash -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }} alert-dismissible fade show mb-4" role="alert">
+                        {% if category == 'success' %}
+                            <i class="bi bi-check-circle-fill me-2"></i>
+                        {% elif category == 'danger' %}
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                        {% elif category == 'info' %}
+                            <i class="bi bi-info-circle-fill me-2"></i>
+                        {% elif category == 'warning' %}
+                            <i class="bi bi-exclamation-circle-fill me-2"></i>
+                        {% endif %}
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        
         <div class="row mb-4">
             <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="section-title mb-4"><i class="bi bi-funnel"></i> Filtrar Dados</h5>
-                        <form id="filterForm" class="row g-3">
-                            <div class="col-md-4">
-                                <label class="form-label">Data única</label>
-                                <div class="input-group">
-                                    <span class="input-group-text"><i class="bi bi-calendar-date"></i></span>
-                                    <input type="text" class="form-control" id="singleDate" placeholder="Selecione uma data">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="form-label">Data inicial</label>
-                                <div class="input-group">
-                                    <span class="input-group-text"><i class="bi bi-calendar-minus"></i></span>
-                                    <input type="text" class="form-control" id="startDate" placeholder="Data inicial">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <label class="form-label">Data final</label>
-                                <div class="input-group">
-                                    <span class="input-group-text"><i class="bi bi-calendar-plus"></i></span>
-                                    <input type="text" class="form-control" id="endDate" placeholder="Data final">
-                                </div>
-                            </div>
-                            <div class="col-12 text-end">
-                                <button type="button" class="btn btn-light" id="resetFilters">
-                                    <i class="bi bi-x-circle"></i> Limpar Filtros
-                                </button>
-                                <button type="submit" class="btn btn-primary">
-                                    <i class="bi bi-search"></i> Aplicar Filtros
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row mb-4">
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card h-100">
-                    <div class="stat-card bg-gradient-primary">
-                        <div>
-                            <i class="bi bi-chat-dots-fill stat-icon"></i>
-                            <div class="stat-title">Total de Mensagens</div>
-                        </div>
-                        <h2 class="stat-value" id="totalMessages">0</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card h-100">
-                    <div class="stat-card bg-gradient-success">
-                        <div>
-                            <i class="bi bi-arrow-right-circle-fill stat-icon"></i>
-                            <div class="stat-title">Encaminhadas</div>
-                        </div>
-                        <h2 class="stat-value" id="totalForwarded">0</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card h-100">
-                    <div class="stat-card bg-gradient-info">
-                        <div>
-                            <i class="bi bi-android2 stat-icon"></i>
-                            <div class="stat-title">Android</div>
-                        </div>
-                        <h2 class="stat-value" id="totalAndroid">0</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="card h-100">
-                    <div class="stat-card bg-gradient-warning">
-                        <div>
-                            <i class="bi bi-apple stat-icon"></i>
-                            <div class="stat-title">iOS</div>
-                        </div>
-                        <h2 class="stat-value" id="totalIOS">0</h2>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-header primary-header d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0"><i class="bi bi-chat-square-text me-2"></i> Mensagens Recebidas</h5>
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-header primary-header">
+                        <h5 class="card-title m-0 text-white">
+                            <i class="bi bi-speedometer2 me-2"></i>Dashboard
+                        </h5>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>ID</th>
-                                        <th>Data/Hora</th>
-                                        <th>Telefone</th>
-                                        <th>Nome</th>
-                                        <th>Dispositivo</th>
-                                        <th>Encaminhada</th>
-                                        <th>Anúncio</th>
-                                        <th>Ações</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="messagesTable">
-                                    <!-- As mensagens serão inseridas aqui via JavaScript -->
-                                </tbody>
-                            </table>
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="section-title mb-4"><i class="bi bi-funnel"></i> Filtrar Dados</h5>
+                                        <form id="filterForm" class="row g-3">
+                                            <div class="col-md-4">
+                                                <label class="form-label">Data única</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="bi bi-calendar-date"></i></span>
+                                                    <input type="text" class="form-control" id="singleDate" placeholder="Selecione uma data">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="form-label">Data inicial</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="bi bi-calendar-minus"></i></span>
+                                                    <input type="text" class="form-control" id="startDate" placeholder="Data inicial">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <label class="form-label">Data final</label>
+                                                <div class="input-group">
+                                                    <span class="input-group-text"><i class="bi bi-calendar-plus"></i></span>
+                                                    <input type="text" class="form-control" id="endDate" placeholder="Data final">
+                                                </div>
+                                            </div>
+                                            <div class="col-12 text-end">
+                                                <button type="button" class="btn btn-light" id="resetFilters">
+                                                    <i class="bi bi-x-circle"></i> Limpar Filtros
+                                                </button>
+                                                <button type="submit" class="btn btn-primary">
+                                                    <i class="bi bi-search"></i> Aplicar Filtros
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mb-4">
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="stat-card bg-gradient-primary">
+                                        <div>
+                                            <i class="bi bi-chat-dots-fill stat-icon"></i>
+                                            <div class="stat-title">Total de Mensagens</div>
+                                        </div>
+                                        <h2 class="stat-value" id="totalMessages">0</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="stat-card bg-gradient-success">
+                                        <div>
+                                            <i class="bi bi-arrow-right-circle-fill stat-icon"></i>
+                                            <div class="stat-title">Encaminhadas</div>
+                                        </div>
+                                        <h2 class="stat-value" id="totalForwarded">0</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="stat-card bg-gradient-info">
+                                        <div>
+                                            <i class="bi bi-android2 stat-icon"></i>
+                                            <div class="stat-title">Android</div>
+                                        </div>
+                                        <h2 class="stat-value" id="totalAndroid">0</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card h-100">
+                                    <div class="stat-card bg-gradient-warning">
+                                        <div>
+                                            <i class="bi bi-apple stat-icon"></i>
+                                            <div class="stat-title">iOS</div>
+                                        </div>
+                                        <h2 class="stat-value" id="totalIOS">0</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header primary-header d-flex justify-content-between align-items-center">
+                                        <h5 class="mb-0"><i class="bi bi-chat-square-text me-2"></i> Mensagens Recebidas</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>ID</th>
+                                                        <th>Data/Hora</th>
+                                                        <th>Telefone</th>
+                                                        <th>Nome</th>
+                                                        <th>Dispositivo</th>
+                                                        <th>Encaminhada</th>
+                                                        <th>Anúncio</th>
+                                                        <th>Ações</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="messagesTable">
+                                                    <!-- As mensagens serão inseridas aqui via JavaScript -->
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Nova seção para Integrações -->
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header primary-header">
+                                        <h5 class="mb-0"><i class="bi bi-puzzle-fill me-2"></i> Integrações</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="card h-100 border-0 shadow-sm">
+                                                    <div class="card-body d-flex flex-column">
+                                                        <div class="d-flex align-items-center mb-3">
+                                                            <div class="flex-shrink-0">
+                                                                <i class="bi bi-box-arrow-in-right" style="font-size: 2rem; color: var(--primary-color);"></i>
+                                                            </div>
+                                                            <div class="ms-3">
+                                                                <h5 class="card-title mb-0">Integração com Kommo</h5>
+                                                                <p class="text-muted small mb-0">Conecte sua conta para importar leads</p>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                        {% if kommo_token_info %}
+                                                            <!-- Mostrar informações do token -->
+                                                            <div class="alert alert-success">
+                                                                <i class="bi bi-check-circle-fill me-2"></i> Conta Kommo integrada com sucesso!
+                                                            </div>
+                                                            
+                                                            <div class="card mb-3 bg-light">
+                                                                <div class="card-body">
+                                                                    <h6 class="card-subtitle mb-3"><i class="bi bi-info-circle"></i> Informações da Integração</h6>
+                                                                    <div class="mb-2">
+                                                                        <strong><i class="bi bi-building"></i> Conta:</strong> {{ kommo_token_info.account_id }}
+                                                                    </div>
+                                                                    <div class="mb-2">
+                                                                        <strong><i class="bi bi-globe"></i> Domínio:</strong> {{ kommo_token_info.domain }}
+                                                                    </div>
+                                                                    <div class="mb-2">
+                                                                        <strong><i class="bi bi-clock-history"></i> Expiração:</strong> 
+                                                                        <span class="{% if kommo_token_info.is_expired %}text-danger{% else %}text-success{% endif %}">
+                                                                            {{ kommo_token_info.expires_at }}
+                                                                            {% if kommo_token_info.is_expired %}
+                                                                                <i class="bi bi-exclamation-triangle-fill text-danger ms-1" title="Token expirado"></i>
+                                                                            {% endif %}
+                                                                        </span>
+                                                                    </div>
+                                                                    <div class="mb-2">
+                                                                        <strong><i class="bi bi-calendar-check"></i> Conectado em:</strong> {{ kommo_token_info.created_at }}
+                                                                    </div>
+                                                                    <div>
+                                                                        <strong><i class="bi bi-arrow-repeat"></i> Última atualização:</strong> {{ kommo_token_info.updated_at }}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <!-- Botão para remover a integração -->
+                                                            <div class="mt-auto text-center">
+                                                                <a href="/kommo/revoke-token?account_id={{ kommo_token_info.account_id }}" class="btn btn-outline-danger">
+                                                                    <i class="bi bi-trash"></i> Remover Integração
+                                                                </a>
+                                                            </div>
+                                                        {% else %}
+                                                            <!-- Mostrar botão de integração -->
+                                                            <p class="card-text">Integre sua conta Kommo para acessar os dados dos seus leads diretamente no dashboard.</p>
+                                                            <div class="mt-auto">
+                                                                <div id="kommo-button-container" class="text-center">
+                                                                    <!-- Botão da Kommo será inserido aqui -->
+                                                                    <script 
+                                                                        class="kommo_oauth"
+                                                                        charset="utf-8"
+                                                                        data-client-id="{{ kommo_client_id }}"
+                                                                        data-title="Integrar com Kommo"
+                                                                        data-compact="false"
+                                                                        data-class-name="btn btn-primary"
+                                                                        data-theme="light"
+                                                                        data-locale="pt"
+                                                                        data-state="webhook-evolution-api-state"
+                                                                        data-error-callback="handleKommoError"
+                                                                        data-mode="popup"
+                                                                        src="https://www.kommo.com/auth/button.js"
+                                                                    ></script>
+                                                                </div>
+                                                            </div>
+                                                        {% endif %}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <!-- Espaço para futuras integrações -->
+                                            <div class="col-md-6">
+                                                <div class="card h-100 border-0 shadow-sm">
+                                                    <div class="card-body d-flex flex-column">
+                                                        <div class="d-flex align-items-center mb-3">
+                                                            <div class="flex-shrink-0">
+                                                                <i class="bi bi-plus-circle-dotted" style="font-size: 2rem; color: var(--primary-color);"></i>
+                                                            </div>
+                                                            <div class="ms-3">
+                                                                <h5 class="card-title mb-0">Adicionar Nova Integração</h5>
+                                                                <p class="text-muted small mb-0">Em breve</p>
+                                                            </div>
+                                                        </div>
+                                                        <p class="card-text">Mais integrações serão adicionadas em breve. Fique atento às atualizações!</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -550,6 +695,36 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+    
+    <!-- Script do botão da Kommo -->
+    <script>
+        // Função para lidar com erros de autorização da Kommo
+        function handleKommoError(data) {
+            console.error('Erro na integração com Kommo:', data);
+            if (data.error === 'access_denied') {
+                showToast('Acesso negado à integração com Kommo.', 'danger');
+            } else {
+                showToast('Ocorreu um erro na integração com Kommo.', 'danger');
+            }
+        }
+
+        // Função para receber mensagens da janela popup do OAuth
+        window.addEventListener("message", function(event) {
+            // Verificar a origem da mensagem (opcional para segurança)
+            if (event.origin.includes('kommo.com')) {
+                console.log('Recebida mensagem da janela OAuth:', event.data);
+                
+                // Se for mensagem de redirecionamento
+                if (event.data.url) {
+                    window.location = event.data.url;
+                }
+                // Se for mensagem de erro
+                else if (event.data.error) {
+                    handleKommoError(event.data);
+                }
+            }
+        }, false);
+    </script>
     
     <script>
         // Configurar seletores de data
@@ -836,6 +1011,9 @@
                         <button type="button" class="btn btn-sm btn-primary view-details" data-id="${msg.id}">
                             <i class="bi bi-eye"></i>
                         </button>
+                        <button type="button" class="btn btn-sm btn-info sync-kommo" data-id="${msg.id}" data-telefone="${msg.telefone}" title="Sincronizar com Kommo">
+                            <i class="bi bi-arrow-repeat"></i>
+                        </button>
                     </td>
                 `;
                 
@@ -850,11 +1028,21 @@
                 });
             });
             
+            // Adicionar eventos para botões de sincronização com Kommo
+            document.querySelectorAll('.sync-kommo').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation(); // Evitar que o evento propague para a linha
+                    const id = this.dataset.id;
+                    const telefone = this.dataset.telefone;
+                    syncWithKommo(id, telefone);
+                });
+            });
+            
             // Adicionar evento para clique na linha
             document.querySelectorAll('.message-row').forEach(row => {
                 row.addEventListener('click', function(e) {
-                    // Ignorar se clicou no botão de detalhes
-                    if (!e.target.closest('.view-details')) {
+                    // Ignorar se clicou no botão de detalhes ou sincronização
+                    if (!e.target.closest('.view-details') && !e.target.closest('.sync-kommo')) {
                         const id = this.dataset.messageId;
                         showMessageDetails(id);
                     }
@@ -925,6 +1113,208 @@
             
             // Exibir modal
             messageDetailModal.show();
+        }
+
+        // Função para sincronizar com o Kommo
+        function syncWithKommo(id, telefone) {
+            if (!telefone) {
+                showToast('Número de telefone não disponível', 'warning');
+                return;
+            }
+            
+            // Mostrar loading
+            loadingIndicator.style.display = 'flex';
+            
+            // Buscar dados de pipelines primeiro
+            fetch('/kommo/pipelines')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Erro ao buscar pipelines: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(pipelinesData => {
+                    let pipelines = {};
+                    if (pipelinesData.status === 'success') {
+                        pipelines = pipelinesData.pipelines;
+                    }
+                    
+                    // Agora fazer a chamada para buscar o lead
+                    return fetch(`/kommo/search-lead?phone=${encodeURIComponent(telefone)}`)
+                        .then(response => {
+                            if (!response.ok) {
+                                throw new Error(`Erro ${response.status}: ${response.statusText}`);
+                            }
+                            return response.json();
+                        })
+                        .then(data => {
+                            if (data.status === 'success' && data.leads && data.leads.length > 0) {
+                                // Mostrar modal com os dados do lead
+                                showKommoLeadDetails(data.leads[0], telefone, pipelines);
+                            } else {
+                                showToast('Nenhum lead encontrado no Kommo para este telefone', 'warning');
+                            }
+                        });
+                })
+                .catch(error => {
+                    console.error('Erro ao buscar dados no Kommo:', error);
+                    showToast('Erro ao buscar dados no Kommo. Verifique o console para mais detalhes.', 'danger');
+                })
+                .finally(() => {
+                    loadingIndicator.style.display = 'none';
+                });
+        }
+        
+        // Função para exibir detalhes do lead do Kommo
+        function showKommoLeadDetails(lead, telefone, pipelines = {}) {
+            // Criar um novo modal dinamicamente
+            const modalId = 'kommoLeadModal';
+            
+            // Remover modal anterior se existir
+            const existingModal = document.getElementById(modalId);
+            if (existingModal) {
+                existingModal.remove();
+            }
+            
+            // Obter informações do pipeline e estágio
+            const pipelineId = lead.pipeline_id;
+            const stageId = lead.status_id;
+            let pipelineName = `Pipeline ${pipelineId}`;
+            let stageName = `Estágio ${stageId}`;
+            let stageColor = '6c757d'; // Cor padrão cinza
+            
+            // Verificar se temos informações sobre este pipeline
+            if (pipelines[pipelineId]) {
+                pipelineName = pipelines[pipelineId].name;
+                // Verificar se temos informações sobre este estágio
+                if (pipelines[pipelineId].stages && pipelines[pipelineId].stages[stageId]) {
+                    stageName = pipelines[pipelineId].stages[stageId].name;
+                    stageColor = pipelines[pipelineId].stages[stageId].color || stageColor;
+                }
+            }
+            
+            // Obter informações do campo personalizado "Situação do lead"
+            let leadSituation = 'Não informada';
+            if (lead.custom_fields_values && lead.custom_fields_values.length > 0) {
+                // Procurar pelo campo "Situação do lead"
+                const situationField = lead.custom_fields_values.find(field => 
+                    field.field_name === 'Situação do lead' || 
+                    field.field_name === 'Situação' ||
+                    field.field_name === 'Situacao do lead' ||
+                    field.field_name === 'Situacao'
+                );
+                
+                if (situationField && situationField.values && situationField.values.length > 0) {
+                    leadSituation = situationField.values[0].value;
+                }
+            }
+            
+            // Criar estrutura do modal
+            const modal = document.createElement('div');
+            modal.className = 'modal fade';
+            modal.id = modalId;
+            modal.tabIndex = '-1';
+            modal.setAttribute('aria-labelledby', `${modalId}Label`);
+            modal.setAttribute('aria-hidden', 'true');
+            
+            // Formatar dados do contato
+            let contactInfo = '<p>Nenhum contato associado</p>';
+            if (lead._embedded && lead._embedded.contacts && lead._embedded.contacts.length > 0) {
+                const contactsList = lead._embedded.contacts.map(contact => {
+                    return `
+                        <div class="mb-3 border-bottom pb-2">
+                            <h6>${contact.name || 'Nome não disponível'}</h6>
+                            <p class="mb-1"><strong>ID:</strong> ${contact.id}</p>
+                            <p class="mb-1"><strong>Principal:</strong> ${contact.is_main ? 'Sim' : 'Não'}</p>
+                        </div>
+                    `;
+                }).join('');
+                contactInfo = contactsList;
+            }
+            
+            // Formatar tags
+            let tagsInfo = '<p>Nenhuma tag</p>';
+            if (lead._embedded && lead._embedded.tags && lead._embedded.tags.length > 0) {
+                const tagsList = lead._embedded.tags.map(tag => {
+                    const tagColor = tag.color ? `#${tag.color}` : '#6c757d';
+                    return `<span class="badge" style="background-color: ${tagColor};">${tag.name}</span>`;
+                }).join(' ');
+                tagsInfo = tagsList;
+            }
+            
+            // Construir conteúdo do modal
+            modal.innerHTML = `
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header bg-gradient-primary text-white">
+                            <h5 class="modal-title" id="${modalId}Label">
+                                <i class="bi bi-building me-2"></i>Lead do Kommo
+                            </h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="mb-4">
+                                        <h5 class="border-bottom pb-2"><i class="bi bi-info-circle me-2"></i>Informações do Lead</h5>
+                                        <p><strong>ID:</strong> ${lead.id}</p>
+                                        <p><strong>Nome:</strong> ${lead.name}</p>
+                                        <p><strong>Valor:</strong> R$ ${lead.price || 0}</p>
+                                        <p><strong>Telefone Consultado:</strong> ${telefone}</p>
+                                        <p><strong>Pipeline:</strong> <span class="badge bg-primary">${pipelineName}</span></p>
+                                        <p><strong>Estágio:</strong> <span class="badge" style="background-color: #${stageColor};">${stageName}</span></p>
+                                        <p><strong>Situação do Lead:</strong> <span class="badge bg-info">${leadSituation}</span></p>
+                                        <p><strong>Criado em:</strong> ${formatDate(new Date(lead.created_at * 1000))}</p>
+                                        
+                                        <!-- Status do negócio -->
+                                        <div class="mt-3">
+                                            <h6 class="border-bottom pb-2">Status do Lead</h6>
+                                            <div class="progress">
+                                                <div class="progress-bar" style="width: 100%; background-color: #${stageColor};" 
+                                                    aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                                    ${stageName}
+                                                </div>
+                                            </div>
+                                            <p class="mt-2 small text-muted">Pipeline: ${pipelineName}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-4">
+                                        <h5 class="border-bottom pb-2"><i class="bi bi-person me-2"></i>Contatos</h5>
+                                        ${contactInfo}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 class="border-bottom pb-2"><i class="bi bi-tags me-2"></i>Tags</h5>
+                                    <div class="mb-3">
+                                        ${tagsInfo}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center mt-3">
+                                <a href="https://dfixstore.kommo.com/leads/detail/${lead.id}" target="_blank" class="btn btn-outline-primary">
+                                    <i class="bi bi-box-arrow-up-right me-1"></i>Abrir no Kommo
+                                </a>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Adicionar o modal ao corpo do documento
+            document.body.appendChild(modal);
+            
+            // Inicializar e exibir o modal
+            const modalInstance = new bootstrap.Modal(modal);
+            modalInstance.show();
         }
     </script>
 </body>

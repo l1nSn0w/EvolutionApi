@@ -11,7 +11,7 @@ const {
   getContactDetails,
   extractPhoneFromContact,
   getUserDetails
-} = require('../services/kommoService');
+} = require('../services/KommoService');
 
 /**
  * Controlador para integração com a plataforma Kommo

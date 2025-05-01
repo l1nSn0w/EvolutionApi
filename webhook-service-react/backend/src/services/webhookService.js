@@ -2,7 +2,7 @@ const axios = require('axios');
 const WebhookMessage = require('../models/WebhookMessage');
 const KommoToken = require('../models/KommoToken');
 const LeadTracking = require('../models/LeadTracking');
-const { searchLeadByPhone, refreshKommoToken, getPipelineDetails } = require('./kommoService');
+const { searchLeadByPhone, refreshKommoToken, getPipelineDetails } = require('./KommoService');
 
 // URL do webhook do Make
 const MAKE_WEBHOOK_URL = "https://hook.us2.make.com/cig25e7rx3x5xdf85vlyx35xx8xa931j";
@@ -267,7 +267,6 @@ class WebhookService {
       throw error;
     }
   }
-  
 
   async saveMessage({
     telefone,

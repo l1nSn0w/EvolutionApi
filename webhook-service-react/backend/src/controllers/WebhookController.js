@@ -1,3 +1,5 @@
+const WebhookService = require('../services/webhookService');
+
 /**
  * Controlador para processar webhooks
  */
@@ -9,7 +11,7 @@ const WebhookController = {
       console.log('OIee');
       
       // Processar a mensagem
-      const result = await webhookService.processMessage(webhookData);
+      const result = await WebhookService.processMessage(webhookData);
       
       res.json({
         success: true,
@@ -28,7 +30,7 @@ const WebhookController = {
 
   async getMessages(req, res) {
     try {
-      const messages = await webhookService.getMessages();
+      const messages = await WebhookService.getMessages();
       res.json(messages);
     } catch (error) {
       console.error('Erro ao buscar mensagens:', error);

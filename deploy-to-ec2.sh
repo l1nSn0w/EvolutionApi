@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Configurações
-EC2_IP="18.230.204.129"
+EC2_IP="15.229.11.54"
 EC2_USER="ec2-user"
 PEM_KEY="../docker_key.pem"
 REMOTE_DIR="/home/ec2-user/evolution-api"
@@ -35,10 +35,38 @@ ssh -i $PEM_KEY $EC2_USER@$EC2_IP "mkdir -p $REMOTE_DIR"
 echo -e "${YELLOW}Copiando arquivos para o servidor...${NC}"
 scp -i $PEM_KEY docker-compose.yaml $EC2_USER@$EC2_IP:$REMOTE_DIR/
 
-# Copiar a pasta webhook-service para o servidor
-echo -e "${YELLOW}Copiando pasta webhook-service para o servidor...${NC}"
-ssh -i $PEM_KEY $EC2_USER@$EC2_IP "mkdir -p $REMOTE_DIR/webhook-service"
-scp -i $PEM_KEY -r webhook-service/* $EC2_USER@$EC2_IP:$REMOTE_DIR/webhook-service/
+# Comentado: Copiar a pasta webhook-service para o servidor
+# echo -e "${YELLOW}Copiando pasta webhook-service para o servidor...${NC}"
+# ssh -i $PEM_KEY $EC2_USER@$EC2_IP "mkdir -p $REMOTE_DIR/webhook-service"
+# scp -i $PEM_KEY -r webhook-service/* $EC2_USER@$EC2_IP:$REMOTE_DIR/webhook-service/
+
+# Copiar a pasta webhook-service-react (frontend e backend) para o servidor, excluindo node_modules
+echo -e "${YELLOW}Copiando pasta webhook-service-react para o servidor (sem node_modules)...${NC}"
+ssh -i $PEM_KEY $EC2_USER@$EC2_IP "mkdir -p $REMOTE_DIR/webhook-service-react/frontend $REMOTE_DIR/webhook-service-react/backend"
+
+# Criar arquivo temporário para rsync excludes
+cat > /tmp/rsync-exclude.txt << EOF
+node_modules/
+.git/
+.env.development
+EOF
+
+# Usar rsync para copiar, excluindo node_modules
+rsync -av --exclude-from="/tmp/rsync-exclude.txt" -e "ssh -i $PEM_KEY" webhook-service-react/frontend/ $EC2_USER@$EC2_IP:$REMOTE_DIR/webhook-service-react/frontend/
+rsync -av --exclude-from="/tmp/rsync-exclude.txt" -e "ssh -i $PEM_KEY" webhook-service-react/backend/ $EC2_USER@$EC2_IP:$REMOTE_DIR/webhook-service-react/backend/
+
+# Limpar arquivo temporário
+rm /tmp/rsync-exclude.txt
+
+# Copiar os arquivos .dockerignore para o servidor
+echo -e "${YELLOW}Copiando arquivos de configuração para o servidor...${NC}"
+scp -i $PEM_KEY webhook-service-react/frontend/.dockerignore $EC2_USER@$EC2_IP:$REMOTE_DIR/webhook-service-react/frontend/
+scp -i $PEM_KEY webhook-service-react/frontend/nginx.conf $EC2_USER@$EC2_IP:$REMOTE_DIR/webhook-service-react/frontend/
+scp -i $PEM_KEY webhook-service-react/backend/.dockerignore $EC2_USER@$EC2_IP:$REMOTE_DIR/webhook-service-react/backend/
+
+# Criar arquivo .env específico para produção no servidor
+echo -e "${YELLOW}Criando arquivo .env de produção para o frontend...${NC}"
+ssh -i $PEM_KEY $EC2_USER@$EC2_IP "echo \"REACT_APP_API_URL=http://$EC2_IP:5002\" > $REMOTE_DIR/webhook-service-react/frontend/.env"
 
 # Restaurar configurações dos backups
 echo -e "${YELLOW}Restaurando configurações...${NC}"
@@ -85,8 +113,10 @@ ssh -i $PEM_KEY $EC2_USER@$EC2_IP "sudo systemctl restart docker"
 
 # Iniciar os contêineres no servidor (preservando volumes)
 echo -e "${YELLOW}Atualizando e iniciando contêineres no servidor (preservando dados)...${NC}"
-ssh -i $PEM_KEY $EC2_USER@$EC2_IP "cd $REMOTE_DIR && sudo /usr/local/bin/docker-compose build webhook-service && sudo /usr/local/bin/docker-compose up -d"
+ssh -i $PEM_KEY $EC2_USER@$EC2_IP "cd $REMOTE_DIR && sudo /usr/local/bin/docker-compose down webhook-service-frontend && sudo /usr/local/bin/docker-compose build --no-cache webhook-service-frontend && sudo /usr/local/bin/docker-compose up -d"
 
 echo -e "${GREEN}Deploy concluído com sucesso!${NC}"
 echo -e "${GREEN}Acesse a API em: http://$EC2_IP:8080${NC}"
-echo -e "${GREEN}O webhook interno está rodando na porta 5001${NC}" 
+# echo -e "${GREEN}O webhook interno está rodando na porta 5001${NC}"
+echo -e "${GREEN}O novo webhook-service-react backend está rodando na porta 5002${NC}"
+echo -e "${GREEN}O novo webhook-service-react frontend está rodando na porta 3000${NC}" 

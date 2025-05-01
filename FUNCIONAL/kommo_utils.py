@@ -7,7 +7,7 @@ from urllib.parse import urlparse
 # Configurações da Kommo OAuth2
 KOMMO_CLIENT_ID = "cc3d1fc9-71d6-478c-bf9b-ef6fa002080d"  # ID de integração da Kommo
 KOMMO_CLIENT_SECRET = "hdhCMay0IaUMgiq3MYhGADbRlpeFvfWwbllUzqA7YQOXGzDKgMWnXXwDzpppE6As"  # Chave secreta da Kommo
-KOMMO_REDIRECT_URI = "https://606c-2804-d55-524d-c400-3118-b589-a723-2bca.ngrok-free.app/kommo/callback"  # URL do ngrok
+KOMMO_REDIRECT_URI = "https://cd3a-2804-1b3-6080-144e-24a5-9ce2-55c-6b7f.ngrok-free.app/kommo/callback"  # URL do ngrok
 
 logger = logging.getLogger('webhook')
 
@@ -525,67 +525,27 @@ def process_kommo_webhook(data):
                             # Obter informações de pipelines para encontrar nomes
                             pipelines = get_pipeline_details(domain_for_api, access_token)
                             
-                            # Valores padrão iniciais
                             previous_pipeline_name = f"Pipeline {previous_pipeline_id}"
                             previous_status_name = f"Estágio {previous_status_id}"
                             current_pipeline_name = f"Pipeline {new_pipeline_id}"
                             current_status_name = f"Estágio {new_status_id}"
                             
-                            # Debug dos pipelines obtidos
-                            logger.info(f"Pipelines obtidos: {pipelines}")
-                            
-                            # Converter IDs para string para garantir compatibilidade
-                            str_previous_pipeline_id = str(previous_pipeline_id) if previous_pipeline_id else None
-                            str_previous_status_id = str(previous_status_id) if previous_status_id else None
-                            str_new_pipeline_id = str(new_pipeline_id) if new_pipeline_id else None
-                            str_new_status_id = str(new_status_id) if new_status_id else None
-                            
-                            logger.info(f"IDs convertidos para string: previous_pipeline={str_previous_pipeline_id}, previous_status={str_previous_status_id}, new_pipeline={str_new_pipeline_id}, new_status={str_new_status_id}")
-                            
                             # Buscar nomes corretos se tivermos as informações dos pipelines
                             if pipelines:
-                                # Iterar todas as chaves para verificar correspondências independente do tipo
-                                for p_id in pipelines.keys():
-                                    # Verificar pipeline anterior
-                                    if str(p_id) == str_previous_pipeline_id:
-                                        previous_pipeline_name = pipelines[p_id].get("name", previous_pipeline_name)
-                                        logger.info(f"Nome do pipeline anterior encontrado: {previous_pipeline_name}")
-                                        
-                                        # Verificar estágio anterior
-                                        if "stages" in pipelines[p_id]:
-                                            for s_id in pipelines[p_id]["stages"].keys():
-                                                if str(s_id) == str_previous_status_id:
-                                                    previous_status_name = pipelines[p_id]["stages"][s_id].get("name", previous_status_name)
-                                                    logger.info(f"Nome do estágio anterior encontrado: {previous_status_name}")
-                                    
-                                    # Verificar pipeline atual
-                                    if str(p_id) == str_new_pipeline_id:
-                                        current_pipeline_name = pipelines[p_id].get("name", current_pipeline_name)
-                                        logger.info(f"Nome do pipeline atual encontrado: {current_pipeline_name}")
-                                        
-                                        # Verificar estágio atual
-                                        if "stages" in pipelines[p_id]:
-                                            for s_id in pipelines[p_id]["stages"].keys():
-                                                if str(s_id) == str_new_status_id:
-                                                    current_status_name = pipelines[p_id]["stages"][s_id].get("name", current_status_name)
-                                                    logger.info(f"Nome do estágio atual encontrado: {current_status_name}")
+                                if previous_pipeline_id in pipelines:
+                                    previous_pipeline_name = pipelines[previous_pipeline_id].get("name", previous_pipeline_name)
+                                    if "stages" in pipelines[previous_pipeline_id] and previous_status_id in pipelines[previous_pipeline_id]["stages"]:
+                                        previous_status_name = pipelines[previous_pipeline_id]["stages"][previous_status_id].get("name", previous_status_name)
+                                
+                                if new_pipeline_id in pipelines:
+                                    current_pipeline_name = pipelines[new_pipeline_id].get("name", current_pipeline_name)
+                                    if "stages" in pipelines[new_pipeline_id] and new_status_id in pipelines[new_pipeline_id]["stages"]:
+                                        current_status_name = pipelines[new_pipeline_id]["stages"][new_status_id].get("name", current_status_name)
                             
                             # Registrar no sistema de rastreamento
                             if phone:
-                                # Verificar se o lead já existe na tabela LeadTracking
-                                existing_lead = db_session.query(app_module.LeadTracking).filter(
-                                    app_module.LeadTracking.lead_id == lead_id
-                                ).first()
-                                
-                                if not existing_lead:
-                                    logger.info(f"Lead ID {lead_id} não encontrado na tabela LeadTracking. Ignorando webhook.")
-                                    return {"status": "success", "message": "Lead não encontrado na tabela LeadTracking. Webhook ignorado."}
-                                
-                                # Usar o message_id do lead existente
-                                message_id = existing_lead.message_id
-                                
                                 tracking_id = registrar_rastreamento_lead(
-                                    message_id=message_id,  # Usar o message_id do lead existente
+                                    message_id=None,  # Não está associado a uma mensagem específica
                                     lead_id=lead_id,
                                     phone=phone,
                                     event_type="status_changed",

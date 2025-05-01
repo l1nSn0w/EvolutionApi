@@ -1,0 +1,16 @@
+.funnel-responsible {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.funnel-responsible .funnel-label {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.funnel-responsible .funnel-value {
+  color: #333;
+  font-weight: 500;
+} 

@@ -6,7 +6,7 @@ services:
     depends_on:
       - redis
       - postgres
-      - webhook-service
+      # - webhook-service  # Comentado para usar apenas o novo serviço webhook-service-react
     ports:
       - 8080:8080
     volumes:
@@ -23,20 +23,78 @@ services:
         max-size: "50m"
         max-file: "3"
 
-  webhook-service:
-    container_name: webhook_service
-    build: ./webhook-service
+  # Serviço webhook-service original (comentado)
+  # webhook-service:
+  #   container_name: webhook_service
+  #   build: ./webhook-service
+  #   restart: always
+  #   ports:
+  #     - 5001:5000
+  #   volumes:
+  #     - webhook_data:/app/data
+  #   networks:
+  #     - evolution-net
+  #   environment:
+  #     - PORT=5000
+  #   expose:
+  #     - 5000
+  #   logging:
+  #     driver: "json-file"
+  #     options:
+  #       max-size: "10m"
+  #       max-file: "3"
+
+  webhook-service-backend:
+    container_name: webhook_service_backend
+    build: 
+      context: ./webhook-service-react/backend
+      dockerfile: Dockerfile
     restart: always
     ports:
-      - 5001:5000
+      - 5002:5000
     volumes:
-      - webhook_data:/app/data
+      - ./webhook-service-react/backend:/app
+      - /app/node_modules
     networks:
       - evolution-net
     environment:
+      - NODE_ENV=development
       - PORT=5000
-    expose:
-      - 5000
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=evolution
+      - DB_USER=user
+      - DB_PASS=pass
+    depends_on:
+      - postgres
+    command: >
+      sh -c "sleep 30 &&
+             echo 'Aguardando API inicializar...' &&
+             npm run dev"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  webhook-service-frontend:
+    container_name: webhook_service_frontend
+    build: 
+      context: ./webhook-service-react/frontend
+      dockerfile: Dockerfile.prod
+    restart: always
+    ports:
+      - 3000:3000
+    volumes:
+      - ./webhook-service-react/frontend/src:/app/src
+      - ./webhook-service-react/frontend/public:/app/public
+    networks:
+      - evolution-net
+    environment:
+      - NODE_ENV=production
+      - REACT_APP_API_URL=http://15.229.11.54:5002
+    depends_on:
+      - webhook-service-backend
     logging:
       driver: "json-file"
       options:
@@ -78,6 +136,11 @@ services:
       - postgres_data:/var/lib/postgresql/data
     expose:
       - 5432
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U user -d evolution"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
     logging:
       driver: "json-file"
       options:
@@ -89,6 +152,7 @@ volumes:
   evolution_redis:
   postgres_data:
   webhook_data:
+  frontend_node_modules:
 
 networks:
   evolution-net:

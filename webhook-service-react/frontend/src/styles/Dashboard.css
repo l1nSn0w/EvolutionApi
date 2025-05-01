@@ -1,0 +1,322 @@
+/* Dashboard Container */
+.dashboard-container {
+  padding: 10px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-title {
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 15px;
+}
+
+/* Pipelines Section */
+.pipelines-section {
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pipelines-section h2 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.pipelines-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pipeline-item {
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 1px solid #e9ecef;
+}
+
+.pipeline-item:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+}
+
+.pipeline-item.active {
+  background: #007bff;
+  color: white;
+  border-color: #0056b3;
+}
+
+.pipeline-item h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Kanban Board */
+.kanban-container {
+  flex: 1;
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.kanban-container h2 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.kanban-board {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  flex: 1;
+}
+
+.kanban-column {
+  min-width: 280px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100vh - 250px);
+}
+
+.kanban-column-header {
+  padding: 12px;
+  background: #e9ecef;
+  border-radius: 8px 8px 0 0;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.kanban-column-header h3 {
+  margin: 0;
+  font-size: 1rem;
+  color: #495057;
+}
+
+.kanban-column-content {
+  padding: 12px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* Lead Cards */
+.lead-card {
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.lead-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.lead-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.lead-id {
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.lead-phone {
+  color: #666;
+  margin: 0;
+  font-size: 0.9em;
+}
+
+.lead-situation, .lead-campaign, .lead-adset, .lead-ad {
+  margin: 4px 0 0 0;
+  font-size: 0.9em;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.lead-situation .badge, .lead-campaign .badge, .lead-adset .badge, .lead-ad .badge {
+  font-size: 0.8em;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+}
+
+.bg-info {
+  background-color: #17a2b8;
+  color: white;
+}
+
+.bg-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.bg-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.bg-dark {
+  background-color: #343a40;
+  color: white;
+}
+
+/* Loading and Error States */
+.loading-container, .error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loading-stages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.empty-stage, .no-stages, .no-pipeline-selected {
+  text-align: center;
+  color: #6c757d;
+  padding: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 5px;
+  }
+  
+  .kanban-column {
+    min-width: 250px;
+  }
+  
+  .pipeline-item {
+    padding: 6px 10px;
+  }
+  
+  .pipeline-item h3 {
+    font-size: 0.9rem;
+  }
+}
+
+/* Estilos do Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.modal-body {
+  padding: 1rem;
+}
+
+/* Estilos para informações de anúncio na tabela */
+.ad-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.85rem;
+}
+
+.ad-campaign, .ad-adset, .ad-name {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.ad-label {
+  color: #6c757d;
+  font-weight: 500;
+  min-width: 70px;
+  font-size: 0.8rem;
+}
+
+.ad-value {
+  color: #212529;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+/* Ajustes para a tabela */
+.table th {
+  white-space: nowrap;
+}
+
+.table td {
+  vertical-align: top;
+  padding: 12px 8px;
+} 

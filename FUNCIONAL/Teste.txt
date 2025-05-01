@@ -19,3 +19,9 @@ aws ec2 describe-security-groups --group-ids sg-0721f48335625311b --query "Secur
 
 buildar o webhook-webhook_service
 docker-compose build webhook-service && docker-compose up -d webhook-service
+
+
+Ok. Agora quero que baseado no nosso projeto (app.py, kommo_utils, dashboard)
+
+Eu estou um pouco perdido no que fazer pra agora poder montar uma dashboard relacionada ao 
+

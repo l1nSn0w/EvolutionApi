@@ -1,0 +1,186 @@
+/* Estilos para o modal de histórico do lead */
+.lead-history-modal {
+  width: 900px;
+  max-width: 95%;
+}
+
+/* Container do funil */
+.funnel-container {
+  padding: 20px 0;
+  overflow-x: auto;
+}
+
+.funnel-timeline {
+  display: flex;
+  align-items: center;
+  min-width: 100%;
+  padding: 10px 0;
+}
+
+/* Estilo para cada etapa do funil */
+.funnel-step {
+  display: flex;
+  align-items: center;
+  min-width: 300px;
+  margin-right: 10px;
+}
+
+.funnel-step-content {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  width: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.funnel-step-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Cabeçalho da etapa */
+.funnel-step-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.funnel-step-date {
+  font-size: 0.85rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.funnel-step-type {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.85rem;
+  color: #495057;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.event-icon {
+  font-size: 1.1rem;
+}
+
+.event-text {
+  font-size: 0.8rem;
+}
+
+/* Descrição do evento */
+.funnel-step-description {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-bottom: 10px;
+  padding: 5px 0;
+  border-bottom: 1px dashed #e9ecef;
+}
+
+/* Corpo da etapa */
+.funnel-step-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.funnel-pipeline, .funnel-status, .funnel-situation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.funnel-situation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.funnel-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+  color: #2ecc71;
+  font-weight: 500;
+}
+
+.funnel-label {
+  font-size: 0.85rem;
+  color: #6c757d;
+  font-weight: 500;
+  min-width: 70px;
+}
+
+.funnel-value {
+  font-size: 0.9rem;
+  color: #212529;
+  font-weight: 500;
+}
+
+/* Badge de status */
+.status-badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 12px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+  min-width: 80px;
+}
+
+/* Conector entre etapas */
+.funnel-connector {
+  display: flex;
+  align-items: center;
+  margin: 0 5px;
+  min-width: 30px;
+}
+
+.funnel-arrow {
+  width: 20px;
+  height: 20px;
+  border-top: 2px solid #adb5bd;
+  border-right: 2px solid #adb5bd;
+  transform: rotate(45deg);
+}
+
+/* Mensagem quando não há histórico */
+.no-history {
+  text-align: center;
+  padding: 30px;
+  color: #6c757d;
+  font-style: italic;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .funnel-timeline {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .funnel-step {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .funnel-connector {
+    width: 100%;
+    height: 20px;
+    margin: 0 0 15px 0;
+    justify-content: center;
+  }
+  
+  .funnel-arrow {
+    transform: rotate(90deg);
+  }
+} 

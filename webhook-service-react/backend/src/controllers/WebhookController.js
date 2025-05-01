@@ -1,4 +1,4 @@
-const WebhookService = require('../services/webhookService');
+const WebhookService = require('../services/WebhookService');
 
 /**
  * Controlador para processar webhooks

@@ -22,28 +22,26 @@ app.get('/', (req, res) => {
 });
 
 // Rotas do webhook
-app.use('/webhook', require('./routes/webhook'));
+app.use('/webhook', require('./routes/Webhook'));
 
 // Rotas do Kommo
-app.use('/kommo', require('./routes/kommo'));
+app.use('/kommo', require('./routes/Kommo'));
 
 // Rotas da API do Kommo
-app.use('/api/kommo', require('./routes/kommoApi'));
+app.use('/api/kommo', require('./routes/KommoApi'));
 
 // Rotas do dashboard
-app.use('/dashboard', require('./routes/dashboard'));
+app.use('/dashboard', require('./routes/Dashboard'));
 
 // Rotas do lead tracking
-app.use('/api', require('./routes/leadTracking'));
+app.use('/api', require('./routes/LeadTracking'));
 
 // Rotas do WhatsApp
-app.use('/api/whatsapp', require('./routes/whatsappRoutes'));
+app.use('/api/whatsapp', require('./routes/WhatsappRoutes'));
 
 // Rotas de relatórios
-app.use('/api/reports', require('./routes/reportRoutes'));
+app.use('/api/reports', require('./routes/ReportRoutes'));
 
-// Rotas de teste
-app.use('/test', require('./routes/test'));
 
 // Tratamento de erros
 app.use((err, req, res, next) => {

@@ -1,7 +1,7 @@
 const axios = require('axios');
-const openaiService = require('../services/openaiService');
-const whatsappService = require('../services/whatsappService');
-const dashboardService = require('../services/dashboardService');
+const openaiService = require('../services/OpenaiService');
+const whatsappService = require('../services/WhatsappService');
+const dashboardService = require('../services/DashboardService');
 
 /**
  * Controlador para geração e envio de relatórios

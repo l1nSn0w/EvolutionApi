@@ -1,4 +1,4 @@
-const whatsappService = require('../services/whatsappService');
+const whatsappService = require('../services/WhatsappService');
 
 /**
  * Controlador para operações relacionadas ao WhatsApp

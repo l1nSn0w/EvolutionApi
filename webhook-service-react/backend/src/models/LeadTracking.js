@@ -82,6 +82,10 @@ const LeadTracking = sequelize.define('LeadTracking', {
   event_time: {
     type: DataTypes.DATE,
     defaultValue: DataTypes.NOW
+  },
+  is_manually_created: {
+    type: DataTypes.BOOLEAN,
+    allowNull: true
   }
 }, {
   tableName: 'lead_tracking',

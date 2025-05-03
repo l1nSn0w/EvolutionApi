@@ -1,5 +1,11 @@
 const axios = require('axios');
 const KommoToken = require('../models/KommoToken');
+const { 
+  KOMMO_CLIENT_ID, 
+  KOMMO_CLIENT_SECRET, 
+  KOMMO_REDIRECT_URI,
+  NGROK_URL
+} = require('../config/kommo');
 
 // Função para buscar lead por telefone
 async function searchLeadByPhone(phone, accessToken, domain) {
@@ -260,6 +266,161 @@ async function getUserDetails(domain, accessToken, userId) {
   }
 }
 
+// Função para trocar código por tokens
+async function exchangeCodeForTokens(code, referer = null) {
+  try {
+    const domain = referer || 'kommo.com';
+    const tokenUrl = `https://${domain}/oauth2/access_token`;
+    
+    const response = await axios.post(tokenUrl, {
+      client_id: KOMMO_CLIENT_ID,
+      client_secret: KOMMO_CLIENT_SECRET,
+      grant_type: 'authorization_code',
+      code: code,
+      redirect_uri: KOMMO_REDIRECT_URI
+    });
+
+    if (response.status === 200) {
+      const tokensData = response.data;
+      const expiresAt = new Date(Date.now() + (tokensData.expires_in * 1000));
+      
+      // Extrair account_id do token JWT
+      let accountId = null;
+      if (tokensData.access_token) {
+        try {
+          // Dividir o token JWT em suas partes (header.payload.signature)
+          const jwtParts = tokensData.access_token.split('.');
+          if (jwtParts.length >= 2) {
+            // Ajustar o padding para base64
+            const padded = jwtParts[1] + '='.repeat((4 - jwtParts[1].length % 4) % 4);
+            // Decodificar e converter para JSON
+            const jwtPayload = JSON.parse(Buffer.from(padded, 'base64').toString());
+            
+            // Extrair o account_id do payload
+            accountId = jwtPayload.account_id?.toString();
+            console.log('Account ID extraído do JWT:', accountId);
+          }
+        } catch (jwtErr) {
+          console.error('Erro ao decodificar JWT:', jwtErr);
+        }
+      }
+      
+      // Se não conseguiu extrair do JWT, tentar do base_domain
+      if (!accountId && tokensData.base_domain) {
+        const domainParts = tokensData.base_domain.split('.');
+        if (domainParts.length > 0) {
+          accountId = domainParts[0];
+          console.log('Account ID extraído do base_domain:', accountId);
+        }
+      }
+      
+      // Se ainda não tiver account_id, usar o domínio como identificador
+      if (!accountId && domain && domain !== 'kommo.com') {
+        const domainParts = domain.split('.');
+        if (domainParts.length > 0) {
+          accountId = domainParts[0];
+          console.log('Account ID extraído do domínio:', accountId);
+        }
+      }
+      
+      // Como último recurso, gerar um ID aleatório
+      if (!accountId) {
+        const { randomBytes } = require('crypto');
+        accountId = `unknown_${randomBytes(4).toString('hex')}`;
+        console.log('Account ID gerado aleatoriamente:', accountId);
+      }
+      
+      return {
+        access_token: tokensData.access_token,
+        refresh_token: tokensData.refresh_token,
+        expires_at: expiresAt,
+        account_id: accountId,
+        domain: domain
+      };
+    }
+    return null;
+  } catch (error) {
+    console.error('Error exchanging code for tokens:', error);
+    return null;
+  }
+}
+
+// Função para verificar o status da autenticação
+async function checkAuthStatus() {
+  try {
+    // Buscar token existente
+    const token = await KommoToken.findOne();
+    
+    if (token) {
+      // Verificar se o token está expirado
+      const isExpired = new Date() > new Date(token.expires_at);
+      
+      return {
+        isAuthenticated: !isExpired,
+        tokenInfo: {
+          account_id: token.account_id,
+          domain: token.domain,
+          expires_at: token.expires_at,
+          created_at: token.createdAt,
+          updated_at: token.updatedAt
+        }
+      };
+    }
+    
+    return { isAuthenticated: false };
+  } catch (error) {
+    console.error('Error checking auth status:', error);
+    throw error;
+  }
+}
+
+// Função para revogar token de autenticação
+async function revokeToken(accountId) {
+  try {
+    if (!accountId) {
+      throw new Error('Account ID is required');
+    }
+    
+    // Encontrar e excluir o token
+    await KommoToken.destroy({ where: { account_id: accountId } });
+    
+    return {
+      success: true,
+      message: 'Token revoked successfully'
+    };
+  } catch (error) {
+    console.error('Error revoking token:', error);
+    throw error;
+  }
+}
+
+// Função para buscar informações da conta Kommo
+async function getAccountInfo(accessToken, referer = null) {
+  try {
+    const domain = referer || 'kommo.com';
+    console.log('🔍 Buscando informações da conta Kommo...');
+    
+    // Fazer a requisição para a API do Kommo
+    const response = await axios.get(`https://${domain}/api/v4/account`, {
+      headers: { 'Authorization': `Bearer ${accessToken}` }
+    });
+    
+    if (response.data && response.data.id) {
+      console.log('✅ Informações da conta obtidas com sucesso!');
+      return {
+        account_id: response.data.id.toString(),
+        domain: domain
+      };
+    }
+    
+    return { account_id: 'default', domain: domain };
+  } catch (error) {
+    console.error('Error fetching account info:', error);
+    return { account_id: 'default', domain: referer || 'kommo.com' };
+  }
+}
+
+// Exportar todas as funções
 module.exports = {
   searchLeadByPhone,
   refreshKommoToken,
@@ -267,5 +428,9 @@ module.exports = {
   getLeadDetails,
   getContactDetails,
   extractPhoneFromContact,
-  getUserDetails
+  getUserDetails,
+  exchangeCodeForTokens,
+  checkAuthStatus,
+  revokeToken,
+  getAccountInfo
 }; 

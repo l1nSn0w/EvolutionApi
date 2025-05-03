@@ -13,7 +13,7 @@ const KommoIntegrationInfo = () => {
   useEffect(() => {
     const fetchIntegrationInfo = async () => {
       try {
-        const response = await axios.get(`${API_URL}/kommo/status`);
+        const response = await axios.get(`${API_URL}/api/kommo/status`);
         if (response.data && response.data.isAuthenticated) {
           setIntegrationInfo(response.data.tokenInfo);
         }
@@ -32,7 +32,7 @@ const KommoIntegrationInfo = () => {
     if (!integrationInfo?.account_id) return;
 
     try {
-      await axios.get(`${API_URL}/kommo/revoke-token?account_id=${integrationInfo.account_id}`);
+      await axios.get(`${API_URL}/api/kommo/revoke-token?account_id=${integrationInfo.account_id}`);
       setIntegrationInfo(null);
       window.location.reload();
     } catch (err) {

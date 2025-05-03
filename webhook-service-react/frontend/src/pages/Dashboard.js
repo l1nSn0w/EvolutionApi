@@ -16,7 +16,7 @@ const Dashboard = () => {
         // Verificar se o usuário está autenticado no Kommo
         const authStatus = await kommoService.checkAuthStatus();
         
-        if (!authStatus.authenticated) {
+        if (!authStatus.isAuthenticated) {
           setError('Você precisa estar autenticado no Kommo para visualizar o dashboard.');
           setLoading(false);
           return;

@@ -70,6 +70,17 @@ const AdDashboard = () => {
     }
   };
 
+  // Função auxiliar para formatar segundos em HH:MM:SS
+  const formatTimeInSeconds = (seconds) => {
+    if (!seconds && seconds !== 0) return 'N/A';
+    
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const secs = Math.floor(seconds % 60);
+    
+    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  };
+
   // Se estiver carregando, mostrar indicador
   if (loading) {
     return <div className="loading">Carregando métricas...</div>;
@@ -88,17 +99,17 @@ const AdDashboard = () => {
   // Extrair dados da resposta da API
   const { campaigns, adSets, ads, top_users } = metricsData;
   
-  // Obter a primeira campanha (geralmente a única ou a principal)
-  const mainCampaign = campaigns[0] || {};
-  
   // Calcular métricas gerais
   const overview = {
-    totalLeads: mainCampaign.total_leads || 0,
-    totalSales: mainCampaign.converted_leads || 0,
-    lostLeads: Object.values(mainCampaign.lost_reasons || {}).reduce((a, b) => a + b, 0),
-    conversionRate: mainCampaign.conversion_rate || 0,
-    avgConversionTime: mainCampaign.average_conversion_time || 'N/A',
-    avgDiscardTime: mainCampaign.average_discard_time || 'N/A'
+    totalLeads: campaigns.reduce((sum, campaign) => sum + (campaign.total_leads || 0), 0),
+    totalSales: campaigns.reduce((sum, campaign) => sum + (campaign.converted_leads || 0), 0),
+    lostLeads: campaigns.reduce((sum, campaign) => 
+      sum + Object.values(campaign.lost_reasons || {}).reduce((a, b) => a + b, 0), 0),
+    conversionRate: campaigns.length > 0 ? 
+      parseFloat((campaigns.reduce((sum, campaign) => sum + (campaign.converted_leads || 0), 0) / 
+       campaigns.reduce((sum, campaign) => sum + (campaign.total_leads || 0), 0) * 100).toFixed(2)) : 0,
+    avgConversionTime: formatTimeInSeconds(campaigns.find(c => c.average_conversion_time)?.average_conversion_time),
+    avgDiscardTime: formatTimeInSeconds(campaigns.find(c => c.average_discard_time)?.average_discard_time)
   };
   
   // Preparar dados para gráficos e tabelas
@@ -176,14 +187,32 @@ const AdDashboard = () => {
     };
   });
   
-  // Dados para gráfico de motivos de perda
-  const lossReasonsData = Object.entries(mainCampaign.lost_reasons || {}).map(([reason, count]) => ({
+  // Dados para gráfico de motivos de perda - consolidando de todas as campanhas
+  const consolidatedLostReasons = {};
+  campaigns.forEach(campaign => {
+    if (campaign.lost_reasons) {
+      Object.entries(campaign.lost_reasons).forEach(([reason, count]) => {
+        consolidatedLostReasons[reason] = (consolidatedLostReasons[reason] || 0) + count;
+      });
+    }
+  });
+  
+  const lossReasonsData = Object.entries(consolidatedLostReasons).map(([reason, count]) => ({
     reason,
     count
   }));
   
-  // Dados para gráfico de distribuição de estágios
-  const stageDistributionData = Object.entries(mainCampaign.stage_reached_distribution || {}).map(([stage, count]) => ({
+  // Dados para gráfico de distribuição de estágios - consolidando de todas as campanhas
+  const consolidatedStageDistribution = {};
+  campaigns.forEach(campaign => {
+    if (campaign.stage_reached_distribution) {
+      Object.entries(campaign.stage_reached_distribution).forEach(([stage, count]) => {
+        consolidatedStageDistribution[stage] = (consolidatedStageDistribution[stage] || 0) + count;
+      });
+    }
+  });
+  
+  const stageDistributionData = Object.entries(consolidatedStageDistribution).map(([stage, count]) => ({
     stage,
     count
   }));

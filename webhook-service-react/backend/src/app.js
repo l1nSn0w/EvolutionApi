@@ -22,19 +22,16 @@ app.get('/', (req, res) => {
 });
 
 // Rotas do webhook
-app.use('/webhook', require('./routes/Webhook'));
+app.use('/webhook', require('./routes/WebhookRoutes'));
 
 // Rotas do Kommo
-app.use('/kommo', require('./routes/Kommo'));
-
-// Rotas da API do Kommo
-app.use('/api/kommo', require('./routes/KommoApi'));
+app.use('/api/kommo', require('./routes/KommoRoutes'));
 
 // Rotas do dashboard
-app.use('/dashboard', require('./routes/Dashboard'));
+app.use('/dashboard', require('./routes/DashboardRoutes'));
 
 // Rotas do lead tracking
-app.use('/api', require('./routes/LeadTracking'));
+app.use('/api', require('./routes/LeadTrackingRoutes'));
 
 // Rotas do WhatsApp
 app.use('/api/whatsapp', require('./routes/WhatsappRoutes'));

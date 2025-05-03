@@ -62,6 +62,11 @@ const WebhookMessage = sequelize.define('WebhookMessage', {
   campaign_id: {
     type: DataTypes.STRING(50),
     allowNull: true
+  },
+  ctwa_clid: {
+    type: DataTypes.STRING(255),
+    allowNull: true,
+    comment: 'Click ID gerado pelo Meta para anúncios Click-To-WhatsApp'
   }
 }, {
   tableName: 'webhook_messages',

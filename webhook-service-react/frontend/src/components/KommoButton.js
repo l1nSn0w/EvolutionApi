@@ -17,7 +17,7 @@ const KommoButton = ({ clientId, errorCallback }) => {
           setIsLoading(false);
           
           // Obter URL do ngrok configurado no backend
-          const response = await axios.get(`${API_URL}/kommo/config`);
+          const response = await axios.get(`${API_URL}/api/kommo/config`);
           if (response.data && response.data.ngrokUrl) {
             setNgrokUrl(response.data.ngrokUrl);
           }

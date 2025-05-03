@@ -1,5 +1,6 @@
 const LeadTracking = require('../models/LeadTracking');
 const { Op } = require('sequelize');
+const leadTrackingService = require('../services/LeadTrackingService');
 
 /**
  * Controlador para gerenciar eventos de rastreamento de leads
@@ -73,6 +74,53 @@ const LeadTrackingController = {
       return res.status(500).json({
         status: 'error',
         message: `Erro ao buscar eventos de rastreamento: ${error.message}`
+      });
+    }
+  },
+
+  /**
+   * Cria manualmente um rastreamento para uma mensagem
+   */
+  async createManualTracking(req, res) {
+    try {
+      const { message_id, lead_id } = req.body;
+      
+      // Validar parâmetros
+      if (!message_id) {
+        return res.status(400).json({ status: 'error', message: 'ID da mensagem é obrigatório' });
+      }
+      
+      // Chamar o serviço para criar o rastreamento
+      const result = await leadTrackingService.createManualTracking(message_id, lead_id || null);
+      
+      if (result.status === 'error') {
+        return res.status(400).json(result);
+      }
+      
+      return res.status(201).json(result);
+    } catch (error) {
+      console.error('Erro ao criar rastreamento manual:', error);
+      return res.status(500).json({ 
+        status: 'error', 
+        message: 'Erro ao processar a solicitação',
+        error: error.message
+      });
+    }
+  },
+  
+  /**
+   * Lista todos os rastreamentos
+   */
+  async getTrackings(req, res) {
+    try {
+      const trackings = await leadTrackingService.getTrackings();
+      return res.json(trackings);
+    } catch (error) {
+      console.error('Erro ao listar rastreamentos:', error);
+      return res.status(500).json({ 
+        status: 'error', 
+        message: 'Erro ao processar a solicitação',
+        error: error.message
       });
     }
   }

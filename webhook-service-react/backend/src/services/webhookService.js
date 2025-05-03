@@ -49,6 +49,7 @@ class WebhookService {
       let adsetId = null;
       let campaignName = null;
       let campaignId = null;
+      let ctwaClid = null;
   
       // Verificar se tem contextInfo.externalAdReply
       const contextInfo = messageData.contextInfo || messageData.message?.contextInfo || messageData.message?.extendedTextMessage?.contextInfo;
@@ -61,6 +62,11 @@ class WebhookService {
         mediaUrl = externalAdReply.mediaUrl || null;
         thumbnailUrl = externalAdReply.thumbnailUrl || null;
         sourceUrl = externalAdReply.sourceUrl || null;
+        ctwaClid = externalAdReply.ctwaClid || null;
+        
+        if (ctwaClid) {
+          console.log('🆔 Click ID (ctwaClid) identificado:', ctwaClid);
+        }
       }
   
       
@@ -114,6 +120,7 @@ class WebhookService {
             adset_id: adsetId,
             campaign_name: campaignName,
             campaign_id: campaignId,
+            ctwa_clid: ctwaClid,
             date_time: data.date_time
           };
   
@@ -154,8 +161,11 @@ class WebhookService {
           adset_name: adsetName,
           adset_id: adsetId,
           campaign_name: campaignName,
-          campaign_id: campaignId
+          campaign_id: campaignId,
+          ctwa_clid: ctwaClid
         });
+
+        console.log('Mensagem salva no banco de dados:', JSON.stringify(webhookMessage, null, 2));
   
         messageId = webhookMessage.id;
         
@@ -212,8 +222,7 @@ class WebhookService {
                 // Buscar detalhes do pipeline e status
                 const pipelineDetails = await getPipelineDetails(domain, token.access_token);
                 
-                console.log('------ 😇 pipelineDetails', JSON.stringify(pipelineDetails, null, 2));
-                
+                //console.log('------ 😇 pipelineDetails', JSON.stringify(pipelineDetails, null, 2));
                 // Encontrar informações do pipeline e status
                 const currentPipeline = pipelineDetails[pipelineId];
                 const currentStatus = currentPipeline?.stages?.[statusId];
@@ -282,7 +291,8 @@ class WebhookService {
     adset_name,
     adset_id,
     campaign_name,
-    campaign_id
+    campaign_id,
+    ctwa_clid
   }) {
     try {
       const webhookMessage = await WebhookMessage.create({
@@ -300,7 +310,8 @@ class WebhookService {
         adset_id,
         campaign_name,
         campaign_id,
-        date_time: new Date().toISOString()
+        ctwa_clid,
+        date_time: date_time || new Date().toISOString()
       });
 
       return webhookMessage;
@@ -352,10 +363,32 @@ class WebhookService {
     try {
       const messages = await WebhookMessage.findAll({
         order: [['date_time', 'DESC']],
-        limit: 100
+        limit: 100,
+        include: [{
+          model: require('../models/LeadTracking'),
+          as: 'LeadTrackings',
+          attributes: ['id']
+        }]
       });
       
-      return messages;
+      // Processamento adicional para verificar se cada mensagem tem rastreamento
+      const processedMessages = messages.map(message => {
+        const messageObj = message.toJSON();
+        // Adicionar campo indicando se a mensagem tem rastreamento
+        messageObj.has_tracking = messageObj.LeadTrackings && messageObj.LeadTrackings.length > 0;
+        
+        // Opcionalmente, adicionar campo com o ID do rastreamento, se existir
+        if (messageObj.has_tracking) {
+          messageObj.tracking_id = messageObj.LeadTrackings[0].id;
+        }
+        
+        // Remover o array de rastreamentos para manter a resposta limpa
+        delete messageObj.LeadTrackings;
+        
+        return messageObj;
+      });
+      
+      return processedMessages;
     } catch (error) {
       console.error('Erro ao buscar mensagens:', error);
       throw error;

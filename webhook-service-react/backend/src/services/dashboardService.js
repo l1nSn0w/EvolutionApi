@@ -131,6 +131,17 @@ const dashboardService = {
       // Add debug logging
       console.log("Starting ad-metrics processing...");
       
+      // 0. Obter todas as mensagens de webhook (inclusive as que não têm eventos de tracking ainda)
+      const webhookMessages = await WebhookMessage.findAll({
+        where: {
+          campaign_id: {
+            [Op.ne]: null
+          }
+        }
+      });
+      
+      console.log(`Retrieved ${webhookMessages.length} webhook messages`);
+      
       // 1. Obter todos os eventos de rastreamento
       const trackingEvents = await LeadTracking.findAll({
         include: [{
@@ -713,36 +724,54 @@ const dashboardService = {
         converted_leads: adMetrics[key].converted_leads
       })));
   
-      // Função para calcular o tempo médio de conversão
+      // Calcular tempos médios de conversão e descarte
       const calculateAverageConversionTime = (conversionTimes) => {
-        if (conversionTimes.length === 0) return null;
-        
-        const totalMs = conversionTimes.reduce((sum, time) => sum + time, 0);
-        const avgMs = totalMs / conversionTimes.length;
-        
-        // Converter para formato HH:MM:SS
-        const hours = Math.floor(avgMs / (1000 * 60 * 60));
-        const minutes = Math.floor((avgMs % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((avgMs % (1000 * 60)) / 1000);
-        
-        return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        if (!conversionTimes || conversionTimes.length === 0) return null;
+        const totalTime = conversionTimes.reduce((sum, time) => sum + time, 0);
+        return Math.round(totalTime / conversionTimes.length);
       };
-      
-      // Função para calcular o tempo médio até descarte
+
       const calculateAverageDiscardTime = (discardTimes) => {
-        if (discardTimes.length === 0) return null;
-        
-        const totalMs = discardTimes.reduce((sum, time) => sum + time, 0);
-        const avgMs = totalMs / discardTimes.length;
-        
-        // Converter para formato HH:MM:SS
-        const hours = Math.floor(avgMs / (1000 * 60 * 60));
-        const minutes = Math.floor((avgMs % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((avgMs % (1000 * 60)) / 1000);
-        
-        return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        if (!discardTimes || discardTimes.length === 0) return null;
+        const totalTime = discardTimes.reduce((sum, time) => sum + time, 0);
+        return Math.round(totalTime / discardTimes.length);
       };
-      
+
+      // Processar cada lead para calcular tempos
+      const conversionTimes = [];
+      const discardTimes = [];
+
+      Object.values(eventsByLead).forEach(events => {
+        const firstEvent = events[0];
+        const lastEvent = events[events.length - 1];
+        
+        if (firstEvent && lastEvent) {
+          const timeDiff = Math.abs(new Date(lastEvent.event_time) - new Date(firstEvent.event_time)) / 1000; // em segundos
+          
+          if (lastEvent.event_type === 'lead_converted') {
+            conversionTimes.push(timeDiff);
+          } else if (lastEvent.event_type === 'lead_lost') {
+            discardTimes.push(timeDiff);
+          }
+        }
+      });
+
+      // Atualizar métricas com os tempos médios
+      Object.values(campaignMetrics).forEach(metric => {
+        metric.average_conversion_time = calculateAverageConversionTime(conversionTimes);
+        metric.average_discard_time = calculateAverageDiscardTime(discardTimes);
+      });
+
+      Object.values(adSetMetrics).forEach(metric => {
+        metric.average_conversion_time = calculateAverageConversionTime(conversionTimes);
+        metric.average_discard_time = calculateAverageDiscardTime(discardTimes);
+      });
+
+      Object.values(adMetrics).forEach(metric => {
+        metric.average_conversion_time = calculateAverageConversionTime(conversionTimes);
+        metric.average_discard_time = calculateAverageDiscardTime(discardTimes);
+      });
+
       // Função para encontrar o estágio mais comum
       const findMostCommonLastStage = (stageDistribution) => {
         if (Object.keys(stageDistribution).length === 0) return null;
@@ -842,6 +871,57 @@ const dashboardService = {
           .slice(0, 5); // Top 5 usuários em vez de 3
       };
 
+      // Função para coletar dados detalhados de leads para cada anúncio
+      const collectLeadDetailsForAd = (adName) => {
+        // Coletar todos os leads associados a este anúncio
+        const leads = [];
+        
+        // Buscar todos os message_id para este anúncio
+        Object.keys(leadsByMessage).forEach(messageId => {
+          const lead = leadsByMessage[messageId];
+          
+          // Verificar se esta mensagem está associada a este anúncio
+          if (lead.message_data && lead.message_data.ad_name === adName) {
+            leads.push({
+              lead_id: lead.lead_id,
+              phone: lead.phone,
+              stage: lead.last_stage,
+              farthest_stage: lead.farthest_stage,
+              responsible_user: lead.responsible_user_name,
+              message_id: messageId
+            });
+          }
+        });
+        
+        return leads;
+      };
+
+      // Função para coletar dados detalhados de leads para cada campanha
+      const collectLeadDetailsForCampaign = (campaignId) => {
+        // Coletar todos os leads associados a esta campanha
+        const leads = [];
+        
+        // Buscar todos os message_id para esta campanha
+        Object.keys(leadsByMessage).forEach(messageId => {
+          const lead = leadsByMessage[messageId];
+          
+          // Verificar se esta mensagem está associada a esta campanha
+          if (lead.message_data && lead.message_data.campaign_id === campaignId) {
+            leads.push({
+              lead_id: lead.lead_id,
+              phone: lead.phone,
+              stage: lead.last_stage,
+              farthest_stage: lead.farthest_stage,
+              responsible_user: lead.responsible_user_name,
+              ad_name: lead.message_data.ad_name,
+              message_id: messageId
+            });
+          }
+        });
+        
+        return leads;
+      };
+
       // 3. Converter os objetos em arrays e adicionar métricas calculadas
       const campaigns = Object.values(campaignMetrics).map(metric => {
         // Calcular taxa de conversão
@@ -864,6 +944,12 @@ const dashboardService = {
         // Converter top_users para array
         const top_users = convertTopUsersToArray(metric.top_users);
         
+        // Coletar informações detalhadas dos leads para diagnóstico
+        const lead_details = collectLeadDetailsForCampaign(metric.campaign_id);
+        
+        // Log campaign metrics
+        console.log(`Processing campaign: ${metric.campaign_name}, leads: ${metric.total_leads}, lead_details: ${lead_details.length}`);
+        
         return {
           ...metric,
           conversion_rate: parseFloat(conversion_rate.toFixed(2)),
@@ -871,7 +957,8 @@ const dashboardService = {
           average_discard_time,
           most_common_last_stage,
           farthest_stage_reached,
-          top_users
+          top_users,
+          lead_details // Adicionar detalhes dos leads
         };
       });
       
@@ -931,8 +1018,11 @@ const dashboardService = {
         // Converter top_users para array
         const top_users = convertTopUsersToArray(metric.top_users);
         
+        // Coletar informações detalhadas dos leads para diagnóstico
+        const lead_details = collectLeadDetailsForAd(metric.ad_name);
+        
         // Log the individual ad metric
-        console.log(`Processing ad: ${metric.ad_name}, leads: ${metric.total_leads}`);
+        console.log(`Processing ad: ${metric.ad_name}, leads: ${metric.total_leads}, lead_details: ${lead_details.length}`);
         
         return {
           ...metric,
@@ -942,7 +1032,8 @@ const dashboardService = {
           average_discard_time,
           most_common_last_stage,
           farthest_stage_reached,
-          top_users
+          top_users,
+          lead_details // Adicionar detalhes dos leads
         };
       });
       
@@ -957,8 +1048,40 @@ const dashboardService = {
         campaigns,
         adSets,
         ads,
-        top_users: []
+        top_users: [],
+        diagnostics: {} // Adicionar seção de diagnóstico
       };
+      
+      // Adicionar informações de diagnóstico para mensagens sem tracking
+      const messagesWithoutTracking = [];
+      webhookMessages.forEach(message => {
+        const messageData = message.toJSON();
+        const messageId = messageData.id;
+        
+        // Verificar se esta mensagem está em algum lead registrado
+        const hasTracking = Object.keys(leadsByMessage).some(id => 
+          parseInt(id) === messageId || id === messageId.toString()
+        );
+        
+        if (!hasTracking) {
+          // Esta mensagem não tem tracking associado
+          messagesWithoutTracking.push({
+            message_id: messageId,
+            phone: messageData.telefone,
+            name: messageData.nome,
+            message: messageData.mensagem,
+            ad_name: messageData.ad_name,
+            adset_name: messageData.adset_name,
+            adset_id: messageData.adset_id,
+            campaign_name: messageData.campaign_name,
+            campaign_id: messageData.campaign_id,
+            date_time: messageData.date_time
+          });
+        }
+      });
+      
+      response.diagnostics.messagesWithoutTracking = messagesWithoutTracking;
+      console.log(`Found ${messagesWithoutTracking.length} messages without tracking`);
       
       // Remove conversion_times and discard_times from the response for cleaner output
       response.campaigns.forEach(campaign => {
@@ -974,6 +1097,7 @@ const dashboardService = {
       response.ads.forEach(ad => {
         delete ad.conversion_times;
         delete ad.discard_times;
+        // Mantenha lead_details (não precisamos excluir)
       });
       
       // Calcular os top users consolidados

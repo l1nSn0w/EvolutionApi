@@ -107,6 +107,10 @@ fi
 sudo usermod -aG docker $USER
 EOF
 
+# Limpar recursos não utilizados do Docker
+echo -e "${YELLOW}Limpando recursos não utilizados do Docker...${NC}"
+ssh -i $PEM_KEY $EC2_USER@$EC2_IP "docker system prune -af"
+
 # Reiniciar a sessão SSH para aplicar as permissões do grupo Docker
 echo -e "${YELLOW}Reiniciando a sessão SSH para aplicar as permissões...${NC}"
 ssh -i $PEM_KEY $EC2_USER@$EC2_IP "sudo systemctl restart docker"

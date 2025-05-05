@@ -1,0 +1,2906 @@
+{
+  "status": "success",
+  "count": 100,
+  "events": [
+    {
+      "id": 216,
+      "message_id": null,
+      "lead_id": "23792241",
+      "phone": "554198282767",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "84601264",
+        "name": "Teste"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83621540",
+        "name": "LEAD CONVERTIDO"
+      },
+      "lead_situation": "COMPROU",
+      "price": "2090.00",
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-04T04:56:07.136Z"
+    },
+    {
+      "id": 215,
+      "message_id": null,
+      "lead_id": "23792241",
+      "phone": "554198282767",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83621540",
+        "name": "LEAD CONVERTIDO"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "84601264",
+        "name": "Teste"
+      },
+      "lead_situation": "COMPROU",
+      "price": "2090.00",
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-04T04:56:04.588Z"
+    },
+    {
+      "id": 214,
+      "message_id": null,
+      "lead_id": "23328189",
+      "phone": "554195120461",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83621544",
+        "name": "LEAD DESCARTADO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12116195",
+      "responsible_user_name": "Matheus undefined",
+      "event_time": "2025-05-04T03:38:52.091Z"
+    },
+    {
+      "id": 213,
+      "message_id": null,
+      "lead_id": "23795921",
+      "phone": "554195042164",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12115559",
+      "responsible_user_name": "Gustavo Paessens undefined",
+      "event_time": "2025-05-04T03:38:10.712Z"
+    },
+    {
+      "id": 212,
+      "message_id": 68,
+      "lead_id": "23800609",
+      "phone": "554199754485",
+      "event_type": "message_received",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-04T03:37:54.837Z"
+    },
+    {
+      "id": 211,
+      "message_id": null,
+      "lead_id": "23800609",
+      "phone": "554199754485",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "68641131",
+        "name": "Leads de entrada"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-04T02:07:46.876Z"
+    },
+    {
+      "id": 210,
+      "message_id": null,
+      "lead_id": "23800609",
+      "phone": "554199754485",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "68641131",
+        "name": "Leads de entrada"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-04T02:07:46.378Z"
+    },
+    {
+      "id": 209,
+      "message_id": 67,
+      "lead_id": "23328189",
+      "phone": "554195120461",
+      "event_type": "message_received",
+      "source_id": "6773552064121",
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83621544",
+        "name": "LEAD DESCARTADO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-04T01:10:29.904Z"
+    },
+    {
+      "id": 208,
+      "message_id": 66,
+      "lead_id": "23799641",
+      "phone": "554188570499",
+      "event_type": "message_received",
+      "source_id": "6729787902321",
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-04T00:21:50.600Z"
+    },
+    {
+      "id": 207,
+      "message_id": null,
+      "lead_id": "23799641",
+      "phone": "554188570499",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "68641131",
+        "name": "Etapa de leads de entrada"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-04T00:21:49.685Z"
+    },
+    {
+      "id": 206,
+      "message_id": 65,
+      "lead_id": "23799463",
+      "phone": "554191071634",
+      "event_type": "message_received",
+      "source_id": "6694168602521",
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-03T23:59:14.224Z"
+    },
+    {
+      "id": 205,
+      "message_id": null,
+      "lead_id": "23799463",
+      "phone": "554191071634",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "68641131",
+        "name": "Etapa de leads de entrada"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T23:59:13.502Z"
+    },
+    {
+      "id": 204,
+      "message_id": 64,
+      "lead_id": "23798543",
+      "phone": "554198799799",
+      "event_type": "message_received",
+      "source_id": "6694168602521",
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-03T21:57:16.417Z"
+    },
+    {
+      "id": 203,
+      "message_id": null,
+      "lead_id": "23798543",
+      "phone": "554198799799",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "68641131",
+        "name": "Etapa de leads de entrada"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T21:57:15.966Z"
+    },
+    {
+      "id": 202,
+      "message_id": null,
+      "lead_id": "23798543",
+      "phone": "554198799799",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "68641131",
+        "name": "Etapa de leads de entrada"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T21:57:15.922Z"
+    },
+    {
+      "id": 201,
+      "message_id": 63,
+      "lead_id": "23796333",
+      "phone": "554199574214",
+      "event_type": "message_received",
+      "source_id": "6773546700721",
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-03T18:45:58.085Z"
+    },
+    {
+      "id": 200,
+      "message_id": null,
+      "lead_id": "23796333",
+      "phone": "554199574214",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "68641131",
+        "name": "Etapa de leads de entrada"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T18:45:57.694Z"
+    },
+    {
+      "id": 199,
+      "message_id": null,
+      "lead_id": "23796333",
+      "phone": "554199574214",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "68641131",
+        "name": "Etapa de leads de entrada"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T18:45:57.650Z"
+    },
+    {
+      "id": 198,
+      "message_id": 62,
+      "lead_id": "23795921",
+      "phone": "554195042164",
+      "event_type": "message_received",
+      "source_id": "6773531938321",
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-03T18:16:18.382Z"
+    },
+    {
+      "id": 197,
+      "message_id": null,
+      "lead_id": "23779575",
+      "phone": "554199044534",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620960",
+        "name": "3° ATENDIMENTO"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83621544",
+        "name": "LEAD DESCARTADO"
+      },
+      "lead_situation": "DESQUALIFICADO",
+      "price": null,
+      "responsible_user_id": "12116195",
+      "responsible_user_name": "Matheus",
+      "event_time": "2025-05-03T17:59:09.286Z"
+    },
+    {
+      "id": 196,
+      "message_id": null,
+      "lead_id": "23781675",
+      "phone": "554197008164",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620960",
+        "name": "3° ATENDIMENTO"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83621544",
+        "name": "LEAD DESCARTADO"
+      },
+      "lead_situation": "DESQUALIFICADO",
+      "price": null,
+      "responsible_user_id": "12116195",
+      "responsible_user_name": "Matheus",
+      "event_time": "2025-05-03T17:58:56.108Z"
+    },
+    {
+      "id": 195,
+      "message_id": null,
+      "lead_id": "23794873",
+      "phone": "554196657433",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83630660",
+        "name": "1º ATENDIMENTO(TARDE)"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T17:46:05.703Z"
+    },
+    {
+      "id": 194,
+      "message_id": 58,
+      "lead_id": "23794723",
+      "phone": "554197931038",
+      "event_type": "message_received",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83630660",
+        "name": "1º ATENDIMENTO(TARDE)"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-03T17:16:59.895Z"
+    },
+    {
+      "id": 193,
+      "message_id": 55,
+      "lead_id": "23793295",
+      "phone": "554187815117",
+      "event_type": "message_received",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83630660",
+        "name": "1º ATENDIMENTO(TARDE)"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-03T17:16:54.447Z"
+    },
+    {
+      "id": 192,
+      "message_id": 54,
+      "lead_id": "23792821",
+      "phone": "554195653883",
+      "event_type": "message_received",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-03T17:16:51.807Z"
+    },
+    {
+      "id": 191,
+      "message_id": 53,
+      "lead_id": "23792799",
+      "phone": "554195391624",
+      "event_type": "message_received",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83621544",
+        "name": "LEAD DESCARTADO"
+      },
+      "lead_situation": "DESQUALIFICADO",
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-03T17:16:48.775Z"
+    },
+    {
+      "id": 190,
+      "message_id": 52,
+      "lead_id": "23792423",
+      "phone": "554199947474",
+      "event_type": "message_received",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-03T17:16:46.080Z"
+    },
+    {
+      "id": 189,
+      "message_id": 51,
+      "lead_id": "23792423",
+      "phone": "554199947474",
+      "event_type": "message_received",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-03T17:16:43.327Z"
+    },
+    {
+      "id": 188,
+      "message_id": 48,
+      "lead_id": "23791291",
+      "phone": "554184967813",
+      "event_type": "message_received",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-03T17:16:40.078Z"
+    },
+    {
+      "id": 187,
+      "message_id": 46,
+      "lead_id": "23789617",
+      "phone": "554188573325",
+      "event_type": "message_received",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620952",
+        "name": "1° ATENDIMENTO(MANHÃ)"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-03T17:16:37.134Z"
+    },
+    {
+      "id": 186,
+      "message_id": 45,
+      "lead_id": "23789477",
+      "phone": "554197542531",
+      "event_type": "message_received",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-03T17:16:30.149Z"
+    },
+    {
+      "id": 185,
+      "message_id": 61,
+      "lead_id": "23794873",
+      "phone": "554196657433",
+      "event_type": "message_received",
+      "source_id": "6729781570921",
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-03T16:57:28.784Z"
+    },
+    {
+      "id": 184,
+      "message_id": null,
+      "lead_id": "23794873",
+      "phone": "554196657433",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "68641131",
+        "name": "Leads de entrada"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T16:57:28.035Z"
+    },
+    {
+      "id": 183,
+      "message_id": null,
+      "lead_id": "23794723",
+      "phone": "554197931038",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83630660",
+        "name": "1º ATENDIMENTO(TARDE)"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12116195",
+      "responsible_user_name": "Matheus",
+      "event_time": "2025-05-03T16:57:08.336Z"
+    },
+    {
+      "id": 182,
+      "message_id": null,
+      "lead_id": "23794801",
+      "phone": "554196623036",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83630660",
+        "name": "1º ATENDIMENTO(TARDE)"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12116195",
+      "responsible_user_name": "Matheus",
+      "event_time": "2025-05-03T16:56:58.906Z"
+    },
+    {
+      "id": 181,
+      "message_id": null,
+      "lead_id": "23794801",
+      "phone": "554196623036",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "68641131",
+        "name": "Leads de entrada"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T16:52:38.311Z"
+    },
+    {
+      "id": 180,
+      "message_id": 60,
+      "lead_id": "23794801",
+      "phone": "554196623036",
+      "event_type": "message_received",
+      "source_id": "6773531003121",
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-03T16:52:38.299Z"
+    },
+    {
+      "id": 179,
+      "message_id": 59,
+      "lead_id": "23794723",
+      "phone": "554197931038",
+      "event_type": "message_received",
+      "source_id": "6773531938321",
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-03T16:51:31.736Z"
+    },
+    {
+      "id": 178,
+      "message_id": null,
+      "lead_id": "23794641",
+      "phone": "554384398266",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83630660",
+        "name": "1º ATENDIMENTO(TARDE)"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12115559",
+      "responsible_user_name": "Gustavo Paessens",
+      "event_time": "2025-05-03T16:48:47.807Z"
+    },
+    {
+      "id": 177,
+      "message_id": null,
+      "lead_id": "23794723",
+      "phone": "554197931038",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "68641131",
+        "name": "Leads de entrada"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T16:46:53.672Z"
+    },
+    {
+      "id": 176,
+      "message_id": 57,
+      "lead_id": "23794641",
+      "phone": "554384398266",
+      "event_type": "message_received",
+      "source_id": "6694168602521",
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-03T16:40:28.309Z"
+    },
+    {
+      "id": 175,
+      "message_id": null,
+      "lead_id": "23794641",
+      "phone": "554384398266",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "68641131",
+        "name": "Leads de entrada"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T16:40:27.417Z"
+    },
+    {
+      "id": 174,
+      "message_id": null,
+      "lead_id": "23787409",
+      "phone": "554188729242",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620952",
+        "name": "1° ATENDIMENTO(MANHÃ)"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12115559",
+      "responsible_user_name": "Gustavo Paessens",
+      "event_time": "2025-05-03T16:20:08.090Z"
+    },
+    {
+      "id": 173,
+      "message_id": null,
+      "lead_id": "23790159",
+      "phone": "554196930343",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620952",
+        "name": "1° ATENDIMENTO(MANHÃ)"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12115559",
+      "responsible_user_name": "Gustavo Paessens",
+      "event_time": "2025-05-03T16:18:38.528Z"
+    },
+    {
+      "id": 172,
+      "message_id": null,
+      "lead_id": "23792423",
+      "phone": "554199947474",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620952",
+        "name": "1° ATENDIMENTO(MANHÃ)"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12115559",
+      "responsible_user_name": "Gustavo Paessens",
+      "event_time": "2025-05-03T16:16:41.366Z"
+    },
+    {
+      "id": 171,
+      "message_id": null,
+      "lead_id": "23792821",
+      "phone": "554195653883",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620952",
+        "name": "1° ATENDIMENTO(MANHÃ)"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12115559",
+      "responsible_user_name": "Gustavo Paessens",
+      "event_time": "2025-05-03T16:16:40.511Z"
+    },
+    {
+      "id": 170,
+      "message_id": null,
+      "lead_id": "23780227",
+      "phone": "554198336022",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620960",
+        "name": "3° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12115559",
+      "responsible_user_name": "Gustavo Paessens",
+      "event_time": "2025-05-03T16:12:56.981Z"
+    },
+    {
+      "id": 169,
+      "message_id": null,
+      "lead_id": "23794101",
+      "phone": "554188060892",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83621544",
+        "name": "LEAD DESCARTADO"
+      },
+      "lead_situation": "DESQUALIFICADO",
+      "price": null,
+      "responsible_user_id": "12115559",
+      "responsible_user_name": "Gustavo Paessens",
+      "event_time": "2025-05-03T16:11:44.595Z"
+    },
+    {
+      "id": 168,
+      "message_id": 56,
+      "lead_id": "23794101",
+      "phone": "554188060892",
+      "event_type": "message_received",
+      "source_id": "6729787902321",
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-03T16:01:41.467Z"
+    },
+    {
+      "id": 167,
+      "message_id": null,
+      "lead_id": "23794101",
+      "phone": "554188060892",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "68641131",
+        "name": "Leads de entrada"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T16:01:41.135Z"
+    },
+    {
+      "id": 166,
+      "message_id": null,
+      "lead_id": "23789477",
+      "phone": "554197542531",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620952",
+        "name": "1° ATENDIMENTO(MANHÃ)"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12116195",
+      "responsible_user_name": "Matheus",
+      "event_time": "2025-05-03T15:25:27.676Z"
+    },
+    {
+      "id": 165,
+      "message_id": null,
+      "lead_id": "23791291",
+      "phone": "554184967813",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620952",
+        "name": "1° ATENDIMENTO(MANHÃ)"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12116195",
+      "responsible_user_name": "Matheus",
+      "event_time": "2025-05-03T15:24:57.948Z"
+    },
+    {
+      "id": 164,
+      "message_id": null,
+      "lead_id": "23791567",
+      "phone": "554199527940",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620952",
+        "name": "1° ATENDIMENTO(MANHÃ)"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12116195",
+      "responsible_user_name": "Matheus",
+      "event_time": "2025-05-03T15:24:47.224Z"
+    },
+    {
+      "id": 163,
+      "message_id": null,
+      "lead_id": "23792799",
+      "phone": "554195391624",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620952",
+        "name": "1° ATENDIMENTO(MANHÃ)"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83621544",
+        "name": "LEAD DESCARTADO"
+      },
+      "lead_situation": "DESQUALIFICADO",
+      "price": null,
+      "responsible_user_id": "12116195",
+      "responsible_user_name": "Matheus",
+      "event_time": "2025-05-03T15:23:23.656Z"
+    },
+    {
+      "id": 162,
+      "message_id": null,
+      "lead_id": "23779575",
+      "phone": "554199044534",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620960",
+        "name": "3° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12116195",
+      "responsible_user_name": "Matheus",
+      "event_time": "2025-05-03T15:20:24.394Z"
+    },
+    {
+      "id": 161,
+      "message_id": null,
+      "lead_id": "23781675",
+      "phone": "554197008164",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620960",
+        "name": "3° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12116195",
+      "responsible_user_name": "Matheus",
+      "event_time": "2025-05-03T15:20:23.707Z"
+    },
+    {
+      "id": 160,
+      "message_id": null,
+      "lead_id": "23762129",
+      "phone": "554198239727",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620960",
+        "name": "3° ATENDIMENTO"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83621544",
+        "name": "LEAD DESCARTADO"
+      },
+      "lead_situation": "DESQUALIFICADO",
+      "price": null,
+      "responsible_user_id": "12116195",
+      "responsible_user_name": "Matheus",
+      "event_time": "2025-05-03T15:20:07.958Z"
+    },
+    {
+      "id": 159,
+      "message_id": null,
+      "lead_id": "23769935",
+      "phone": "554187150596",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620960",
+        "name": "3° ATENDIMENTO"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83621544",
+        "name": "LEAD DESCARTADO"
+      },
+      "lead_situation": "PAROU DE RESPONDER",
+      "price": null,
+      "responsible_user_id": "12116195",
+      "responsible_user_name": "Matheus",
+      "event_time": "2025-05-03T15:19:47.257Z"
+    },
+    {
+      "id": 158,
+      "message_id": null,
+      "lead_id": "23772105",
+      "phone": "554198919139",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620960",
+        "name": "3° ATENDIMENTO"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83621544",
+        "name": "LEAD DESCARTADO"
+      },
+      "lead_situation": "PAROU DE RESPONDER",
+      "price": null,
+      "responsible_user_id": "12116195",
+      "responsible_user_name": "Matheus",
+      "event_time": "2025-05-03T15:19:23.749Z"
+    },
+    {
+      "id": 157,
+      "message_id": null,
+      "lead_id": "23792241",
+      "phone": "554198282767",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620952",
+        "name": "1° ATENDIMENTO(MANHÃ)"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83621540",
+        "name": "LEAD CONVERTIDO"
+      },
+      "lead_situation": "COMPROU",
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T15:18:28.559Z"
+    },
+    {
+      "id": 156,
+      "message_id": null,
+      "lead_id": "23772749",
+      "phone": "554899811037",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620960",
+        "name": "3° ATENDIMENTO"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83621544",
+        "name": "LEAD DESCARTADO"
+      },
+      "lead_situation": "NÃO RESPONDEU PRIMEIRO CONTATO",
+      "price": null,
+      "responsible_user_id": "12116195",
+      "responsible_user_name": "Matheus",
+      "event_time": "2025-05-03T15:18:22.646Z"
+    },
+    {
+      "id": 155,
+      "message_id": null,
+      "lead_id": "23793295",
+      "phone": "554187815117",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83630660",
+        "name": "1º ATENDIMENTO(TARDE)"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12116195",
+      "responsible_user_name": "Matheus",
+      "event_time": "2025-05-03T15:09:24.439Z"
+    },
+    {
+      "id": 154,
+      "message_id": null,
+      "lead_id": "23793295",
+      "phone": "554187815117",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "68641131",
+        "name": "Leads de entrada"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T15:06:16.101Z"
+    },
+    {
+      "id": 153,
+      "message_id": null,
+      "lead_id": "23792821",
+      "phone": "554195653883",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620952",
+        "name": "1° ATENDIMENTO(MANHÃ)"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12115559",
+      "responsible_user_name": "Gustavo Paessens",
+      "event_time": "2025-05-03T14:37:30.286Z"
+    },
+    {
+      "id": 152,
+      "message_id": null,
+      "lead_id": "23792799",
+      "phone": "554195391624",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620952",
+        "name": "1° ATENDIMENTO(MANHÃ)"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12116195",
+      "responsible_user_name": "Matheus",
+      "event_time": "2025-05-03T14:36:31.637Z"
+    },
+    {
+      "id": 151,
+      "message_id": null,
+      "lead_id": "23792821",
+      "phone": "554195653883",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "68641131",
+        "name": "Leads de entrada"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T14:36:24.667Z"
+    },
+    {
+      "id": 150,
+      "message_id": null,
+      "lead_id": "23792799",
+      "phone": "554195391624",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "68641131",
+        "name": "Leads de entrada"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T14:34:09.974Z"
+    },
+    {
+      "id": 149,
+      "message_id": null,
+      "lead_id": "23792799",
+      "phone": "554195391624",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "68641131",
+        "name": "Leads de entrada"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T14:34:09.785Z"
+    },
+    {
+      "id": 148,
+      "message_id": null,
+      "lead_id": "23756843",
+      "phone": "554188432538",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620960",
+        "name": "3° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T14:14:04.609Z"
+    },
+    {
+      "id": 147,
+      "message_id": null,
+      "lead_id": "23757401",
+      "phone": "554134258112",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620960",
+        "name": "3° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T14:14:04.121Z"
+    },
+    {
+      "id": 146,
+      "message_id": null,
+      "lead_id": "23759189",
+      "phone": "554199250353",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620960",
+        "name": "3° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T14:14:03.062Z"
+    },
+    {
+      "id": 145,
+      "message_id": null,
+      "lead_id": "23760823",
+      "phone": "554196698057",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620960",
+        "name": "3° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T14:14:02.730Z"
+    },
+    {
+      "id": 144,
+      "message_id": null,
+      "lead_id": "23769497",
+      "phone": "554198230012",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620960",
+        "name": "3° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T14:14:01.326Z"
+    },
+    {
+      "id": 143,
+      "message_id": null,
+      "lead_id": "23770121",
+      "phone": "554184673738",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620960",
+        "name": "3° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T14:14:00.163Z"
+    },
+    {
+      "id": 142,
+      "message_id": null,
+      "lead_id": "23780051",
+      "phone": "559584265372",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620960",
+        "name": "3° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T14:13:58.441Z"
+    },
+    {
+      "id": 141,
+      "message_id": null,
+      "lead_id": "23784119",
+      "phone": "554188837722",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620960",
+        "name": "3° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T14:13:57.567Z"
+    },
+    {
+      "id": 140,
+      "message_id": null,
+      "lead_id": "23792423",
+      "phone": "554199947474",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620952",
+        "name": "1° ATENDIMENTO(MANHÃ)"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12115559",
+      "responsible_user_name": "Gustavo Paessens",
+      "event_time": "2025-05-03T14:09:37.667Z"
+    },
+    {
+      "id": 139,
+      "message_id": null,
+      "lead_id": "23757459",
+      "phone": "554198496237",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83621544",
+        "name": "LEAD DESCARTADO"
+      },
+      "lead_situation": "OBJEÇÃO DE PREÇO",
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T14:09:21.547Z"
+    },
+    {
+      "id": 138,
+      "message_id": null,
+      "lead_id": "23792423",
+      "phone": "554199947474",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "68641131",
+        "name": "Leads de entrada"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T14:08:14.456Z"
+    },
+    {
+      "id": 137,
+      "message_id": null,
+      "lead_id": "23784119",
+      "phone": "554188837722",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83630660",
+        "name": "1º ATENDIMENTO(TARDE)"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T14:06:46.772Z"
+    },
+    {
+      "id": 136,
+      "message_id": null,
+      "lead_id": "23780051",
+      "phone": "559584265372",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83630660",
+        "name": "1º ATENDIMENTO(TARDE)"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T14:06:45.659Z"
+    },
+    {
+      "id": 135,
+      "message_id": null,
+      "lead_id": "23792241",
+      "phone": "554198282767",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620952",
+        "name": "1° ATENDIMENTO(MANHÃ)"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T14:06:10.899Z"
+    },
+    {
+      "id": 134,
+      "message_id": 50,
+      "lead_id": "23792241",
+      "phone": "554198282767",
+      "event_type": "message_received",
+      "source_id": "6773531003121",
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-03T13:55:54.292Z"
+    },
+    {
+      "id": 133,
+      "message_id": null,
+      "lead_id": "23792241",
+      "phone": "554198282767",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "68641131",
+        "name": "Leads de entrada"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T13:55:53.244Z"
+    },
+    {
+      "id": 132,
+      "message_id": null,
+      "lead_id": "23792241",
+      "phone": "554198282767",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "68641131",
+        "name": "Leads de entrada"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T13:55:53.159Z"
+    },
+    {
+      "id": 131,
+      "message_id": null,
+      "lead_id": "23791567",
+      "phone": "554199527940",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620952",
+        "name": "1° ATENDIMENTO(MANHÃ)"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12116195",
+      "responsible_user_name": "Matheus",
+      "event_time": "2025-05-03T13:20:05.022Z"
+    },
+    {
+      "id": 130,
+      "message_id": 49,
+      "lead_id": "23791567",
+      "phone": "554199527940",
+      "event_type": "message_received",
+      "source_id": "6729787902321",
+      "previous_pipeline": {
+        "id": null,
+        "name": null
+      },
+      "previous_status": {
+        "id": null,
+        "name": null
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": null,
+      "responsible_user_name": null,
+      "event_time": "2025-05-03T13:09:36.726Z"
+    },
+    {
+      "id": 129,
+      "message_id": null,
+      "lead_id": "23791567",
+      "phone": "554199527940",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "68641131",
+        "name": "Leads de entrada"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T13:09:35.807Z"
+    },
+    {
+      "id": 128,
+      "message_id": null,
+      "lead_id": "23791291",
+      "phone": "554184967813",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620952",
+        "name": "1° ATENDIMENTO(MANHÃ)"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12116195",
+      "responsible_user_name": "Matheus",
+      "event_time": "2025-05-03T12:47:43.373Z"
+    },
+    {
+      "id": 127,
+      "message_id": null,
+      "lead_id": "23791291",
+      "phone": "554184967813",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "68641131",
+        "name": "Leads de entrada"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T12:46:08.607Z"
+    },
+    {
+      "id": 126,
+      "message_id": null,
+      "lead_id": "23786993",
+      "phone": "554198863809",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620952",
+        "name": "1° ATENDIMENTO(MANHÃ)"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T12:35:18.957Z"
+    },
+    {
+      "id": 125,
+      "message_id": null,
+      "lead_id": "23789617",
+      "phone": "554188573325",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620952",
+        "name": "1° ATENDIMENTO(MANHÃ)"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "11272951",
+      "responsible_user_name": "Felipe Quichaba",
+      "event_time": "2025-05-03T12:31:34.364Z"
+    },
+    {
+      "id": 124,
+      "message_id": null,
+      "lead_id": "23780227",
+      "phone": "554198336022",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83630660",
+        "name": "1º ATENDIMENTO(TARDE)"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12115559",
+      "responsible_user_name": "Gustavo Paessens",
+      "event_time": "2025-05-03T12:16:08.139Z"
+    },
+    {
+      "id": 123,
+      "message_id": null,
+      "lead_id": "23790159",
+      "phone": "554196930343",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620952",
+        "name": "1° ATENDIMENTO(MANHÃ)"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12115559",
+      "responsible_user_name": "Gustavo Paessens",
+      "event_time": "2025-05-03T12:15:24.226Z"
+    },
+    {
+      "id": 122,
+      "message_id": null,
+      "lead_id": "23772083",
+      "phone": "554291259936",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83621544",
+        "name": "LEAD DESCARTADO"
+      },
+      "lead_situation": "PAROU DE RESPONDER",
+      "price": null,
+      "responsible_user_id": "12115559",
+      "responsible_user_name": "Gustavo Paessens",
+      "event_time": "2025-05-03T12:13:35.363Z"
+    },
+    {
+      "id": 121,
+      "message_id": null,
+      "lead_id": "23761805",
+      "phone": "554196993427",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83621544",
+        "name": "LEAD DESCARTADO"
+      },
+      "lead_situation": "PAROU DE RESPONDER",
+      "price": null,
+      "responsible_user_id": "12115559",
+      "responsible_user_name": "Gustavo Paessens",
+      "event_time": "2025-05-03T12:11:20.904Z"
+    },
+    {
+      "id": 120,
+      "message_id": null,
+      "lead_id": "23761271",
+      "phone": "554196300694",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83620960",
+        "name": "3° ATENDIMENTO"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83621544",
+        "name": "LEAD DESCARTADO"
+      },
+      "lead_situation": "PAROU DE RESPONDER",
+      "price": null,
+      "responsible_user_id": "12115559",
+      "responsible_user_name": "Gustavo Paessens",
+      "event_time": "2025-05-03T12:10:53.660Z"
+    },
+    {
+      "id": 119,
+      "message_id": null,
+      "lead_id": "23787409",
+      "phone": "554188729242",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "73683791",
+        "name": "etapa de leads reorganizados"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620952",
+        "name": "1° ATENDIMENTO(MANHÃ)"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12115559",
+      "responsible_user_name": "Gustavo Paessens",
+      "event_time": "2025-05-03T12:08:14.799Z"
+    },
+    {
+      "id": 118,
+      "message_id": null,
+      "lead_id": "23779575",
+      "phone": "554199044534",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83630660",
+        "name": "1º ATENDIMENTO(TARDE)"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12116195",
+      "responsible_user_name": "Matheus",
+      "event_time": "2025-05-03T12:01:15.435Z"
+    },
+    {
+      "id": 117,
+      "message_id": null,
+      "lead_id": "23781675",
+      "phone": "554197008164",
+      "event_type": "lead_status_changed",
+      "source_id": null,
+      "previous_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "previous_status": {
+        "id": "83630660",
+        "name": "1º ATENDIMENTO(TARDE)"
+      },
+      "current_pipeline": {
+        "id": "8750303",
+        "name": "Funil de vendas"
+      },
+      "current_status": {
+        "id": "83620956",
+        "name": "2° ATENDIMENTO"
+      },
+      "lead_situation": null,
+      "price": null,
+      "responsible_user_id": "12116195",
+      "responsible_user_name": "Matheus",
+      "event_time": "2025-05-03T11:59:48.528Z"
+    }
+  ]
+}

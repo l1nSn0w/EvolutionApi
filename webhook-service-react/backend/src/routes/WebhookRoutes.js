@@ -3,6 +3,7 @@ const router = express.Router();
 const WebhookMessage = require('../models/WebhookMessage');
 const axios = require('axios');
 const { MAKE_WEBHOOK_URL, FB_ACCESS_TOKEN } = require('../config/kommo');
+   // @ts-ignore
 const WebhookController = require('../controllers/WebhookController');
 
 

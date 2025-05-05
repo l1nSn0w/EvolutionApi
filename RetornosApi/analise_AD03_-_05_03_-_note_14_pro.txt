@@ -1,0 +1,321 @@
+# ANÁLISE DO ANÚNCIO: AD03 - 05/03 - note 14 pro
+Data/Hora: Mon May  5 02:50:49 -03 2025
+
+## 1. DADOS DO ANÚNCIO EM CAMPAIGN-ANALYTICS.TXT
+
+### 1.1 Métricas Gerais
+
+        "6488356802321_6694169304921_AD03 - 05/03 - note 14 pro",
+        "6488356802321_6647997141521_AD17 - 05/03 - note 14 pro plus",
+        "6488356802321_6681969001721_AD08 - 10/04 - generalista v2",
+        "6488356802321_6647997141521_AD16 - 05/03 - note 14 pro plus",
+        "6488356802321_6681969001721_AD10 - 29/04 - note 14",
+        "6488356802321_6681969001721_AD11 - 29/04 - note 14"
+      ],
+      "conversion_rate": 0,
+      "clicks_per_contact": 1.12,
+      "average_ticket": 0,
+      "discard_rate": 36,
+      "average_conversion_time_ms": null,
+      "average_conversion_time_hours": null,
+      "average_conversion_time_days": null,
+      "average_discard_time_ms": 84712208,
+
+### 1.2 Dados de Descartes
+
+      "discard_rate": 50,
+
+### 1.3 Motivos de Descarte
+
+      "discard_reasons_array": [
+        {
+          "reason": "DESQUALIFICADO",
+          "count": 9
+        },
+        {
+          "reason": "PAROU DE RESPONDER",
+          "count": 4
+        },
+        {
+          "reason": "Não especificado",
+          "count": 2
+        },
+        {
+--
+        "6488356802321_6694169304921_AD03 - 05/03 - note 14 pro"
+--
+      "discard_reasons_array": [
+        {
+          "reason": "DESQUALIFICADO",
+          "count": 3
+        },
+        {
+          "reason": "PAROU DE RESPONDER",
+          "count": 2
+        },
+        {
+          "reason": "OBJEÇÃO DE PREÇO",
+          "count": 1
+        },
+        {
+          "reason": "NÃO RESPONDEU PRIMEIRO CONTATO",
+          "count": 1
+--
+      "discard_reasons_array": [
+        {
+          "reason": "DESQUALIFICADO",
+          "count": 3
+        },
+        {
+          "reason": "PAROU DE RESPONDER",
+          "count": 2
+        },
+        {
+
+## 2. TELEFONES ASSOCIADOS AO ANÚNCIO
+
+Total de telefones associados: 14
+```
+5511937405997
+554132729734
+554188299049
+554195413841
+554196251126
+554196431910
+554197008164
+554197827850
+554198108773
+554198336022
+554198496237
+554199044534
+554199195472
+559288476154
+```
+
+## 3. LEADS DESCARTADOS
+
+### 3.1 Telefones com Status LEAD DESCARTADO
+
+```
+5511937405997
+554132729734
+554195413841
+554197008164
+554197827850
+554198496237
+554199044534
+```
+
+Total de telefones descartados: 7
+
+### 3.2 Motivos de Descarte por Telefone
+
+
+#### Telefone: 5511937405997
+
+```
+        "motivo": "PAROU DE RESPONDER",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "PAROU DE RESPONDER",
+    "total_descartes": 1
+  },
+  "554188250996": {
+```
+
+Anúncios associados a este telefone:
+
+```
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 19,
+        "date_time": "2025-05-01T14:28:40.173Z"
+--
+        "ad_name": "AD08 - 10/04 - generalista v2",
+        "message_id": 20,
+        "date_time": "2025-05-01T14:33:12.333Z"
+```
+
+
+#### Telefone: 554132729734
+
+```
+        "motivo": "NÃO RESPONDEU PRIMEIRO CONTATO",
+        "message_id": null,
+        "responsible_user_name": "Felipe Quichaba"
+      },
+      {
+        "lead_id": "23608617",
+--
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+```
+
+Anúncios associados a este telefone:
+
+```
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 9,
+        "date_time": "2025-05-01T13:30:46.565Z"
+--
+        "ad_name": "AD08 - 10/04 - generalista v2",
+        "message_id": 10,
+        "date_time": "2025-05-01T14:15:35.955Z"
+```
+
+
+#### Telefone: 554195413841
+
+```
+        "motivo": "DESQUALIFICADO",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "DESQUALIFICADO",
+    "total_descartes": 1
+  },
+  "554134258112": {
+```
+
+Anúncios associados a este telefone:
+
+```
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 2,
+        "date_time": "2025-05-01T11:18:08.418Z"
+--
+        "ad_name": "AD17 - 05/03 - note 14 pro plus",
+```
+
+
+#### Telefone: 554197008164
+
+```
+        "motivo": "DESQUALIFICADO",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "DESQUALIFICADO",
+    "total_descartes": 1
+  },
+  "554185223633": {
+```
+
+Anúncios associados a este telefone:
+
+```
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 41,
+        "date_time": "2025-05-02T15:22:54.942Z"
+```
+
+
+#### Telefone: 554197827850
+
+```
+        "motivo": "PAROU DE RESPONDER",
+        "message_id": null,
+        "responsible_user_name": "Gustavo Paessens"
+      },
+      {
+        "lead_id": "23757489",
+--
+        "motivo": "Não especificado",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+```
+
+Anúncios associados a este telefone:
+
+```
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 5,
+        "date_time": "2025-05-01T12:24:22.379Z"
+```
+
+
+#### Telefone: 554198496237
+
+```
+        "motivo": "OBJEÇÃO DE PREÇO",
+        "message_id": null,
+        "responsible_user_name": "Felipe Quichaba"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "OBJEÇÃO DE PREÇO",
+    "total_descartes": 1
+  },
+  "554197827850": {
+```
+
+Anúncios associados a este telefone:
+
+```
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 4,
+        "date_time": "2025-05-01T12:21:42.684Z"
+--
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+```
+
+
+#### Telefone: 554199044534
+
+```
+        "motivo": "DESQUALIFICADO",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "DESQUALIFICADO",
+    "total_descartes": 1
+  },
+  "559584265372": {
+```
+
+Anúncios associados a este telefone:
+
+```
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 35,
+        "date_time": "2025-05-02T13:03:43.954Z"
+```
+
+
+## 4. RESUMO DOS MOTIVOS DE DESCARTE
+
+```
+   3 DESQUALIFICADO
+   2 PAROU DE RESPONDER
+   1 OBJEÇÃO DE PREÇO
+   1 NÃO RESPONDEU PRIMEIRO CONTATO
+```
+
+
+## 5. VALIDAÇÃO DE CONTAGEM
+
+Contagem no campaign-analytics.txt: 7 leads descartados (Taxa: 50%)
+Contagem no leadByPhone.txt: 7 telefones com status LEAD DESCARTADO
+
+Conclusão: As contagens CORRESPONDEM! ✅
+
+## 6. CONCLUSÃO
+
+A análise do anúncio "AD03 - 05/03 - note 14 pro" mostra que:
+- Foram encontrados 7 telefones com status LEAD DESCARTADO associados a este anúncio
+- Os principais motivos de descarte são:
+- DESQUALIFICADO: 3 ocorrências
+- PAROU DE RESPONDER: 2 ocorrências
+- OBJEÇÃO DE PREÇO: 1 ocorrências
+- NÃO RESPONDEU PRIMEIRO CONTATO: 1 ocorrências
+
+Esta análise foi gerada automaticamente em Mon May  5 02:50:50 -03 2025

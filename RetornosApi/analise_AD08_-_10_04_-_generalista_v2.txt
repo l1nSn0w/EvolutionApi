@@ -1,0 +1,267 @@
+# ANÁLISE DO ANÚNCIO: AD08 - 10/04 - generalista v2
+Data/Hora: Mon May  5 02:50:35 -03 2025
+
+## 1. DADOS DO ANÚNCIO EM CAMPAIGN-ANALYTICS.TXT
+
+### 1.1 Métricas Gerais
+
+        "6488356802321_6681969001721_AD08 - 10/04 - generalista v2",
+        "6488356802321_6647997141521_AD16 - 05/03 - note 14 pro plus",
+        "6488356802321_6681969001721_AD10 - 29/04 - note 14",
+        "6488356802321_6681969001721_AD11 - 29/04 - note 14"
+      ],
+      "conversion_rate": 0,
+      "clicks_per_contact": 1.12,
+      "average_ticket": 0,
+      "discard_rate": 36,
+      "average_conversion_time_ms": null,
+      "average_conversion_time_hours": null,
+      "average_conversion_time_days": null,
+      "average_discard_time_ms": 84712208,
+      "average_discard_time_hours": 23.53,
+      "average_discard_time_days": 0.98,
+
+### 1.2 Dados de Descartes
+
+
+### 1.3 Motivos de Descarte
+
+      "discard_reasons_array": [
+        {
+          "reason": "DESQUALIFICADO",
+          "count": 9
+        },
+        {
+          "reason": "PAROU DE RESPONDER",
+          "count": 4
+        },
+        {
+          "reason": "Não especificado",
+          "count": 2
+        },
+        {
+          "reason": "NÃO RESPONDEU PRIMEIRO CONTATO",
+          "count": 2
+--
+      "discard_reasons_array": [
+        {
+          "reason": "DESQUALIFICADO",
+          "count": 4
+        },
+        {
+          "reason": "Não especificado",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "adset_id": "6694169304921",
+      "adset_name": "CJ 53 - 05/03 [Note 14 Pro] - Stories/Reels [vídeo víew 75%] 22 a 50 [S/A]",
+      "campaign_id": "6488356802321",
+      "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+--
+      "discard_reasons_array": [
+        {
+          "reason": "DESQUALIFICADO",
+          "count": 4
+        },
+        {
+          "reason": "Não especificado",
+          "count": 1
+        }
+      ]
+    },
+    {
+
+## 2. TELEFONES ASSOCIADOS AO ANÚNCIO
+
+Total de telefones associados: 13
+```
+553199854440
+554188060892
+554188250996
+554188570499
+554188729242
+554191976224
+554195391624
+554196698057
+554197542531
+554198230012
+554198863809
+554199413505
+554199527940
+```
+
+## 3. LEADS DESCARTADOS
+
+### 3.1 Telefones com Status LEAD DESCARTADO
+
+```
+554188060892
+554188250996
+554191976224
+554195391624
+554199413505
+```
+
+Total de telefones descartados: 5
+
+### 3.2 Motivos de Descarte por Telefone
+
+
+#### Telefone: 554188060892
+
+```
+        "motivo": "DESQUALIFICADO",
+        "message_id": null,
+        "responsible_user_name": "Gustavo Paessens"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "DESQUALIFICADO",
+    "total_descartes": 1
+  },
+  "554384398266": {
+```
+
+Anúncios associados a este telefone:
+
+```
+        "ad_name": "AD08 - 10/04 - generalista v2",
+        "message_id": 56,
+        "date_time": "2025-05-03T13:01:39.287Z"
+--
+        "ad_name": "AD17 - 05/03 - note 14 pro plus",
+        "message_id": 57,
+        "date_time": "2025-05-03T13:40:26.292Z"
+```
+
+
+#### Telefone: 554188250996
+
+```
+        "motivo": "DESQUALIFICADO",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "DESQUALIFICADO",
+    "total_descartes": 1
+  },
+  "554196993427": {
+```
+
+Anúncios associados a este telefone:
+
+```
+        "ad_name": "AD08 - 10/04 - generalista v2",
+        "message_id": 20,
+        "date_time": "2025-05-01T14:33:12.333Z"
+--
+        "ad_name": "AD04 - 29/04 - poco x7 pro",
+```
+
+
+#### Telefone: 554191976224
+
+```
+        "motivo": "DESQUALIFICADO",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "DESQUALIFICADO",
+    "total_descartes": 1
+  },
+  "554198919139": {
+```
+
+Anúncios associados a este telefone:
+
+```
+        "ad_name": "AD08 - 10/04 - generalista v2",
+        "message_id": 28,
+        "date_time": "2025-05-02T09:53:03.255Z"
+--
+        "ad_name": "AD04 - 10/04 - generalista apresentado — Cópia",
+```
+
+
+#### Telefone: 554195391624
+
+```
+        "motivo": "DESQUALIFICADO",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      },
+      {
+        "lead_id": "23792799",
+--
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+```
+
+Anúncios associados a este telefone:
+
+```
+        "ad_name": "AD08 - 10/04 - generalista v2",
+        "message_id": 53,
+        "date_time": "2025-05-03T11:34:04.388Z"
+```
+
+
+#### Telefone: 554199413505
+
+```
+        "motivo": "Não especificado",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      },
+      {
+        "lead_id": "23589251",
+--
+        "motivo": "DESQUALIFICADO",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+```
+
+Anúncios associados a este telefone:
+
+```
+        "ad_name": "AD08 - 10/04 - generalista v2",
+        "message_id": 6,
+        "date_time": "2025-05-01T12:42:42.295Z"
+--
+        "ad_name": "AD17 - 05/03 - note 14 pro plus",
+        "message_id": 7,
+        "date_time": "2025-05-01T13:16:40.130Z"
+```
+
+
+## 4. RESUMO DOS MOTIVOS DE DESCARTE
+
+```
+   4 DESQUALIFICADO
+   1 Não especificado
+```
+
+
+## 5. VALIDAÇÃO DE CONTAGEM
+
+Contagem no campaign-analytics.txt: 5 leads descartados (Taxa: 38.46%)
+Contagem no leadByPhone.txt: 5 telefones com status LEAD DESCARTADO
+
+Conclusão: As contagens CORRESPONDEM! ✅
+
+## 6. CONCLUSÃO
+
+A análise do anúncio "AD08 - 10/04 - generalista v2" mostra que:
+- Foram encontrados 5 telefones com status LEAD DESCARTADO associados a este anúncio
+- Os principais motivos de descarte são:
+- DESQUALIFICADO: 4 ocorrências
+- Não especificado: 1 ocorrências
+
+Esta análise foi gerada automaticamente em Mon May  5 02:50:35 -03 2025

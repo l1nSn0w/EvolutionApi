@@ -31,7 +31,8 @@ app.use('/api/kommo', require('./routes/KommoRoutes'));
 app.use('/dashboard', require('./routes/DashboardRoutes'));
 
 // Rotas do lead tracking
-app.use('/api', require('./routes/LeadTrackingRoutes'));
+// @ts-ignore
+app.use('/api', require('./routes/LeadTrackingRoutes')); 
 
 // Rotas do WhatsApp
 app.use('/api/whatsapp', require('./routes/WhatsappRoutes'));

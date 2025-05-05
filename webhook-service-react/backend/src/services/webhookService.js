@@ -361,24 +361,57 @@ class WebhookService {
 
   async getMessages() {
     try {
+      // Primeiro, obter todas as mensagens com seus rastreamentos
       const messages = await WebhookMessage.findAll({
         order: [['date_time', 'DESC']],
         limit: 100,
         include: [{
           model: require('../models/LeadTracking'),
           as: 'LeadTrackings',
-          attributes: ['id']
+          attributes: ['id', 'event_type', 'lead_id', 'phone']
         }]
+      });
+      
+      // Buscar todos os rastreamentos de estágio (lead_status_changed) para todos os telefones
+      // que temos nas mensagens, em uma única consulta para evitar múltiplas consultas ao banco
+      const LeadTracking = require('../models/LeadTracking');
+      const { Op } = require('sequelize');
+      
+      // Extrair todos os telefones distintos das mensagens
+      const phones = [...new Set(messages.map(msg => msg.telefone))];
+      
+      // Buscar todos os rastreamentos de estágio para esses telefones
+      const stageTrackings = await LeadTracking.findAll({
+        where: {
+          phone: { [Op.in]: phones },
+          event_type: 'lead_status_changed'
+        },
+        attributes: ['phone', 'lead_id']
+      });
+      
+      // Criar um mapa para busca rápida por telefone
+      const phoneToStageTrackingMap = {};
+      stageTrackings.forEach(tracking => {
+        phoneToStageTrackingMap[tracking.phone] = true;
       });
       
       // Processamento adicional para verificar se cada mensagem tem rastreamento
       const processedMessages = messages.map(message => {
         const messageObj = message.toJSON();
+        
         // Adicionar campo indicando se a mensagem tem rastreamento
         messageObj.has_tracking = messageObj.LeadTrackings && messageObj.LeadTrackings.length > 0;
         
-        // Opcionalmente, adicionar campo com o ID do rastreamento, se existir
-        if (messageObj.has_tracking) {
+        // Adicionar campo indicando se a mensagem tem rastreamento de estágio do Kommo
+        // Verificamos tanto pelos rastreamentos associados diretamente à mensagem
+        // quanto pelos rastreamentos encontrados para o mesmo número de telefone
+        messageObj.has_stage_tracking = 
+          (messageObj.LeadTrackings && messageObj.LeadTrackings.some(tracking => tracking.event_type === 'lead_status_changed')) || 
+          phoneToStageTrackingMap[messageObj.telefone] === true;
+        
+        // Se tiver rastreamento, extrair o lead_id para referência
+        if (messageObj.has_tracking && messageObj.LeadTrackings.length > 0) {
+          messageObj.lead_id = messageObj.LeadTrackings[0].lead_id;
           messageObj.tracking_id = messageObj.LeadTrackings[0].id;
         }
         

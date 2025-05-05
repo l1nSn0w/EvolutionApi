@@ -1,0 +1,1051 @@
+{
+  "campaigns": [
+    {
+      "campaign_id": "6488356802321",
+      "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+      "total_contacts": 50,
+      "total_clicks": 56,
+      "total_leads": 50,
+      "converted_leads": 0,
+      "discarded_leads": 18,
+      "total_value": 0,
+      "status_distribution": {
+        "LEAD DESCARTADO": 18,
+        "3° ATENDIMENTO": 6,
+        "1° ATENDIMENTO(MANHÃ)": 3,
+        "etapa de leads reorganizados": 22,
+        "AGENDADO ou LEAD QUENTE": 1,
+        "2° ATENDIMENTO": 4,
+        "1º ATENDIMENTO(TARDE)": 2
+      },
+      "conversion_times": [],
+      "discard_times": [
+        {
+          "time_ms": 14768894,
+          "days": 0.170936273148148,
+          "hours": 4.10247055555556,
+          "contact": "554195413841",
+          "motivo": "DESQUALIFICADO",
+          "lead_id": "23756879"
+        },
+        {
+          "time_ms": 179258794,
+          "days": 2.07475456018519,
+          "hours": 49.7941094444444,
+          "contact": "554198496237",
+          "motivo": "OBJEÇÃO DE PREÇO",
+          "lead_id": "23757459"
+        },
+        {
+          "time_ms": 101108176,
+          "days": 1.17023351851852,
+          "hours": 28.0856044444444,
+          "contact": "554197827850",
+          "motivo": "PAROU DE RESPONDER",
+          "lead_id": "23757489"
+        },
+        {
+          "time_ms": 131929171,
+          "days": 1.52695799768519,
+          "hours": 36.6469919444444,
+          "contact": "554199413505",
+          "motivo": "Não especificado",
+          "lead_id": "23589251"
+        },
+        {
+          "time_ms": 209158,
+          "days": 0.00242081018518519,
+          "hours": 0.0580994444444445,
+          "contact": "554196046253",
+          "motivo": "DESQUALIFICADO",
+          "lead_id": "23758065"
+        },
+        {
+          "time_ms": 222246502,
+          "days": 2.57229747685185,
+          "hours": 61.7351394444444,
+          "contact": "554132729734",
+          "motivo": "NÃO RESPONDEU PRIMEIRO CONTATO",
+          "lead_id": "23608617"
+        },
+        {
+          "time_ms": 154101252,
+          "days": 1.78357930555556,
+          "hours": 42.8059033333333,
+          "contact": "554196300694",
+          "motivo": "PAROU DE RESPONDER",
+          "lead_id": "23761271"
+        },
+        {
+          "time_ms": 95618683,
+          "days": 1.10669771990741,
+          "hours": 26.5607452777778,
+          "contact": "5511937405997",
+          "motivo": "PAROU DE RESPONDER",
+          "lead_id": "23761373"
+        },
+        {
+          "time_ms": 95335484,
+          "days": 1.1034199537037,
+          "hours": 26.4820788888889,
+          "contact": "554188250996",
+          "motivo": "DESQUALIFICADO",
+          "lead_id": "23761441"
+        },
+        {
+          "time_ms": 93325332,
+          "days": 1.08015430555556,
+          "hours": 25.9237033333333,
+          "contact": "554199044534",
+          "motivo": "DESQUALIFICADO",
+          "lead_id": "23779575"
+        },
+        {
+          "time_ms": 85655451,
+          "days": 0.991382534722222,
+          "hours": 23.7931808333333,
+          "contact": "554197008164",
+          "motivo": "DESQUALIFICADO",
+          "lead_id": "23781675"
+        },
+        {
+          "time_ms": 89744539,
+          "days": 1.03870994212963,
+          "hours": 24.9290386111111,
+          "contact": "554899811037",
+          "motivo": "NÃO RESPONDEU PRIMEIRO CONTATO",
+          "lead_id": "23772749"
+        },
+        {
+          "time_ms": 64053972,
+          "days": 0.741365416666667,
+          "hours": 17.79277,
+          "contact": "554192115837",
+          "motivo": "DESQUALIFICADO",
+          "lead_id": "23769757"
+        },
+        {
+          "time_ms": 101935315,
+          "days": 1.17980688657407,
+          "hours": 28.3153652777778,
+          "contact": "554187150596",
+          "motivo": "PAROU DE RESPONDER",
+          "lead_id": "23769935"
+        },
+        {
+          "time_ms": 83060392,
+          "days": 0.96134712962963,
+          "hours": 23.0723311111111,
+          "contact": "554191976224",
+          "motivo": "DESQUALIFICADO",
+          "lead_id": "23771133"
+        },
+        {
+          "time_ms": 2959268,
+          "days": 0.034250787037037,
+          "hours": 0.822018888888889,
+          "contact": "554195391624",
+          "motivo": "DESQUALIFICADO",
+          "lead_id": "23792799"
+        },
+        {
+          "time_ms": 605308,
+          "days": 0.00700587962962963,
+          "hours": 0.168141111111111,
+          "contact": "554188060892",
+          "motivo": "DESQUALIFICADO",
+          "lead_id": "23794101"
+        },
+        {
+          "time_ms": 8904051,
+          "days": 0.103056145833333,
+          "hours": 2.4733475,
+          "contact": "554195120461",
+          "motivo": "Não especificado",
+          "lead_id": "23328189"
+        }
+      ],
+      "discard_reasons": {
+        "DESQUALIFICADO": 9,
+        "OBJEÇÃO DE PREÇO": 1,
+        "PAROU DE RESPONDER": 4,
+        "Não especificado": 2,
+        "NÃO RESPONDEU PRIMEIRO CONTATO": 2
+      },
+      "messages": [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 17, 18, 19, 20, 35, 37, 41, 40, 34, 43, 44, 32, 24, 25, 26, 27, 28, 45, 47, 49, 53, 55, 56, 57, 63, 64, 65, 66, 67, 71, 72, 73, 76, 77, 78, 79, 80, 83, 85, 84, 87, 88, 90, 99, 100],
+      "responsible_users": [
+        {
+          "name": "Felipe Quichaba",
+          "total_leads": 23,
+          "converted_leads": 0,
+          "total_value": 0,
+          "discarded_leads": 2,
+          "discard_reasons": {
+            "OBJEÇÃO DE PREÇO": 1,
+            "NÃO RESPONDEU PRIMEIRO CONTATO": 1
+          },
+          "conversion_rate": 0,
+          "average_ticket": 0,
+          "discard_rate": 8.7,
+          "discard_reasons_array": [
+            {
+              "reason": "OBJEÇÃO DE PREÇO",
+              "count": 1
+            },
+            {
+              "reason": "NÃO RESPONDEU PRIMEIRO CONTATO",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "name": "Matheus",
+          "total_leads": 18,
+          "converted_leads": 0,
+          "total_value": 0,
+          "discarded_leads": 13,
+          "discard_reasons": {
+            "DESQUALIFICADO": 8,
+            "Não especificado": 2,
+            "PAROU DE RESPONDER": 2,
+            "NÃO RESPONDEU PRIMEIRO CONTATO": 1
+          },
+          "conversion_rate": 0,
+          "average_ticket": 0,
+          "discard_rate": 72.22,
+          "discard_reasons_array": [
+            {
+              "reason": "DESQUALIFICADO",
+              "count": 8
+            },
+            {
+              "reason": "Não especificado",
+              "count": 2
+            },
+            {
+              "reason": "PAROU DE RESPONDER",
+              "count": 2
+            },
+            {
+              "reason": "NÃO RESPONDEU PRIMEIRO CONTATO",
+              "count": 1
+            }
+          ]
+        },
+        {
+          "name": "Gustavo Paessens",
+          "total_leads": 9,
+          "converted_leads": 0,
+          "total_value": 0,
+          "discarded_leads": 3,
+          "discard_reasons": {
+            "PAROU DE RESPONDER": 2,
+            "DESQUALIFICADO": 1
+          },
+          "conversion_rate": 0,
+          "average_ticket": 0,
+          "discard_rate": 33.33,
+          "discard_reasons_array": [
+            {
+              "reason": "PAROU DE RESPONDER",
+              "count": 2
+            },
+            {
+              "reason": "DESQUALIFICADO",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "ad_sets": [
+        "6694169304921",
+        "6647997141521",
+        "6681969001721"
+      ],
+      "ads": [
+        "6488356802321_6694169304921_AD03 - 05/03 - note 14 pro",
+        "6488356802321_6647997141521_AD17 - 05/03 - note 14 pro plus",
+        "6488356802321_6681969001721_AD08 - 10/04 - generalista v2",
+        "6488356802321_6647997141521_AD16 - 05/03 - note 14 pro plus",
+        "6488356802321_6681969001721_AD10 - 29/04 - note 14",
+        "6488356802321_6681969001721_AD11 - 29/04 - note 14"
+      ],
+      "conversion_rate": 0,
+      "clicks_per_contact": 1.12,
+      "average_ticket": 0,
+      "discard_rate": 36,
+      "average_conversion_time_ms": null,
+      "average_conversion_time_hours": null,
+      "average_conversion_time_days": null,
+      "average_discard_time_ms": 84712208,
+      "average_discard_time_hours": 23.53,
+      "average_discard_time_days": 0.98,
+      "discard_reasons_array": [
+        {
+          "reason": "DESQUALIFICADO",
+          "count": 9
+        },
+        {
+          "reason": "PAROU DE RESPONDER",
+          "count": 4
+        },
+        {
+          "reason": "Não especificado",
+          "count": 2
+        },
+        {
+          "reason": "NÃO RESPONDEU PRIMEIRO CONTATO",
+          "count": 2
+        },
+        {
+          "reason": "OBJEÇÃO DE PREÇO",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "campaign_id": "6635625411721",
+      "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+      "total_contacts": 27,
+      "total_clicks": 34,
+      "total_leads": 27,
+      "converted_leads": 1,
+      "discarded_leads": 7,
+      "total_value": 2090,
+      "status_distribution": {
+        "3° ATENDIMENTO": 3,
+        "LEAD DESCARTADO": 10,
+        "1° ATENDIMENTO(MANHÃ)": 1,
+        "2° ATENDIMENTO": 4,
+        "LEAD CONVERTIDO": 1,
+        "1º ATENDIMENTO(TARDE)": 4,
+        "etapa de leads reorganizados": 11
+      },
+      "conversion_times": [
+        {
+          "time_ms": 54014663,
+          "days": 0.625169710648148,
+          "hours": 15.0040730555556,
+          "contact": "554198282767",
+          "price": 2090,
+          "lead_id": "23792241"
+        }
+      ],
+      "discard_times": [
+        {
+          "time_ms": 98731135,
+          "days": 1.14272146990741,
+          "hours": 27.4253152777778,
+          "contact": "554188230543",
+          "motivo": "PAROU DE RESPONDER",
+          "lead_id": "23760705"
+        },
+        {
+          "time_ms": 151906032,
+          "days": 1.75817166666667,
+          "hours": 42.19612,
+          "contact": "554196993427",
+          "motivo": "PAROU DE RESPONDER",
+          "lead_id": "23761805"
+        },
+        {
+          "time_ms": 161701743,
+          "days": 1.87154795138889,
+          "hours": 44.9171508333333,
+          "contact": "554198239727",
+          "motivo": "DESQUALIFICADO",
+          "lead_id": "23762129"
+        },
+        {
+          "time_ms": 80905571,
+          "days": 0.936407071759259,
+          "hours": 22.4737697222222,
+          "contact": "554291259936",
+          "motivo": "PAROU DE RESPONDER",
+          "lead_id": "23772083"
+        },
+        {
+          "time_ms": 374973,
+          "days": 0.00433996527777778,
+          "hours": 0.104159166666667,
+          "contact": "554184718909",
+          "motivo": "BOLETO",
+          "lead_id": "23780463"
+        },
+        {
+          "time_ms": 49237276,
+          "days": 0.56987587962963,
+          "hours": 13.6770211111111,
+          "contact": "554788913233",
+          "motivo": "DESQUALIFICADO",
+          "lead_id": "23773051"
+        },
+        {
+          "time_ms": 91988408,
+          "days": 1.06468064814815,
+          "hours": 25.5523355555556,
+          "contact": "554198919139",
+          "motivo": "PAROU DE RESPONDER",
+          "lead_id": "23772105"
+        }
+      ],
+      "discard_reasons": {
+        "PAROU DE RESPONDER": 4,
+        "DESQUALIFICADO": 2,
+        "BOLETO": 1
+      },
+      "messages": [1, 16, 21, 22, 23, 36, 31, 29, 39, 38, 42, 33, 30, 46, 48, 50, 51, 52, 54, 59, 58, 60, 61, 62, 68, 70, 69, 74, 75, 81, 82, 86, 89, 91],
+      "responsible_users": [
+        {
+          "name": "Felipe Quichaba",
+          "total_leads": 12,
+          "converted_leads": 1,
+          "total_value": 2090,
+          "conversion_rate": 8.33,
+          "average_ticket": 2090
+        },
+        {
+          "name": "Matheus",
+          "total_leads": 8,
+          "converted_leads": 0,
+          "total_value": 0,
+          "discarded_leads": 4,
+          "discard_reasons": {
+            "PAROU DE RESPONDER": 2,
+            "DESQUALIFICADO": 2
+          },
+          "conversion_rate": 0,
+          "average_ticket": 0,
+          "discard_rate": 50,
+          "discard_reasons_array": [
+            {
+              "reason": "PAROU DE RESPONDER",
+              "count": 2
+            },
+            {
+              "reason": "DESQUALIFICADO",
+              "count": 2
+            }
+          ]
+        },
+        {
+          "name": "Gustavo Paessens",
+          "total_leads": 7,
+          "converted_leads": 0,
+          "total_value": 0,
+          "discarded_leads": 3,
+          "discard_reasons": {
+            "PAROU DE RESPONDER": 2,
+            "BOLETO": 1
+          },
+          "conversion_rate": 0,
+          "average_ticket": 0,
+          "discard_rate": 42.86,
+          "discard_reasons_array": [
+            {
+              "reason": "PAROU DE RESPONDER",
+              "count": 2
+            },
+            {
+              "reason": "BOLETO",
+              "count": 1
+            }
+          ]
+        }
+      ],
+      "ad_sets": [
+        "6758183774121",
+        "6758188836321",
+        "6729776128321"
+      ],
+      "ads": [
+        "6635625411721_6758183774121_AD04 - 29/04 - poco x7 pro",
+        "6635625411721_6758188836321_AD06 - 29/04 - note 14 pro plus",
+        "6635625411721_6729776128321_AD04 - 10/04 - generalista apresentado — Cópia",
+        "6635625411721_6758188836321_AD05 - 29/04 - note 14 pro plus"
+      ],
+      "conversion_rate": 3.7,
+      "clicks_per_contact": 1.26,
+      "average_ticket": 2090,
+      "discard_rate": 25.93,
+      "average_conversion_time_ms": 54014663,
+      "average_conversion_time_hours": 15,
+      "average_conversion_time_days": 0.63,
+      "average_discard_time_ms": 90692163,
+      "average_discard_time_hours": 25.19,
+      "average_discard_time_days": 1.05,
+      "discard_reasons_array": [
+        {
+          "reason": "PAROU DE RESPONDER",
+          "count": 4
+        },
+        {
+          "reason": "DESQUALIFICADO",
+          "count": 2
+        },
+        {
+          "reason": "BOLETO",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "ad_sets": [
+    {
+      "adset_id": "6647997141521",
+      "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+      "campaign_id": "6488356802321",
+      "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+      "total_contacts": 20,
+      "total_clicks": 21,
+      "total_leads": 20,
+      "converted_leads": 0,
+      "discarded_leads": 5,
+      "total_value": 0,
+      "discard_reasons": {
+        "DESQUALIFICADO": 2,
+        "PAROU DE RESPONDER": 2,
+        "NÃO RESPONDEU PRIMEIRO CONTATO": 1
+      },
+      "ads": [
+        "6488356802321_6647997141521_AD17 - 05/03 - note 14 pro plus",
+        "6488356802321_6647997141521_AD16 - 05/03 - note 14 pro plus"
+      ],
+      "conversion_rate": 0,
+      "clicks_per_contact": 1.05,
+      "average_ticket": 0,
+      "discard_rate": 25,
+      "discard_reasons_array": [
+        {
+          "reason": "DESQUALIFICADO",
+          "count": 2
+        },
+        {
+          "reason": "PAROU DE RESPONDER",
+          "count": 2
+        },
+        {
+          "reason": "NÃO RESPONDEU PRIMEIRO CONTATO",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "adset_id": "6681969001721",
+      "adset_name": "CJ 51 - 17/02 [Poco X6 Pro] - Stories/Reels [vídeo víew 75%] homens - 25 a 45 [S/A]",
+      "campaign_id": "6488356802321",
+      "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+      "total_contacts": 16,
+      "total_clicks": 18,
+      "total_leads": 16,
+      "converted_leads": 0,
+      "discarded_leads": 6,
+      "total_value": 0,
+      "discard_reasons": {
+        "Não especificado": 2,
+        "DESQUALIFICADO": 4
+      },
+      "ads": [
+        "6488356802321_6681969001721_AD08 - 10/04 - generalista v2",
+        "6488356802321_6681969001721_AD10 - 29/04 - note 14",
+        "6488356802321_6681969001721_AD11 - 29/04 - note 14"
+      ],
+      "conversion_rate": 0,
+      "clicks_per_contact": 1.13,
+      "average_ticket": 0,
+      "discard_rate": 37.5,
+      "discard_reasons_array": [
+        {
+          "reason": "DESQUALIFICADO",
+          "count": 4
+        },
+        {
+          "reason": "Não especificado",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "adset_id": "6694169304921",
+      "adset_name": "CJ 53 - 05/03 [Note 14 Pro] - Stories/Reels [vídeo víew 75%] 22 a 50 [S/A]",
+      "campaign_id": "6488356802321",
+      "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+      "total_contacts": 14,
+      "total_clicks": 17,
+      "total_leads": 14,
+      "converted_leads": 0,
+      "discarded_leads": 7,
+      "total_value": 0,
+      "discard_reasons": {
+        "DESQUALIFICADO": 3,
+        "OBJEÇÃO DE PREÇO": 1,
+        "PAROU DE RESPONDER": 2,
+        "NÃO RESPONDEU PRIMEIRO CONTATO": 1
+      },
+      "ads": [
+        "6488356802321_6694169304921_AD03 - 05/03 - note 14 pro"
+      ],
+      "conversion_rate": 0,
+      "clicks_per_contact": 1.21,
+      "average_ticket": 0,
+      "discard_rate": 50,
+      "discard_reasons_array": [
+        {
+          "reason": "DESQUALIFICADO",
+          "count": 3
+        },
+        {
+          "reason": "PAROU DE RESPONDER",
+          "count": 2
+        },
+        {
+          "reason": "OBJEÇÃO DE PREÇO",
+          "count": 1
+        },
+        {
+          "reason": "NÃO RESPONDEU PRIMEIRO CONTATO",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "adset_id": "6758183774121",
+      "adset_name": "CJ 29 - 23/04 - poco x7 pro - stories/reels -  [IG] mix vídeo/envolvimento - 20 - 45 - S/A",
+      "campaign_id": "6635625411721",
+      "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+      "total_contacts": 10,
+      "total_clicks": 12,
+      "total_leads": 10,
+      "converted_leads": 0,
+      "discarded_leads": 2,
+      "total_value": 0,
+      "discard_reasons": {
+        "PAROU DE RESPONDER": 1,
+        "DESQUALIFICADO": 1
+      },
+      "ads": [
+        "6635625411721_6758183774121_AD04 - 29/04 - poco x7 pro"
+      ],
+      "conversion_rate": 0,
+      "clicks_per_contact": 1.2,
+      "average_ticket": 0,
+      "discard_rate": 20,
+      "discard_reasons_array": [
+        {
+          "reason": "PAROU DE RESPONDER",
+          "count": 1
+        },
+        {
+          "reason": "DESQUALIFICADO",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "adset_id": "6729776128321",
+      "adset_name": "CJ 24 - 10/04 - teste mc - stories/reels -  [IG] xiaomi + redmi - 19 - 45 - S/A",
+      "campaign_id": "6635625411721",
+      "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+      "total_contacts": 9,
+      "total_clicks": 13,
+      "total_leads": 9,
+      "converted_leads": 0,
+      "discarded_leads": 4,
+      "total_value": 0,
+      "discard_reasons": {
+        "PAROU DE RESPONDER": 2,
+        "BOLETO": 1,
+        "DESQUALIFICADO": 1
+      },
+      "ads": [
+        "6635625411721_6729776128321_AD04 - 10/04 - generalista apresentado — Cópia"
+      ],
+      "conversion_rate": 0,
+      "clicks_per_contact": 1.44,
+      "average_ticket": 0,
+      "discard_rate": 44.44,
+      "discard_reasons_array": [
+        {
+          "reason": "PAROU DE RESPONDER",
+          "count": 2
+        },
+        {
+          "reason": "BOLETO",
+          "count": 1
+        },
+        {
+          "reason": "DESQUALIFICADO",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "adset_id": "6758188836321",
+      "adset_name": "CJ 30 - 23/04 - note 14 pro plus - stories/reels -  [IG] mix vídeo/envolvimento - 22 - 45 - S/A",
+      "campaign_id": "6635625411721",
+      "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+      "total_contacts": 8,
+      "total_clicks": 9,
+      "total_leads": 8,
+      "converted_leads": 1,
+      "discarded_leads": 1,
+      "total_value": 2090,
+      "discard_reasons": {
+        "PAROU DE RESPONDER": 1
+      },
+      "ads": [
+        "6635625411721_6758188836321_AD06 - 29/04 - note 14 pro plus",
+        "6635625411721_6758188836321_AD05 - 29/04 - note 14 pro plus"
+      ],
+      "conversion_rate": 12.5,
+      "clicks_per_contact": 1.13,
+      "average_ticket": 2090,
+      "discard_rate": 12.5,
+      "discard_reasons_array": [
+        {
+          "reason": "PAROU DE RESPONDER",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "ads": [
+    {
+      "ad_name": "AD17 - 05/03 - note 14 pro plus",
+      "adset_id": "6647997141521",
+      "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+      "campaign_id": "6488356802321",
+      "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+      "total_contacts": 15,
+      "total_clicks": 16,
+      "total_leads": 15,
+      "converted_leads": 0,
+      "discarded_leads": 2,
+      "total_value": 0,
+      "discard_reasons": {
+        "DESQUALIFICADO": 1,
+        "PAROU DE RESPONDER": 1
+      },
+      "conversion_rate": 0,
+      "clicks_per_contact": 1.07,
+      "average_ticket": 0,
+      "discard_rate": 13.33,
+      "discard_reasons_array": [
+        {
+          "reason": "DESQUALIFICADO",
+          "count": 1
+        },
+        {
+          "reason": "PAROU DE RESPONDER",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ad_name": "AD03 - 05/03 - note 14 pro",
+      "adset_id": "6694169304921",
+      "adset_name": "CJ 53 - 05/03 [Note 14 Pro] - Stories/Reels [vídeo víew 75%] 22 a 50 [S/A]",
+      "campaign_id": "6488356802321",
+      "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+      "total_contacts": 14,
+      "total_clicks": 17,
+      "total_leads": 14,
+      "converted_leads": 0,
+      "discarded_leads": 7,
+      "total_value": 0,
+      "discard_reasons": {
+        "DESQUALIFICADO": 3,
+        "OBJEÇÃO DE PREÇO": 1,
+        "PAROU DE RESPONDER": 2,
+        "NÃO RESPONDEU PRIMEIRO CONTATO": 1
+      },
+      "conversion_rate": 0,
+      "clicks_per_contact": 1.21,
+      "average_ticket": 0,
+      "discard_rate": 50,
+      "discard_reasons_array": [
+        {
+          "reason": "DESQUALIFICADO",
+          "count": 3
+        },
+        {
+          "reason": "PAROU DE RESPONDER",
+          "count": 2
+        },
+        {
+          "reason": "OBJEÇÃO DE PREÇO",
+          "count": 1
+        },
+        {
+          "reason": "NÃO RESPONDEU PRIMEIRO CONTATO",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ad_name": "AD08 - 10/04 - generalista v2",
+      "adset_id": "6681969001721",
+      "adset_name": "CJ 51 - 17/02 [Poco X6 Pro] - Stories/Reels [vídeo víew 75%] homens - 25 a 45 [S/A]",
+      "campaign_id": "6488356802321",
+      "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+      "total_contacts": 13,
+      "total_clicks": 14,
+      "total_leads": 13,
+      "converted_leads": 0,
+      "discarded_leads": 5,
+      "total_value": 0,
+      "discard_reasons": {
+        "Não especificado": 1,
+        "DESQUALIFICADO": 4
+      },
+      "conversion_rate": 0,
+      "clicks_per_contact": 1.08,
+      "average_ticket": 0,
+      "discard_rate": 38.46,
+      "discard_reasons_array": [
+        {
+          "reason": "DESQUALIFICADO",
+          "count": 4
+        },
+        {
+          "reason": "Não especificado",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ad_name": "AD04 - 29/04 - poco x7 pro",
+      "adset_id": "6758183774121",
+      "adset_name": "CJ 29 - 23/04 - poco x7 pro - stories/reels -  [IG] mix vídeo/envolvimento - 20 - 45 - S/A",
+      "campaign_id": "6635625411721",
+      "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+      "total_contacts": 10,
+      "total_clicks": 12,
+      "total_leads": 10,
+      "converted_leads": 0,
+      "discarded_leads": 2,
+      "total_value": 0,
+      "discard_reasons": {
+        "PAROU DE RESPONDER": 1,
+        "DESQUALIFICADO": 1
+      },
+      "conversion_rate": 0,
+      "clicks_per_contact": 1.2,
+      "average_ticket": 0,
+      "discard_rate": 20,
+      "discard_reasons_array": [
+        {
+          "reason": "PAROU DE RESPONDER",
+          "count": 1
+        },
+        {
+          "reason": "DESQUALIFICADO",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ad_name": "AD04 - 10/04 - generalista apresentado — Cópia",
+      "adset_id": "6729776128321",
+      "adset_name": "CJ 24 - 10/04 - teste mc - stories/reels -  [IG] xiaomi + redmi - 19 - 45 - S/A",
+      "campaign_id": "6635625411721",
+      "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+      "total_contacts": 9,
+      "total_clicks": 13,
+      "total_leads": 9,
+      "converted_leads": 0,
+      "discarded_leads": 4,
+      "total_value": 0,
+      "discard_reasons": {
+        "PAROU DE RESPONDER": 2,
+        "BOLETO": 1,
+        "DESQUALIFICADO": 1
+      },
+      "conversion_rate": 0,
+      "clicks_per_contact": 1.44,
+      "average_ticket": 0,
+      "discard_rate": 44.44,
+      "discard_reasons_array": [
+        {
+          "reason": "PAROU DE RESPONDER",
+          "count": 2
+        },
+        {
+          "reason": "BOLETO",
+          "count": 1
+        },
+        {
+          "reason": "DESQUALIFICADO",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ad_name": "AD06 - 29/04 - note 14 pro plus",
+      "adset_id": "6758188836321",
+      "adset_name": "CJ 30 - 23/04 - note 14 pro plus - stories/reels -  [IG] mix vídeo/envolvimento - 22 - 45 - S/A",
+      "campaign_id": "6635625411721",
+      "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+      "total_contacts": 7,
+      "total_clicks": 7,
+      "total_leads": 7,
+      "converted_leads": 1,
+      "discarded_leads": 1,
+      "total_value": 2090,
+      "discard_reasons": {
+        "PAROU DE RESPONDER": 1
+      },
+      "conversion_rate": 14.29,
+      "clicks_per_contact": 1,
+      "average_ticket": 2090,
+      "discard_rate": 14.29,
+      "discard_reasons_array": [
+        {
+          "reason": "PAROU DE RESPONDER",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ad_name": "AD16 - 05/03 - note 14 pro plus",
+      "adset_id": "6647997141521",
+      "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+      "campaign_id": "6488356802321",
+      "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+      "total_contacts": 5,
+      "total_clicks": 5,
+      "total_leads": 5,
+      "converted_leads": 0,
+      "discarded_leads": 3,
+      "total_value": 0,
+      "discard_reasons": {
+        "NÃO RESPONDEU PRIMEIRO CONTATO": 1,
+        "DESQUALIFICADO": 1,
+        "PAROU DE RESPONDER": 1
+      },
+      "conversion_rate": 0,
+      "clicks_per_contact": 1,
+      "average_ticket": 0,
+      "discard_rate": 60,
+      "discard_reasons_array": [
+        {
+          "reason": "NÃO RESPONDEU PRIMEIRO CONTATO",
+          "count": 1
+        },
+        {
+          "reason": "DESQUALIFICADO",
+          "count": 1
+        },
+        {
+          "reason": "PAROU DE RESPONDER",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ad_name": "AD10 - 29/04 - note 14",
+      "adset_id": "6681969001721",
+      "adset_name": "CJ 51 - 17/02 [Poco X6 Pro] - Stories/Reels [vídeo víew 75%] homens - 25 a 45 [S/A]",
+      "campaign_id": "6488356802321",
+      "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+      "total_contacts": 2,
+      "total_clicks": 3,
+      "total_leads": 2,
+      "converted_leads": 0,
+      "discarded_leads": 0,
+      "total_value": 0,
+      "discard_reasons": {
+
+      },
+      "conversion_rate": 0,
+      "clicks_per_contact": 1.5,
+      "average_ticket": 0,
+      "discard_rate": 0,
+      "discard_reasons_array": []
+    },
+    {
+      "ad_name": "AD11 - 29/04 - note 14",
+      "adset_id": "6681969001721",
+      "adset_name": "CJ 51 - 17/02 [Poco X6 Pro] - Stories/Reels [vídeo víew 75%] homens - 25 a 45 [S/A]",
+      "campaign_id": "6488356802321",
+      "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+      "total_contacts": 1,
+      "total_clicks": 1,
+      "total_leads": 1,
+      "converted_leads": 0,
+      "discarded_leads": 1,
+      "total_value": 0,
+      "discard_reasons": {
+        "Não especificado": 1
+      },
+      "conversion_rate": 0,
+      "clicks_per_contact": 1,
+      "average_ticket": 0,
+      "discard_rate": 100,
+      "discard_reasons_array": [
+        {
+          "reason": "Não especificado",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "ad_name": "AD05 - 29/04 - note 14 pro plus",
+      "adset_id": "6758188836321",
+      "adset_name": "CJ 30 - 23/04 - note 14 pro plus - stories/reels -  [IG] mix vídeo/envolvimento - 22 - 45 - S/A",
+      "campaign_id": "6635625411721",
+      "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+      "total_contacts": 1,
+      "total_clicks": 2,
+      "total_leads": 1,
+      "converted_leads": 0,
+      "discarded_leads": 0,
+      "total_value": 0,
+      "discard_reasons": {
+
+      },
+      "conversion_rate": 0,
+      "clicks_per_contact": 2,
+      "average_ticket": 0,
+      "discard_rate": 0,
+      "discard_reasons_array": []
+    }
+  ],
+  "total_campaigns": 2,
+  "total_ad_sets": 6,
+  "total_ads": 10,
+  "total_contacts": 77,
+  "total_clicks": 90,
+  "discard_metrics": {
+    "total_discarded_leads": 25,
+    "discard_reasons": [
+      {
+        "reason": "DESQUALIFICADO",
+        "count": 11
+      },
+      {
+        "reason": "PAROU DE RESPONDER",
+        "count": 8
+      },
+      {
+        "reason": "Não especificado",
+        "count": 2
+      },
+      {
+        "reason": "NÃO RESPONDEU PRIMEIRO CONTATO",
+        "count": 2
+      },
+      {
+        "reason": "BOLETO",
+        "count": 1
+      },
+      {
+        "reason": "OBJEÇÃO DE PREÇO",
+        "count": 1
+      }
+    ],
+    "average_discard_time_days": 1.02,
+    "average_discard_time_hours": 24.36
+  },
+  "processed_at": "2025-05-05T05:19:46.477Z"
+}

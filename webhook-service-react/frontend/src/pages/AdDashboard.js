@@ -36,7 +36,8 @@ const AdDashboard = () => {
     const fetchMetricsData = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`${API_URL}/dashboard/ad-metrics`);
+        // Usando a nova rota campaign-analytics
+        const response = await fetch(`${API_URL}/dashboard/campaign-analytics`);
         
         if (!response.ok) {
           throw new Error(`Erro ao buscar dados: ${response.status}`);
@@ -70,15 +71,26 @@ const AdDashboard = () => {
     }
   };
 
-  // Função auxiliar para formatar segundos em HH:MM:SS
-  const formatTimeInSeconds = (seconds) => {
-    if (!seconds && seconds !== 0) return 'N/A';
+  // Função auxiliar para formatar milissegundos em formato legível
+  const formatTimeInMs = (ms) => {
+    if (!ms && ms !== 0) return 'N/A';
     
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const secs = Math.floor(seconds % 60);
+    const days = Math.floor(ms / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
     
-    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    if (days > 0) {
+      return `${days}d ${hours}h ${minutes}m`;
+    } else {
+      return `${hours}h ${minutes}m`;
+    }
+  };
+
+  // Função para determinar a classe de estilo para taxas de descarte
+  const getDiscardRateClass = (rate) => {
+    if (rate >= 30) return 'discard-rate-high';
+    if (rate >= 15) return 'discard-rate-medium';
+    return 'discard-rate-low';
   };
 
   // Se estiver carregando, mostrar indicador
@@ -97,129 +109,157 @@ const AdDashboard = () => {
   }
 
   // Extrair dados da resposta da API
-  const { campaigns, adSets, ads, top_users } = metricsData;
+  const { campaigns, ad_sets, ads, total_contacts, total_clicks, processed_at } = metricsData;
   
   // Calcular métricas gerais
   const overview = {
+    totalContacts: total_contacts || 0,
+    totalClicks: total_clicks || 0,
     totalLeads: campaigns.reduce((sum, campaign) => sum + (campaign.total_leads || 0), 0),
     totalSales: campaigns.reduce((sum, campaign) => sum + (campaign.converted_leads || 0), 0),
-    lostLeads: campaigns.reduce((sum, campaign) => 
-      sum + Object.values(campaign.lost_reasons || {}).reduce((a, b) => a + b, 0), 0),
+    totalDiscards: campaigns.reduce((sum, campaign) => sum + (campaign.discarded_leads || 0), 0),
+    totalValue: campaigns.reduce((sum, campaign) => sum + (campaign.total_value || 0), 0),
+    clicksPerContact: (total_clicks / total_contacts).toFixed(2) || 0,
     conversionRate: campaigns.length > 0 ? 
       parseFloat((campaigns.reduce((sum, campaign) => sum + (campaign.converted_leads || 0), 0) / 
        campaigns.reduce((sum, campaign) => sum + (campaign.total_leads || 0), 0) * 100).toFixed(2)) : 0,
-    avgConversionTime: formatTimeInSeconds(campaigns.find(c => c.average_conversion_time)?.average_conversion_time),
-    avgDiscardTime: formatTimeInSeconds(campaigns.find(c => c.average_discard_time)?.average_discard_time)
+    discardRate: campaigns.length > 0 ? 
+      parseFloat((campaigns.reduce((sum, campaign) => sum + (campaign.discarded_leads || 0), 0) / 
+       campaigns.reduce((sum, campaign) => sum + (campaign.total_leads || 0), 0) * 100).toFixed(2)) : 0,
+    avgConversionTime: formatTimeInMs(campaigns.find(c => c.average_conversion_time_ms)?.average_conversion_time_ms || 0),
+    avgDiscardTime: formatTimeInMs(campaigns.find(c => c.average_discard_time_ms)?.average_discard_time_ms || 0),
+    avgTicket: campaigns.reduce((sum, campaign) => sum + (campaign.total_value || 0), 0) / 
+      campaigns.reduce((sum, campaign) => sum + (campaign.converted_leads || 0), 0) || 0
   };
   
   // Preparar dados para gráficos e tabelas
   const adsForTable = ads.map(ad => {
-    // Para cada anúncio, procurar o conjunto de anúncios correspondente pelo nome do anúncio
-    // Assumir que ads têm relação 1:1 com adSets (cada anúncio pertence a um conjunto específico)
-    const matchingAdSet = adSets.find(adset => 
-      // Verificar se há anúncios relacionados a este adSet com o mesmo nome
-      // Para dados reais, deveríamos ter uma referência direta
-      ad.ad_name.includes(adset.adset_name.substring(0, 5)) || 
-      adset.adset_name.includes(ad.ad_name.substring(0, 5))
-    );
-    
-    // Mesma lógica para campanhas
-    const matchingCampaign = campaigns.find(campaign => 
-      // Na falta de referência direta, usamos a lógica de que ads e campaign têm alguma relação de nome
-      // Para dados reais, deveríamos ter uma referência direta
-      campaign.campaign_id
-    );
-    
-    // Com base no exemplo, sabemos estas associações específicas
-    let adsetName = 'N/A';
-    let campaignName = 'N/A';
-    
-    // AD10 - 29/04 - note 14 -> CJ 51 - 17/02 [Poco X6 Pro]
-    if (ad.ad_name === "AD10 - 29/04 - note 14") {
-      adsetName = adSets.find(as => as.adset_id === "6681969001721")?.adset_name || 'N/A';
-    }
-    // AD01 - 05/03 - note 14 pro -> CJ 53 - 05/03 [Note 14 Pro]
-    else if (ad.ad_name === "AD01 - 05/03 - note 14 pro") {
-      adsetName = adSets.find(as => as.adset_id === "6694169304921")?.adset_name || 'N/A';
-    }
-    
-    // Todos os anúncios pertencem a UP - MENSAGEM - XIAOMI - 18/10/2023
-    campaignName = campaigns[0]?.campaign_name || 'N/A';
-    
     return {
       ad_name: ad.ad_name,
       leads: ad.total_leads,
       sales: ad.converted_leads,
+      discards: ad.discarded_leads || 0,
       conversion: ad.conversion_rate,
-      adset_name: adsetName,
-      campaign_name: campaignName,
-      farthest_stage: ad.farthest_stage_reached
+      discard_rate: ad.discard_rate || 0,
+      clicks: ad.total_clicks,
+      clicks_per_contact: ad.clicks_per_contact,
+      adset_name: ad.adset_name,
+      campaign_name: ad.campaign_name,
+      average_ticket: ad.average_ticket
     };
   });
   
-  const adsetsForTable = adSets.map(adset => {
-    // Encontrar campanhas relacionadas a este adset - no nosso caso, todos os adsets
-    // pertencem à mesma campanha
-    const campaignNames = [campaigns[0]?.campaign_name || 'N/A'];
-    
+  const adsetsForTable = ad_sets.map(adset => {
     return {
       adset_name: adset.adset_name,
+      adset_id: adset.adset_id,
       leads: adset.total_leads,
+      clicks: adset.total_clicks,
       sales: adset.converted_leads,
+      discards: adset.discarded_leads || 0,
       conversion: adset.conversion_rate,
-      campaigns: campaignNames,
-      farthest_stage: adset.farthest_stage_reached
+      discard_rate: adset.discard_rate || 0,
+      clicks_per_contact: adset.clicks_per_contact,
+      campaign_name: adset.campaign_name,
+      average_ticket: adset.average_ticket
     };
   });
   
   const campaignsForTable = campaigns.map(campaign => {
-    // Como sabemos que todos os anúncios pertencem à campanha principal
-    // (já que só temos uma campanha), podemos simplesmente contar o número total de anúncios
-    const activeAds = ads.length;
+    // Contar número de ads associados a esta campanha
+    const campaignAds = ads.filter(ad => ad.campaign_id === campaign.campaign_id).length;
     
     return {
       campaign_name: campaign.campaign_name,
+      campaign_id: campaign.campaign_id,
       leads: campaign.total_leads,
+      clicks: campaign.total_clicks,
       sales: campaign.converted_leads,
+      discards: campaign.discarded_leads || 0,
       conversion: campaign.conversion_rate,
-      active_ads: activeAds,
-      farthest_stage: campaign.farthest_stage_reached
+      discard_rate: campaign.discard_rate || 0,
+      clicks_per_contact: campaign.clicks_per_contact,
+      active_ads: campaignAds,
+      average_ticket: campaign.average_ticket,
+      total_value: campaign.total_value
     };
   });
   
-  // Dados para gráfico de motivos de perda - consolidando de todas as campanhas
-  const consolidatedLostReasons = {};
+  // Dados para gráfico de distribuição de status - usando status_distribution
+  const statusDistributionData = [];
   campaigns.forEach(campaign => {
-    if (campaign.lost_reasons) {
-      Object.entries(campaign.lost_reasons).forEach(([reason, count]) => {
-        consolidatedLostReasons[reason] = (consolidatedLostReasons[reason] || 0) + count;
+    if (campaign.status_distribution) {
+      Object.entries(campaign.status_distribution).forEach(([status, count]) => {
+        statusDistributionData.push({
+          status,
+          count,
+          campaign: campaign.campaign_name
+        });
       });
     }
   });
   
-  const lossReasonsData = Object.entries(consolidatedLostReasons).map(([reason, count]) => ({
-    reason,
-    count
-  }));
-  
-  // Dados para gráfico de distribuição de estágios - consolidando de todas as campanhas
-  const consolidatedStageDistribution = {};
+  // Preparar dados de usuários responsáveis
+  const usersData = [];
   campaigns.forEach(campaign => {
-    if (campaign.stage_reached_distribution) {
-      Object.entries(campaign.stage_reached_distribution).forEach(([stage, count]) => {
-        consolidatedStageDistribution[stage] = (consolidatedStageDistribution[stage] || 0) + count;
+    if (campaign.responsible_users) {
+      campaign.responsible_users.forEach(user => {
+        // Verificar se já temos este usuário
+        const existingUser = usersData.find(u => u.name === user.name);
+        if (existingUser) {
+          // Atualizar contagens existentes
+          existingUser.total_leads += user.total_leads;
+          existingUser.converted_leads += user.converted_leads;
+          existingUser.total_value += user.total_value;
+          // Adicionar dados de descarte se disponíveis
+          if (user.discarded_leads !== undefined) {
+            existingUser.discarded_leads = (existingUser.discarded_leads || 0) + user.discarded_leads;
+          }
+        } else {
+          // Adicionar novo usuário
+          usersData.push({
+            name: user.name,
+            total_leads: user.total_leads,
+            converted_leads: user.converted_leads,
+            discarded_leads: user.discarded_leads || 0,
+            conversion_rate: 0, // Será recalculado
+            discard_rate: 0, // Será recalculado
+            total_value: user.total_value,
+            average_ticket: 0 // Será recalculado
+          });
+        }
       });
     }
   });
   
-  const stageDistributionData = Object.entries(consolidatedStageDistribution).map(([stage, count]) => ({
-    stage,
-    count
-  }));
+  // Recalcular métricas para usuários após agregação
+  usersData.forEach(user => {
+    // Recalcular taxa de conversão
+    user.conversion_rate = user.total_leads > 0 
+      ? parseFloat((user.converted_leads / user.total_leads * 100).toFixed(2))
+      : 0;
+      
+    // Recalcular taxa de descarte
+    user.discard_rate = user.total_leads > 0 
+      ? parseFloat((user.discarded_leads / user.total_leads * 100).toFixed(2))
+      : 0;
+      
+    // Recalcular ticket médio
+    user.average_ticket = user.converted_leads > 0
+      ? parseFloat((user.total_value / user.converted_leads).toFixed(2))
+      : 0;
+  });
+  
+  // Classificar usuários por número de leads
+  usersData.sort((a, b) => b.total_leads - a.total_leads);
+
+  // Preparar dados para gráfico de motivos de descarte agregados
+  const discardReasonsData = metricsData.discard_metrics?.discard_reasons || [];
 
   return (
     <div className="ad-dashboard">
       <h1>Dashboard de Tráfego</h1>
+      <p className="last-updated">Última atualização: {new Date(processed_at).toLocaleString()}</p>
 
       {/* Filtros Globais */}
       <div className="filters-section">
@@ -267,7 +307,7 @@ const AdDashboard = () => {
           <label>Conjunto de Anúncios:</label>
           <select value={selectedAdSet} onChange={(e) => setSelectedAdSet(e.target.value)}>
             <option value="all">Todos</option>
-            {adSets.map(adset => (
+            {ad_sets.map(adset => (
               <option key={adset.adset_id} value={adset.adset_id}>
                 {adset.adset_name}
               </option>
@@ -280,7 +320,7 @@ const AdDashboard = () => {
           <select value={selectedAd} onChange={(e) => setSelectedAd(e.target.value)}>
             <option value="all">Todos</option>
             {ads.map(ad => (
-              <option key={ad.ad_name} value={ad.ad_name}>
+              <option key={`${ad.campaign_id}_${ad.adset_id}_${ad.ad_name}`} value={ad.ad_name}>
                 {ad.ad_name}
               </option>
             ))}
@@ -303,20 +343,44 @@ const AdDashboard = () => {
         <h2>Visão Geral</h2>
         <div className="metrics-grid">
           <div className="metric-card">
-            <h3>Total de Leads de Campanha</h3>
+            <h3>Total de Contatos</h3>
+            <p>{overview.totalContacts}</p>
+          </div>
+          <div className="metric-card">
+            <h3>Total de Cliques</h3>
+            <p>{overview.totalClicks}</p>
+          </div>
+          <div className="metric-card">
+            <h3>Cliques por Contato</h3>
+            <p>{overview.clicksPerContact}</p>
+          </div>
+          <div className="metric-card">
+            <h3>Total de Leads</h3>
             <p>{overview.totalLeads}</p>
           </div>
           <div className="metric-card">
-            <h3>Total de Leads Convertidos</h3>
+            <h3>Leads Convertidos</h3>
             <p>{overview.totalSales}</p>
           </div>
-          <div className="metric-card">
-            <h3>Leads Perdidos</h3>
-            <p>{overview.lostLeads}</p>
-          </div>
-          <div className="metric-card">
+          <div className="metric-card highlight-positive">
             <h3>Taxa de Conversão</h3>
             <p>{overview.conversionRate}%</p>
+          </div>
+          <div className="metric-card highlight-negative">
+            <h3>Leads Descartados</h3>
+            <p>{overview.totalDiscards}</p>
+          </div>
+          <div className="metric-card highlight-negative">
+            <h3>Taxa de Descarte</h3>
+            <p>{overview.discardRate}%</p>
+          </div>
+          <div className="metric-card">
+            <h3>Valor Total</h3>
+            <p>R$ {overview.totalValue.toLocaleString()}</p>
+          </div>
+          <div className="metric-card">
+            <h3>Ticket Médio</h3>
+            <p>R$ {overview.avgTicket.toLocaleString()}</p>
           </div>
           <div className="metric-card">
             <h3>Tempo Médio até Conversão</h3>
@@ -337,22 +401,30 @@ const AdDashboard = () => {
             <thead>
               <tr>
                 <th>Anúncio</th>
+                <th>Cliques</th>
+                <th>Cliques/Contato</th>
                 <th>Leads</th>
                 <th>Convertidos</th>
                 <th>Conversão (%)</th>
-                <th>Estágio mais Avançado</th>
+                <th>Descartados</th>
+                <th>Descarte (%)</th>
+                <th>Ticket Médio</th>
                 <th>Conjunto</th>
                 <th>Campanha</th>
               </tr>
             </thead>
             <tbody>
               {adsForTable.map((ad) => (
-                <tr key={ad.ad_name}>
+                <tr key={`${ad.campaign_name}_${ad.adset_name}_${ad.ad_name}`}>
                   <td>{ad.ad_name}</td>
+                  <td>{ad.clicks}</td>
+                  <td>{ad.clicks_per_contact}</td>
                   <td>{ad.leads}</td>
                   <td>{ad.sales}</td>
                   <td>{ad.conversion}%</td>
-                  <td>{ad.farthest_stage}</td>
+                  <td>{ad.discards}</td>
+                  <td className={getDiscardRateClass(ad.discard_rate)}>{ad.discard_rate}%</td>
+                  <td>R$ {ad.average_ticket.toLocaleString()}</td>
                   <td>{ad.adset_name}</td>
                   <td>{ad.campaign_name}</td>
                 </tr>
@@ -409,22 +481,30 @@ const AdDashboard = () => {
             <thead>
               <tr>
                 <th>Conjunto</th>
+                <th>Cliques</th>
+                <th>Cliques/Contato</th>
                 <th>Leads</th>
                 <th>Convertidos</th>
                 <th>Conversão (%)</th>
-                <th>Estágio mais Avançado</th>
-                <th>Campanhas</th>
+                <th>Descartados</th>
+                <th>Descarte (%)</th>
+                <th>Ticket Médio</th>
+                <th>Campanha</th>
               </tr>
             </thead>
             <tbody>
               {adsetsForTable.map((adset) => (
-                <tr key={adset.adset_name}>
+                <tr key={adset.adset_id}>
                   <td>{adset.adset_name}</td>
+                  <td>{adset.clicks}</td>
+                  <td>{adset.clicks_per_contact}</td>
                   <td>{adset.leads}</td>
                   <td>{adset.sales}</td>
                   <td>{adset.conversion}%</td>
-                  <td>{adset.farthest_stage}</td>
-                  <td>{adset.campaigns.join(', ')}</td>
+                  <td>{adset.discards}</td>
+                  <td className={getDiscardRateClass(adset.discard_rate)}>{adset.discard_rate}%</td>
+                  <td>R$ {adset.average_ticket.toLocaleString()}</td>
+                  <td>{adset.campaign_name}</td>
                 </tr>
               ))}
             </tbody>
@@ -440,21 +520,31 @@ const AdDashboard = () => {
             <thead>
               <tr>
                 <th>Campanha</th>
+                <th>Cliques</th>
+                <th>Cliques/Contato</th>
                 <th>Leads</th>
                 <th>Convertidos</th>
                 <th>Conversão (%)</th>
-                <th>Estágio mais Avançado</th>
+                <th>Descartados</th>
+                <th>Descarte (%)</th>
+                <th>Valor Total</th>
+                <th>Ticket Médio</th>
                 <th>Anúncios Ativos</th>
               </tr>
             </thead>
             <tbody>
               {campaignsForTable.map((campaign) => (
-                <tr key={campaign.campaign_name}>
+                <tr key={campaign.campaign_id}>
                   <td>{campaign.campaign_name}</td>
+                  <td>{campaign.clicks}</td>
+                  <td>{campaign.clicks_per_contact}</td>
                   <td>{campaign.leads}</td>
                   <td>{campaign.sales}</td>
                   <td>{campaign.conversion}%</td>
-                  <td>{campaign.farthest_stage}</td>
+                  <td>{campaign.discards}</td>
+                  <td className={getDiscardRateClass(campaign.discard_rate)}>{campaign.discard_rate}%</td>
+                  <td>R$ {campaign.total_value.toLocaleString()}</td>
+                  <td>R$ {campaign.average_ticket.toLocaleString()}</td>
                   <td>{campaign.active_ads}</td>
                 </tr>
               ))}
@@ -463,16 +553,16 @@ const AdDashboard = () => {
         </div>
       </div>
 
-      {/* Seção 5 - Distribuição de Estágios */}
-      <div className="lead-stages-section">
-        <h2>Distribuição de Estágios</h2>
+      {/* Seção 5 - Distribuição de Status */}
+      <div className="lead-status-section">
+        <h2>Distribuição de Status</h2>
         <div className="charts-container">
           <div className="chart">
-            <h3>Estágios Alcançados pelos Leads</h3>
+            <h3>Status dos Leads</h3>
             <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={stageDistributionData}>
+              <BarChart data={statusDistributionData}>
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="stage" />
+                <XAxis dataKey="status" />
                 <YAxis />
                 <Tooltip />
                 <Legend />
@@ -483,36 +573,7 @@ const AdDashboard = () => {
         </div>
       </div>
 
-      {/* Seção 6 - Motivos de Perda */}
-      <div className="loss-reasons-section">
-        <h2>Motivos de Perda</h2>
-        <div className="charts-container">
-          <div className="chart">
-            <h3>Distribuição de Motivos de Perda</h3>
-            <ResponsiveContainer width="100%" height={300}>
-              <PieChart>
-                <Pie
-                  data={lossReasonsData}
-                  dataKey="count"
-                  nameKey="reason"
-                  cx="50%"
-                  cy="50%"
-                  outerRadius={100}
-                  label
-                >
-                  {lossReasonsData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                  ))}
-                </Pie>
-                <Tooltip />
-                <Legend />
-              </PieChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-      </div>
-
-      {/* Seção 7 - Desempenho por Atendente */}
+      {/* Seção 6 - Desempenho por Atendente */}
       <div className="users-performance-section">
         <h2>Desempenho por Atendente</h2>
         <div className="table-container">
@@ -523,17 +584,21 @@ const AdDashboard = () => {
                 <th>Leads Atendidos</th>
                 <th>Leads Convertidos</th>
                 <th>Taxa de Conversão</th>
+                <th>Leads Descartados</th>
+                <th>Taxa de Descarte</th>
                 <th>Valor Total</th>
                 <th>Ticket Médio</th>
               </tr>
             </thead>
             <tbody>
-              {top_users.map((user) => (
+              {usersData.map((user) => (
                 <tr key={user.name}>
                   <td>{user.name}</td>
-                  <td>{user.attended}</td>
-                  <td>{user.converted}</td>
+                  <td>{user.total_leads}</td>
+                  <td>{user.converted_leads}</td>
                   <td>{user.conversion_rate}%</td>
+                  <td>{user.discarded_leads}</td>
+                  <td className={getDiscardRateClass(user.discard_rate)}>{user.discard_rate}%</td>
                   <td>R$ {user.total_value.toLocaleString()}</td>
                   <td>R$ {user.average_ticket.toLocaleString()}</td>
                 </tr>
@@ -546,7 +611,7 @@ const AdDashboard = () => {
           <div className="chart">
             <h3>Taxa de Conversão por Atendente</h3>
             <ResponsiveContainer width="100%" height={300}>
-              <BarChart data={top_users}>
+              <BarChart data={usersData}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
                 <YAxis />
@@ -556,6 +621,91 @@ const AdDashboard = () => {
               </BarChart>
             </ResponsiveContainer>
           </div>
+          
+          <div className="chart">
+            <h3>Taxa de Descarte por Atendente</h3>
+            <ResponsiveContainer width="100%" height={300}>
+              <BarChart data={usersData}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="discard_rate" fill="#FF8042" name="Taxa de Descarte (%)" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+      </div>
+      
+      {/* Nova Seção - Análise de Descartes */}
+      <div className="discard-analysis-section">
+        <h2>Análise de Descartes</h2>
+        
+        <div className="charts-container">
+          <div className="chart">
+            <h3>Principais Motivos de Descarte</h3>
+            <ResponsiveContainer width="100%" height={300}>
+              <BarChart data={discardReasonsData}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="reason" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="count" fill="#FF8042" name="Quantidade" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+          
+          <div className="chart">
+            <h3>Distribuição de Motivos de Descarte</h3>
+            <ResponsiveContainer width="100%" height={300}>
+              <PieChart className="discard-pie">
+                <Pie
+                  data={discardReasonsData}
+                  dataKey="count"
+                  nameKey="reason"
+                  cx="50%"
+                  cy="50%"
+                  outerRadius={100}
+                  label
+                >
+                  {discardReasonsData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                  ))}
+                </Pie>
+                <Tooltip />
+                <Legend />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+        
+        {/* Tabela de Motivos de Descarte */}
+        <div className="table-container">
+          <h3>Detalhamento de Motivos de Descarte</h3>
+          <table className="discard-reasons-table">
+            <thead>
+              <tr>
+                <th>Motivo</th>
+                <th>Quantidade</th>
+                <th>Percentual (%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {discardReasonsData.map((reason) => (
+                <tr key={reason.reason}>
+                  <td>{reason.reason}</td>
+                  <td>{reason.count}</td>
+                  <td>
+                    {parseFloat(
+                      (reason.count / discardReasonsData.reduce((sum, r) => sum + r.count, 0) * 100).toFixed(2)
+                    )}%
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>

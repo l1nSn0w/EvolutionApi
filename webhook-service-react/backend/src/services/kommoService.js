@@ -420,6 +420,128 @@ async function getAccountInfo(accessToken, referer = null) {
   }
 }
 
+// Função para criar um rastreamento manual de estágio do lead no Kommo
+async function createLeadStageTracking(leadId, phone) {
+  try {
+    console.log(`🔍 Criando rastreamento de estágio para o lead ${leadId} com telefone ${phone}`);
+    
+    // Buscar o token mais recente do Kommo
+    const token = await KommoToken.findOne({
+      order: [['created_at', 'DESC']]
+    });
+    
+    if (!token) {
+      return { 
+        status: 'error', 
+        message: 'Nenhum token de acesso para o Kommo configurado' 
+      };
+    }
+    
+    // Construir o domínio
+    let domain = token.domain;
+    if (!domain.startsWith('http')) {
+      if (!domain.endsWith('.kommo.com')) {
+        domain = `${domain}.kommo.com`;
+      }
+    }
+    
+    // Se não temos o ID do lead, mas temos o telefone, buscamos o lead pelo telefone
+    if (!leadId && phone) {
+      console.log(`🔍 Buscando lead no Kommo para o telefone: ${phone}`);
+      const result = await searchLeadByPhone(phone, token.access_token, domain);
+      
+      if (result.status !== 'success' || !result.leads || result.leads.length === 0) {
+        return { 
+          status: 'error', 
+          message: `Nenhum lead encontrado no Kommo para o telefone ${phone}` 
+        };
+      }
+      
+      // Lead encontrado, usar o primeiro da lista
+      const lead = result.leads[0];
+      leadId = lead.id;
+    }
+    
+    // Obter detalhes do lead
+    const leadDetails = await getLeadDetails(domain, token.access_token, leadId);
+    
+    if (!leadDetails) {
+      return { 
+        status: 'error', 
+        message: `Não foi possível obter detalhes do lead ${leadId}` 
+      };
+    }
+    
+    // Obter informações do pipeline e status
+    const pipelineDetails = await getPipelineDetails(domain, token.access_token);
+    
+    if (!pipelineDetails) {
+      return { 
+        status: 'error', 
+        message: 'Não foi possível obter detalhes dos pipelines' 
+      };
+    }
+    
+    // Extrair dados do lead
+    const pipelineId = leadDetails.pipeline_id;
+    const statusId = leadDetails.status_id;
+    const currentPipeline = pipelineDetails[pipelineId];
+    const currentStatus = currentPipeline?.stages?.[statusId];
+    
+    // Extrair nome do responsável, se disponível
+    let responsibleUserName = null;
+    if (leadDetails.responsible_user_id) {
+      const userDetails = await getUserDetails(domain, token.access_token, leadDetails.responsible_user_id);
+      if (userDetails) {
+        responsibleUserName = `${userDetails.name} ${userDetails.surname}`;
+      }
+    }
+    
+    // Buscar campo personalizado "Situação do lead"
+    let leadSituation = null;
+    if (leadDetails.custom_fields_values) {
+      for (const field of leadDetails.custom_fields_values) {
+        if (['Situação do lead', 'Situacao do lead', 'Situação', 'Situacao'].includes(field.field_name)) {
+          if (field.values && field.values.length > 0) {
+            leadSituation = field.values[0].value;
+            break;
+          }
+        }
+      }
+    }
+    
+    // Criar o registro de rastreamento
+    const LeadTracking = require('../models/LeadTracking');
+    const leadTracking = await LeadTracking.create({
+      lead_id: leadId.toString(),
+      phone: phone,
+      event_type: 'lead_status_changed',
+      source_id: leadDetails.source_id || null,
+      current_pipeline_id: pipelineId?.toString() || null,
+      current_pipeline_name: currentPipeline?.name || null,
+      current_status_id: statusId?.toString() || null,
+      current_status_name: currentStatus?.name || null,
+      lead_situation: leadSituation,
+      price: leadDetails.price || null,
+      responsible_user_id: leadDetails.responsible_user_id?.toString() || null,
+      responsible_user_name: responsibleUserName || null,
+      is_manually_created: true
+    });
+    
+    return {
+      status: 'success',
+      message: 'Rastreamento de estágio criado com sucesso',
+      tracking: leadTracking
+    };
+  } catch (error) {
+    console.error('❌ Erro ao criar rastreamento de estágio:', error.message);
+    return {
+      status: 'error',
+      message: `Erro ao criar rastreamento de estágio: ${error.message}`
+    };
+  }
+}
+
 // Exportar todas as funções
 module.exports = {
   searchLeadByPhone,
@@ -432,5 +554,6 @@ module.exports = {
   exchangeCodeForTokens,
   checkAuthStatus,
   revokeToken,
-  getAccountInfo
+  getAccountInfo,
+  createLeadStageTracking
 }; 

@@ -1,0 +1,6034 @@
+{
+  "554188432538": {
+    "telefone": "554188432538",
+    "nome": "Raimundo Paulo Marques",
+    "mensagens": [1],
+    "rastreamentos": [1, 2, 3, 7, 148],
+    "leads": [
+      "23756843"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6758183774121",
+        "adset_name": "CJ 29 - 23/04 - poco x7 pro - stories/reels -  [IG] mix vídeo/envolvimento - 20 - 45 - S/A",
+        "ad_name": "AD04 - 29/04 - poco x7 pro",
+        "message_id": 1,
+        "date_time": "2025-05-01T11:13:54.893Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 148,
+        "lead_id": "23756843",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T11:14:04.609Z",
+        "current_status_name": "3° ATENDIMENTO",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 3,
+        "lead_id": "23756843",
+        "message_id": 1,
+        "event_type": "message_received",
+        "event_time": "2025-05-01T11:13:54.893Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 7,
+        "lead_id": "23756843",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T09:16:17.403Z",
+        "current_status_name": "1° ATENDIMENTO(MANHÃ)",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 2,
+        "lead_id": "23756843",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T08:13:56.231Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 1,
+        "lead_id": "23756843",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T08:13:56.119Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-01T08:13:56.119Z",
+    "ultimo_contato": "2025-05-03T11:14:04.609Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "3° ATENDIMENTO",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554195413841": {
+    "telefone": "554195413841",
+    "nome": "Alan Kuzma",
+    "mensagens": [2],
+    "rastreamentos": [4, 5, 29, 30],
+    "leads": [
+      "23756879"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6694169304921",
+        "adset_name": "CJ 53 - 05/03 [Note 14 Pro] - Stories/Reels [vídeo víew 75%] 22 a 50 [S/A]",
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 2,
+        "date_time": "2025-05-01T11:18:08.418Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 30,
+        "lead_id": "23756879",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T12:58:21.221Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": "DESQUALIFICADO",
+        "price": null
+      },
+      {
+        "id": 29,
+        "lead_id": "23756879",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T12:44:25.736Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 4,
+        "lead_id": "23756879",
+        "message_id": 2,
+        "event_type": "message_received",
+        "event_time": "2025-05-01T11:18:08.418Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 5,
+        "lead_id": "23756879",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T08:52:12.327Z",
+        "current_status_name": "1° ATENDIMENTO(MANHÃ)",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-01T08:52:12.327Z",
+    "ultimo_contato": "2025-05-01T12:58:21.221Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Matheus",
+    "descartes": [
+      {
+        "lead_id": "23756879",
+        "event_time": "2025-05-01T12:58:21.221Z",
+        "motivo": "DESQUALIFICADO",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "DESQUALIFICADO",
+    "total_descartes": 1
+  },
+  "554134258112": {
+    "telefone": "554134258112",
+    "nome": "Instituto Nacional do Trabalhador",
+    "mensagens": [3],
+    "rastreamentos": [6, 10, 147],
+    "leads": [
+      "23757401"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6647997141521",
+        "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+        "ad_name": "AD17 - 05/03 - note 14 pro plus",
+        "message_id": 3,
+        "date_time": "2025-05-01T12:15:37.808Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 147,
+        "lead_id": "23757401",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T11:14:04.121Z",
+        "current_status_name": "3° ATENDIMENTO",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 6,
+        "lead_id": "23757401",
+        "message_id": 3,
+        "event_type": "message_received",
+        "event_time": "2025-05-01T12:15:37.808Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 10,
+        "lead_id": "23757401",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T09:23:24.986Z",
+        "current_status_name": "1° ATENDIMENTO(MANHÃ)",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-01T09:23:24.986Z",
+    "ultimo_contato": "2025-05-03T11:14:04.121Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "3° ATENDIMENTO",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554198496237": {
+    "telefone": "554198496237",
+    "nome": "Stefan",
+    "mensagens": [4],
+    "rastreamentos": [8, 9, 12, 139],
+    "leads": [
+      "23757459"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6694169304921",
+        "adset_name": "CJ 53 - 05/03 [Note 14 Pro] - Stories/Reels [vídeo víew 75%] 22 a 50 [S/A]",
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 4,
+        "date_time": "2025-05-01T12:21:42.684Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 139,
+        "lead_id": "23757459",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T11:09:21.547Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": "OBJEÇÃO DE PREÇO",
+        "price": null
+      },
+      {
+        "id": 9,
+        "lead_id": "23757459",
+        "message_id": 4,
+        "event_type": "message_received",
+        "event_time": "2025-05-01T12:21:42.684Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 12,
+        "lead_id": "23757459",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T09:30:10.023Z",
+        "current_status_name": "1° ATENDIMENTO(MANHÃ)",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 8,
+        "lead_id": "23757459",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T09:21:42.753Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-01T09:21:42.753Z",
+    "ultimo_contato": "2025-05-03T11:09:21.547Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [
+      {
+        "lead_id": "23757459",
+        "event_time": "2025-05-03T11:09:21.547Z",
+        "motivo": "OBJEÇÃO DE PREÇO",
+        "message_id": null,
+        "responsible_user_name": "Felipe Quichaba"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "OBJEÇÃO DE PREÇO",
+    "total_descartes": 1
+  },
+  "554197827850": {
+    "telefone": "554197827850",
+    "nome": "Natthy Camargo 🥰",
+    "mensagens": [5],
+    "rastreamentos": [11, 13, 31, 53, 86],
+    "leads": [
+      "23757489"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6694169304921",
+        "adset_name": "CJ 53 - 05/03 [Note 14 Pro] - Stories/Reels [vídeo víew 75%] 22 a 50 [S/A]",
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 5,
+        "date_time": "2025-05-01T12:24:22.379Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 53,
+        "lead_id": "23757489",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T13:29:34.160Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": "PAROU DE RESPONDER",
+        "price": null
+      },
+      {
+        "id": 31,
+        "lead_id": "23757489",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T13:16:59.625Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 86,
+        "lead_id": "23757489",
+        "message_id": 5,
+        "event_type": "message_received",
+        "event_time": "2025-05-01T12:24:22.379Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": null,
+        "lead_situation": "PAROU DE RESPONDER",
+        "price": null
+      },
+      {
+        "id": 13,
+        "lead_id": "23757489",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T09:38:20.939Z",
+        "current_status_name": "1° ATENDIMENTO(MANHÃ)",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 11,
+        "lead_id": "23757489",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T09:24:25.984Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-01T09:24:25.984Z",
+    "ultimo_contato": "2025-05-02T13:29:34.160Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Gustavo Paessens",
+    "descartes": [
+      {
+        "lead_id": "23757489",
+        "event_time": "2025-05-02T13:29:34.160Z",
+        "motivo": "PAROU DE RESPONDER",
+        "message_id": null,
+        "responsible_user_name": "Gustavo Paessens"
+      },
+      {
+        "lead_id": "23757489",
+        "event_time": "2025-05-01T12:24:22.379Z",
+        "motivo": "PAROU DE RESPONDER",
+        "message_id": 5,
+        "responsible_user_name": null,
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "ad_name": "AD03 - 05/03 - note 14 pro"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "PAROU DE RESPONDER",
+    "total_descartes": 2
+  },
+  "554199413505": {
+    "telefone": "554199413505",
+    "nome": "Vanessa",
+    "mensagens": [6],
+    "rastreamentos": [14, 95],
+    "leads": [
+      "23589251"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6681969001721",
+        "adset_name": "CJ 51 - 17/02 [Poco X6 Pro] - Stories/Reels [vídeo víew 75%] homens - 25 a 45 [S/A]",
+        "ad_name": "AD08 - 10/04 - generalista v2",
+        "message_id": 6,
+        "date_time": "2025-05-01T12:42:42.295Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 95,
+        "lead_id": "23589251",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T01:21:31.466Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 14,
+        "lead_id": "23589251",
+        "message_id": 6,
+        "event_type": "message_received",
+        "event_time": "2025-05-01T12:42:42.295Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-01T12:42:42.295Z",
+    "ultimo_contato": "2025-05-03T01:21:31.466Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Matheus",
+    "descartes": [
+      {
+        "lead_id": "23589251",
+        "event_time": "2025-05-03T01:21:31.466Z",
+        "motivo": "Não especificado",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      },
+      {
+        "lead_id": "23589251",
+        "event_time": "2025-05-01T12:42:42.295Z",
+        "motivo": "Não especificado",
+        "message_id": 6,
+        "responsible_user_name": null,
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "ad_name": "AD08 - 10/04 - generalista v2"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "Não especificado",
+    "total_descartes": 2
+  },
+  "554196046253": {
+    "telefone": "554196046253",
+    "nome": "Fernanda Maria",
+    "mensagens": [7, 8],
+    "rastreamentos": [15, 16, 17, 18],
+    "leads": [
+      "23758065"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6647997141521",
+        "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+        "ad_name": "AD17 - 05/03 - note 14 pro plus",
+        "message_id": 7,
+        "date_time": "2025-05-01T13:16:40.130Z"
+      },
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6647997141521",
+        "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+        "ad_name": "AD17 - 05/03 - note 14 pro plus",
+        "message_id": 8,
+        "date_time": "2025-05-01T13:18:25.008Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 17,
+        "lead_id": "23758065",
+        "message_id": 8,
+        "event_type": "message_received",
+        "event_time": "2025-05-01T13:18:25.008Z",
+        "current_status_name": "1° ATENDIMENTO(MANHÃ)",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 15,
+        "lead_id": "23758065",
+        "message_id": 7,
+        "event_type": "message_received",
+        "event_time": "2025-05-01T13:16:40.130Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 18,
+        "lead_id": "23758065",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T10:21:40.017Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": "DESQUALIFICADO",
+        "price": null
+      },
+      {
+        "id": 16,
+        "lead_id": "23758065",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T10:18:10.859Z",
+        "current_status_name": "1° ATENDIMENTO(MANHÃ)",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-01T10:18:10.859Z",
+    "ultimo_contato": "2025-05-01T13:18:25.008Z",
+    "total_mensagens": 2,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "1° ATENDIMENTO(MANHÃ)",
+    "responsavel": "Matheus",
+    "descartes": [
+      {
+        "lead_id": "23758065",
+        "event_time": "2025-05-01T10:21:40.017Z",
+        "motivo": "DESQUALIFICADO",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "DESQUALIFICADO",
+    "total_descartes": 1
+  },
+  "554132729734": {
+    "telefone": "554132729734",
+    "nome": "Clinica TK",
+    "mensagens": [9],
+    "rastreamentos": [19, 217],
+    "leads": [
+      "23608617"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6694169304921",
+        "adset_name": "CJ 53 - 05/03 [Note 14 Pro] - Stories/Reels [vídeo víew 75%] 22 a 50 [S/A]",
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 9,
+        "date_time": "2025-05-01T13:30:46.565Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 217,
+        "lead_id": "23608617",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T03:14:53.067Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": "NÃO RESPONDEU PRIMEIRO CONTATO",
+        "price": null
+      },
+      {
+        "id": 19,
+        "lead_id": "23608617",
+        "message_id": 9,
+        "event_type": "message_received",
+        "event_time": "2025-05-01T13:30:46.565Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": null,
+        "lead_situation": "NÃO RESPONDEU PRIMEIRO CONTATO",
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-01T13:30:46.565Z",
+    "ultimo_contato": "2025-05-04T03:14:53.067Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [
+      {
+        "lead_id": "23608617",
+        "event_time": "2025-05-04T03:14:53.067Z",
+        "motivo": "NÃO RESPONDEU PRIMEIRO CONTATO",
+        "message_id": null,
+        "responsible_user_name": "Felipe Quichaba"
+      },
+      {
+        "lead_id": "23608617",
+        "event_time": "2025-05-01T13:30:46.565Z",
+        "motivo": "NÃO RESPONDEU PRIMEIRO CONTATO",
+        "message_id": 9,
+        "responsible_user_name": null,
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "ad_name": "AD03 - 05/03 - note 14 pro"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "NÃO RESPONDEU PRIMEIRO CONTATO",
+    "total_descartes": 2
+  },
+  "553199854440": {
+    "telefone": "553199854440",
+    "nome": "Yan Guilherme🇧🇷🫡",
+    "mensagens": [10, 11],
+    "rastreamentos": [20, 21, 22, 23, 28],
+    "leads": [
+      "23758745"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6681969001721",
+        "adset_name": "CJ 51 - 17/02 [Poco X6 Pro] - Stories/Reels [vídeo víew 75%] homens - 25 a 45 [S/A]",
+        "ad_name": "AD08 - 10/04 - generalista v2",
+        "message_id": 10,
+        "date_time": "2025-05-01T14:15:35.955Z"
+      },
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6681969001721",
+        "adset_name": "CJ 51 - 17/02 [Poco X6 Pro] - Stories/Reels [vídeo víew 75%] homens - 25 a 45 [S/A]",
+        "ad_name": "AD08 - 10/04 - generalista v2",
+        "message_id": 11,
+        "date_time": "2025-05-01T14:16:28.130Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 22,
+        "lead_id": "23758745",
+        "message_id": 11,
+        "event_type": "message_received",
+        "event_time": "2025-05-01T14:16:28.130Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 21,
+        "lead_id": "23758745",
+        "message_id": 10,
+        "event_type": "message_received",
+        "event_time": "2025-05-01T14:15:35.955Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 28,
+        "lead_id": "23758745",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T12:43:10.240Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 23,
+        "lead_id": "23758745",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T11:16:58.396Z",
+        "current_status_name": "1° ATENDIMENTO(MANHÃ)",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 20,
+        "lead_id": "23758745",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T11:15:36.264Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-01T11:15:36.264Z",
+    "ultimo_contato": "2025-05-01T14:16:28.130Z",
+    "total_mensagens": 2,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Matheus",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554199250353": {
+    "telefone": "554199250353",
+    "nome": "Jefferson Soares",
+    "mensagens": [12],
+    "rastreamentos": [24, 96, 146],
+    "leads": [
+      "23759189"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6647997141521",
+        "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+        "ad_name": "AD17 - 05/03 - note 14 pro plus",
+        "message_id": 12,
+        "date_time": "2025-05-01T14:48:44.483Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 146,
+        "lead_id": "23759189",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T11:14:03.062Z",
+        "current_status_name": "3° ATENDIMENTO",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 96,
+        "lead_id": "23759189",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T01:22:17.828Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 24,
+        "lead_id": "23759189",
+        "message_id": 12,
+        "event_type": "message_received",
+        "event_time": "2025-05-01T14:48:44.483Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-01T14:48:44.483Z",
+    "ultimo_contato": "2025-05-03T11:14:03.062Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "3° ATENDIMENTO",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554188230543": {
+    "telefone": "554188230543",
+    "nome": "David",
+    "mensagens": [16],
+    "rastreamentos": [32, 35, 72],
+    "leads": [
+      "23760705"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6758188836321",
+        "adset_name": "CJ 30 - 23/04 - note 14 pro plus - stories/reels -  [IG] mix vídeo/envolvimento - 22 - 45 - S/A",
+        "ad_name": "AD06 - 29/04 - note 14 pro plus",
+        "message_id": 16,
+        "date_time": "2025-05-01T13:37:12.628Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 72,
+        "lead_id": "23760705",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T17:02:43.763Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": "PAROU DE RESPONDER",
+        "price": null
+      },
+      {
+        "id": 35,
+        "lead_id": "23760705",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T13:47:06.049Z",
+        "current_status_name": "1º ATENDIMENTO(TARDE)",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 32,
+        "lead_id": "23760705",
+        "message_id": 16,
+        "event_type": "message_received",
+        "event_time": "2025-05-01T13:37:12.628Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-01T13:37:12.628Z",
+    "ultimo_contato": "2025-05-02T17:02:43.763Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Matheus",
+    "descartes": [
+      {
+        "lead_id": "23760705",
+        "event_time": "2025-05-02T17:02:43.763Z",
+        "motivo": "PAROU DE RESPONDER",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "PAROU DE RESPONDER",
+    "total_descartes": 1
+  },
+  "554196698057": {
+    "telefone": "554196698057",
+    "nome": "Jhonatan Henrique (JHP Gestão De Marcas)",
+    "mensagens": [17],
+    "rastreamentos": [33, 34, 43, 145],
+    "leads": [
+      "23760823"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6681969001721",
+        "adset_name": "CJ 51 - 17/02 [Poco X6 Pro] - Stories/Reels [vídeo víew 75%] homens - 25 a 45 [S/A]",
+        "ad_name": "AD08 - 10/04 - generalista v2",
+        "message_id": 17,
+        "date_time": "2025-05-01T13:45:37.307Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 145,
+        "lead_id": "23760823",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T11:14:02.730Z",
+        "current_status_name": "3° ATENDIMENTO",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 43,
+        "lead_id": "23760823",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T14:52:42.059Z",
+        "current_status_name": "1° ATENDIMENTO(MANHÃ)",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 33,
+        "lead_id": "23760823",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T13:45:38.984Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 34,
+        "lead_id": "23760823",
+        "message_id": 17,
+        "event_type": "message_received",
+        "event_time": "2025-05-01T13:45:37.307Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-01T13:45:37.307Z",
+    "ultimo_contato": "2025-05-03T11:14:02.730Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "3° ATENDIMENTO",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554196300694": {
+    "telefone": "554196300694",
+    "nome": "Josie Senna",
+    "mensagens": [18],
+    "rastreamentos": [36, 38, 55, 120],
+    "leads": [
+      "23761271"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6647997141521",
+        "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+        "ad_name": "AD17 - 05/03 - note 14 pro plus",
+        "message_id": 18,
+        "date_time": "2025-05-01T14:22:32.408Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 120,
+        "lead_id": "23761271",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T09:10:53.660Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": "PAROU DE RESPONDER",
+        "price": null
+      },
+      {
+        "id": 55,
+        "lead_id": "23761271",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T13:30:51.428Z",
+        "current_status_name": "3° ATENDIMENTO",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 38,
+        "lead_id": "23761271",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T14:31:00.676Z",
+        "current_status_name": "1º ATENDIMENTO(TARDE)",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 36,
+        "lead_id": "23761271",
+        "message_id": 18,
+        "event_type": "message_received",
+        "event_time": "2025-05-01T14:22:32.408Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-01T14:22:32.408Z",
+    "ultimo_contato": "2025-05-03T09:10:53.660Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Gustavo Paessens",
+    "descartes": [
+      {
+        "lead_id": "23761271",
+        "event_time": "2025-05-03T09:10:53.660Z",
+        "motivo": "PAROU DE RESPONDER",
+        "message_id": null,
+        "responsible_user_name": "Gustavo Paessens"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "PAROU DE RESPONDER",
+    "total_descartes": 1
+  },
+  "5511937405997": {
+    "telefone": "5511937405997",
+    "nome": "Maurício",
+    "mensagens": [19],
+    "rastreamentos": [37, 39, 71],
+    "leads": [
+      "23761373"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6694169304921",
+        "adset_name": "CJ 53 - 05/03 [Note 14 Pro] - Stories/Reels [vídeo víew 75%] 22 a 50 [S/A]",
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 19,
+        "date_time": "2025-05-01T14:28:40.173Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 71,
+        "lead_id": "23761373",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T17:02:18.856Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": "PAROU DE RESPONDER",
+        "price": null
+      },
+      {
+        "id": 39,
+        "lead_id": "23761373",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T14:31:08.685Z",
+        "current_status_name": "1º ATENDIMENTO(TARDE)",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 37,
+        "lead_id": "23761373",
+        "message_id": 19,
+        "event_type": "message_received",
+        "event_time": "2025-05-01T14:28:40.173Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-01T14:28:40.173Z",
+    "ultimo_contato": "2025-05-02T17:02:18.856Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Matheus",
+    "descartes": [
+      {
+        "lead_id": "23761373",
+        "event_time": "2025-05-02T17:02:18.856Z",
+        "motivo": "PAROU DE RESPONDER",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "PAROU DE RESPONDER",
+    "total_descartes": 1
+  },
+  "554188250996": {
+    "telefone": "554188250996",
+    "nome": "Maicon Santos",
+    "mensagens": [20],
+    "rastreamentos": [40, 41, 42, 70],
+    "leads": [
+      "23761441"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6681969001721",
+        "adset_name": "CJ 51 - 17/02 [Poco X6 Pro] - Stories/Reels [vídeo víew 75%] homens - 25 a 45 [S/A]",
+        "ad_name": "AD08 - 10/04 - generalista v2",
+        "message_id": 20,
+        "date_time": "2025-05-01T14:33:12.333Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 70,
+        "lead_id": "23761441",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T17:02:07.817Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": "DESQUALIFICADO",
+        "price": null
+      },
+      {
+        "id": 42,
+        "lead_id": "23761441",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T14:34:42.299Z",
+        "current_status_name": "1º ATENDIMENTO(TARDE)",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 40,
+        "lead_id": "23761441",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T14:33:13.484Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 41,
+        "lead_id": "23761441",
+        "message_id": 20,
+        "event_type": "message_received",
+        "event_time": "2025-05-01T14:33:12.333Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-01T14:33:12.333Z",
+    "ultimo_contato": "2025-05-02T17:02:07.817Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Matheus",
+    "descartes": [
+      {
+        "lead_id": "23761441",
+        "event_time": "2025-05-02T17:02:07.817Z",
+        "motivo": "DESQUALIFICADO",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "DESQUALIFICADO",
+    "total_descartes": 1
+  },
+  "554196993427": {
+    "telefone": "554196993427",
+    "nome": "Ernani Maneira",
+    "mensagens": [21],
+    "rastreamentos": [44, 59, 121],
+    "leads": [
+      "23761805"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6758183774121",
+        "adset_name": "CJ 29 - 23/04 - poco x7 pro - stories/reels -  [IG] mix vídeo/envolvimento - 20 - 45 - S/A",
+        "ad_name": "AD04 - 29/04 - poco x7 pro",
+        "message_id": 21,
+        "date_time": "2025-05-01T14:59:34.872Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 121,
+        "lead_id": "23761805",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T09:11:20.904Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": "PAROU DE RESPONDER",
+        "price": null
+      },
+      {
+        "id": 59,
+        "lead_id": "23761805",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T13:36:17.607Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 44,
+        "lead_id": "23761805",
+        "message_id": 21,
+        "event_type": "message_received",
+        "event_time": "2025-05-01T14:59:34.872Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-01T14:59:34.872Z",
+    "ultimo_contato": "2025-05-03T09:11:20.904Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Gustavo Paessens",
+    "descartes": [
+      {
+        "lead_id": "23761805",
+        "event_time": "2025-05-03T09:11:20.904Z",
+        "motivo": "PAROU DE RESPONDER",
+        "message_id": null,
+        "responsible_user_name": "Gustavo Paessens"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "PAROU DE RESPONDER",
+    "total_descartes": 1
+  },
+  "554198239727": {
+    "telefone": "554198239727",
+    "nome": "Desconhecido",
+    "mensagens": [22, 23],
+    "rastreamentos": [45, 46, 47, 48, 115, 160],
+    "leads": [
+      "23762129"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6758183774121",
+        "adset_name": "CJ 29 - 23/04 - poco x7 pro - stories/reels -  [IG] mix vídeo/envolvimento - 20 - 45 - S/A",
+        "ad_name": "AD04 - 29/04 - poco x7 pro",
+        "message_id": 22,
+        "date_time": "2025-05-01T15:25:06.215Z"
+      },
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6758183774121",
+        "adset_name": "CJ 29 - 23/04 - poco x7 pro - stories/reels -  [IG] mix vídeo/envolvimento - 20 - 45 - S/A",
+        "ad_name": "AD04 - 29/04 - poco x7 pro",
+        "message_id": 23,
+        "date_time": "2025-05-01T16:00:07.139Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 160,
+        "lead_id": "23762129",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T12:20:07.958Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": "DESQUALIFICADO",
+        "price": null
+      },
+      {
+        "id": 115,
+        "lead_id": "23762129",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T08:57:11.592Z",
+        "current_status_name": "3° ATENDIMENTO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 48,
+        "lead_id": "23762129",
+        "message_id": 23,
+        "event_type": "message_received",
+        "event_time": "2025-05-01T16:00:07.139Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 47,
+        "lead_id": "23762129",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T15:25:10.131Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 46,
+        "lead_id": "23762129",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-01T15:25:10.111Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 45,
+        "lead_id": "23762129",
+        "message_id": 22,
+        "event_type": "message_received",
+        "event_time": "2025-05-01T15:25:06.215Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-01T15:25:06.215Z",
+    "ultimo_contato": "2025-05-03T12:20:07.958Z",
+    "total_mensagens": 2,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Matheus",
+    "descartes": [
+      {
+        "lead_id": "23762129",
+        "event_time": "2025-05-03T12:20:07.958Z",
+        "motivo": "DESQUALIFICADO",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "DESQUALIFICADO",
+    "total_descartes": 1
+  },
+  "554199044534": {
+    "telefone": "554199044534",
+    "nome": "Nilza Moreti",
+    "mensagens": [35],
+    "rastreamentos": [49, 50, 51, 52, 118, 162, 197],
+    "leads": [
+      "23779575"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6694169304921",
+        "adset_name": "CJ 53 - 05/03 [Note 14 Pro] - Stories/Reels [vídeo víew 75%] 22 a 50 [S/A]",
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 35,
+        "date_time": "2025-05-02T13:03:43.954Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 197,
+        "lead_id": "23779575",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T14:59:09.286Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": "DESQUALIFICADO",
+        "price": null
+      },
+      {
+        "id": 162,
+        "lead_id": "23779575",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T12:20:24.394Z",
+        "current_status_name": "3° ATENDIMENTO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 118,
+        "lead_id": "23779575",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T09:01:15.435Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 52,
+        "lead_id": "23779575",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T13:15:27.161Z",
+        "current_status_name": "1º ATENDIMENTO(TARDE)",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 51,
+        "lead_id": "23779575",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T13:03:46.371Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 50,
+        "lead_id": "23779575",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T13:03:46.333Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 49,
+        "lead_id": "23779575",
+        "message_id": 35,
+        "event_type": "message_received",
+        "event_time": "2025-05-02T13:03:43.954Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-02T13:03:43.954Z",
+    "ultimo_contato": "2025-05-03T14:59:09.286Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Matheus",
+    "descartes": [
+      {
+        "lead_id": "23779575",
+        "event_time": "2025-05-03T14:59:09.286Z",
+        "motivo": "DESQUALIFICADO",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "DESQUALIFICADO",
+    "total_descartes": 1
+  },
+  "559584265372": {
+    "telefone": "559584265372",
+    "nome": "franklin31m",
+    "mensagens": [36],
+    "rastreamentos": [54, 58, 136, 142],
+    "leads": [
+      "23780051"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6758188836321",
+        "adset_name": "CJ 30 - 23/04 - note 14 pro plus - stories/reels -  [IG] mix vídeo/envolvimento - 22 - 45 - S/A",
+        "ad_name": "AD06 - 29/04 - note 14 pro plus",
+        "message_id": 36,
+        "date_time": "2025-05-02T13:30:30.991Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 142,
+        "lead_id": "23780051",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T11:13:58.441Z",
+        "current_status_name": "3° ATENDIMENTO",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 136,
+        "lead_id": "23780051",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T11:06:45.659Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 58,
+        "lead_id": "23780051",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T13:32:02.633Z",
+        "current_status_name": "1º ATENDIMENTO(TARDE)",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 54,
+        "lead_id": "23780051",
+        "message_id": 36,
+        "event_type": "message_received",
+        "event_time": "2025-05-02T13:30:30.991Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-02T13:30:30.991Z",
+    "ultimo_contato": "2025-05-03T11:13:58.441Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "3° ATENDIMENTO",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554291259936": {
+    "telefone": "554291259936",
+    "nome": "Josué Jpsantos cell",
+    "mensagens": [31, 29],
+    "rastreamentos": [56, 57, 85, 92, 122],
+    "leads": [
+      "23772083"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6729776128321",
+        "adset_name": "CJ 24 - 10/04 - teste mc - stories/reels -  [IG] xiaomi + redmi - 19 - 45 - S/A",
+        "ad_name": "AD04 - 10/04 - generalista apresentado — Cópia",
+        "message_id": 31,
+        "date_time": "2025-05-02T11:07:29.589Z"
+      },
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6729776128321",
+        "adset_name": "CJ 24 - 10/04 - teste mc - stories/reels -  [IG] xiaomi + redmi - 19 - 45 - S/A",
+        "ad_name": "AD04 - 10/04 - generalista apresentado — Cópia",
+        "message_id": 29,
+        "date_time": "2025-05-02T10:45:09.792Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 122,
+        "lead_id": "23772083",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T09:13:35.363Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": "PAROU DE RESPONDER",
+        "price": null
+      },
+      {
+        "id": 57,
+        "lead_id": "23772083",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T13:32:00.179Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 56,
+        "lead_id": "23772083",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T13:31:59.337Z",
+        "current_status_name": "1º ATENDIMENTO(TARDE)",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 85,
+        "lead_id": "23772083",
+        "message_id": 31,
+        "event_type": "message_received",
+        "event_time": "2025-05-02T11:07:29.589Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 92,
+        "lead_id": "23772083",
+        "message_id": 29,
+        "event_type": "message_received",
+        "event_time": "2025-05-02T10:45:09.792Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-02T10:45:09.792Z",
+    "ultimo_contato": "2025-05-03T09:13:35.363Z",
+    "total_mensagens": 2,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Gustavo Paessens",
+    "descartes": [
+      {
+        "lead_id": "23772083",
+        "event_time": "2025-05-03T09:13:35.363Z",
+        "motivo": "PAROU DE RESPONDER",
+        "message_id": null,
+        "responsible_user_name": "Gustavo Paessens"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "PAROU DE RESPONDER",
+    "total_descartes": 1
+  },
+  "554198336022": {
+    "telefone": "554198336022",
+    "nome": "Fernando Bertti",
+    "mensagens": [37],
+    "rastreamentos": [60, 61, 81, 124, 170],
+    "leads": [
+      "23780227"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6694169304921",
+        "adset_name": "CJ 53 - 05/03 [Note 14 Pro] - Stories/Reels [vídeo víew 75%] 22 a 50 [S/A]",
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 37,
+        "date_time": "2025-05-02T13:41:42.505Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 170,
+        "lead_id": "23780227",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T13:12:56.981Z",
+        "current_status_name": "3° ATENDIMENTO",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 124,
+        "lead_id": "23780227",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T09:16:08.139Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 61,
+        "lead_id": "23780227",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T13:50:44.000Z",
+        "current_status_name": "1º ATENDIMENTO(TARDE)",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 60,
+        "lead_id": "23780227",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T13:41:48.099Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 81,
+        "lead_id": "23780227",
+        "message_id": 37,
+        "event_type": "message_received",
+        "event_time": "2025-05-02T13:41:42.505Z",
+        "current_status_name": "1º ATENDIMENTO(TARDE)",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-02T13:41:42.505Z",
+    "ultimo_contato": "2025-05-03T13:12:56.981Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "3° ATENDIMENTO",
+    "responsavel": "Gustavo Paessens",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554184718909": {
+    "telefone": "554184718909",
+    "nome": "luh babá🥰",
+    "mensagens": [39, 38],
+    "rastreamentos": [62, 63, 64, 65, 80],
+    "leads": [
+      "23780463"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6729776128321",
+        "adset_name": "CJ 24 - 10/04 - teste mc - stories/reels -  [IG] xiaomi + redmi - 19 - 45 - S/A",
+        "ad_name": "AD04 - 10/04 - generalista apresentado — Cópia",
+        "message_id": 39,
+        "date_time": "2025-05-02T14:00:52.548Z"
+      },
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6729776128321",
+        "adset_name": "CJ 24 - 10/04 - teste mc - stories/reels -  [IG] xiaomi + redmi - 19 - 45 - S/A",
+        "ad_name": "AD04 - 10/04 - generalista apresentado — Cópia",
+        "message_id": 38,
+        "date_time": "2025-05-02T13:56:41.809Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 65,
+        "lead_id": "23780463",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T14:02:56.782Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": "BOLETO",
+        "price": null
+      },
+      {
+        "id": 64,
+        "lead_id": "23780463",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T14:01:41.293Z",
+        "current_status_name": "1º ATENDIMENTO(TARDE)",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 63,
+        "lead_id": "23780463",
+        "message_id": 39,
+        "event_type": "message_received",
+        "event_time": "2025-05-02T14:00:52.548Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 62,
+        "lead_id": "23780463",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T13:56:47.954Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 80,
+        "lead_id": "23780463",
+        "message_id": 38,
+        "event_type": "message_received",
+        "event_time": "2025-05-02T13:56:41.809Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": null,
+        "lead_situation": "BOLETO",
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-02T13:56:41.809Z",
+    "ultimo_contato": "2025-05-02T14:02:56.782Z",
+    "total_mensagens": 2,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Gustavo Paessens",
+    "descartes": [
+      {
+        "lead_id": "23780463",
+        "event_time": "2025-05-02T14:02:56.782Z",
+        "motivo": "BOLETO",
+        "message_id": null,
+        "responsible_user_name": "Gustavo Paessens"
+      },
+      {
+        "lead_id": "23780463",
+        "event_time": "2025-05-02T13:56:41.809Z",
+        "motivo": "BOLETO",
+        "message_id": 38,
+        "responsible_user_name": null,
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "ad_name": "AD04 - 10/04 - generalista apresentado — Cópia"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "BOLETO",
+    "total_descartes": 2
+  },
+  "554197008164": {
+    "telefone": "554197008164",
+    "nome": "Natan",
+    "mensagens": [41, 40],
+    "rastreamentos": [66, 67, 68, 79, 117, 161, 196],
+    "leads": [
+      "23781675"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6694169304921",
+        "adset_name": "CJ 53 - 05/03 [Note 14 Pro] - Stories/Reels [vídeo víew 75%] 22 a 50 [S/A]",
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 41,
+        "date_time": "2025-05-02T15:22:54.942Z"
+      },
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6694169304921",
+        "adset_name": "CJ 53 - 05/03 [Note 14 Pro] - Stories/Reels [vídeo víew 75%] 22 a 50 [S/A]",
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 40,
+        "date_time": "2025-05-02T15:11:20.657Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 196,
+        "lead_id": "23781675",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T14:58:56.108Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": "DESQUALIFICADO",
+        "price": null
+      },
+      {
+        "id": 161,
+        "lead_id": "23781675",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T12:20:23.707Z",
+        "current_status_name": "3° ATENDIMENTO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 117,
+        "lead_id": "23781675",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T08:59:48.528Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 68,
+        "lead_id": "23781675",
+        "message_id": 41,
+        "event_type": "message_received",
+        "event_time": "2025-05-02T15:22:54.942Z",
+        "current_status_name": "1º ATENDIMENTO(TARDE)",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 67,
+        "lead_id": "23781675",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T15:12:32.209Z",
+        "current_status_name": "1º ATENDIMENTO(TARDE)",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 66,
+        "lead_id": "23781675",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T15:11:26.002Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 79,
+        "lead_id": "23781675",
+        "message_id": 40,
+        "event_type": "message_received",
+        "event_time": "2025-05-02T15:11:20.657Z",
+        "current_status_name": "1º ATENDIMENTO(TARDE)",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-02T15:11:20.657Z",
+    "ultimo_contato": "2025-05-03T14:58:56.108Z",
+    "total_mensagens": 2,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Matheus",
+    "descartes": [
+      {
+        "lead_id": "23781675",
+        "event_time": "2025-05-03T14:58:56.108Z",
+        "motivo": "DESQUALIFICADO",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "DESQUALIFICADO",
+    "total_descartes": 1
+  },
+  "554185223633": {
+    "telefone": "554185223633",
+    "nome": "Aninha",
+    "mensagens": [34],
+    "rastreamentos": [69, 82],
+    "leads": [
+      "23775555"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6647997141521",
+        "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+        "ad_name": "AD16 - 05/03 - note 14 pro plus",
+        "message_id": 34,
+        "date_time": "2025-05-02T12:22:45.595Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 69,
+        "lead_id": "23775555",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T15:46:15.292Z",
+        "current_status_name": "AGENDADO ou LEAD QUENTE",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 82,
+        "lead_id": "23775555",
+        "message_id": 34,
+        "event_type": "message_received",
+        "event_time": "2025-05-02T12:22:45.595Z",
+        "current_status_name": "AGENDADO ou LEAD QUENTE",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-02T12:22:45.595Z",
+    "ultimo_contato": "2025-05-02T15:46:15.292Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "AGENDADO ou LEAD QUENTE",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554188837722": {
+    "telefone": "554188837722",
+    "nome": "Fábio Muniz",
+    "mensagens": [42],
+    "rastreamentos": [73, 74, 78, 137, 141],
+    "leads": [
+      "23784119"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6729776128321",
+        "adset_name": "CJ 24 - 10/04 - teste mc - stories/reels -  [IG] xiaomi + redmi - 19 - 45 - S/A",
+        "ad_name": "AD04 - 10/04 - generalista apresentado — Cópia",
+        "message_id": 42,
+        "date_time": "2025-05-02T17:58:02.068Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 141,
+        "lead_id": "23784119",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T11:13:57.567Z",
+        "current_status_name": "3° ATENDIMENTO",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 137,
+        "lead_id": "23784119",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T11:06:46.772Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 74,
+        "lead_id": "23784119",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T18:22:08.365Z",
+        "current_status_name": "1º ATENDIMENTO(TARDE)",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 73,
+        "lead_id": "23784119",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T17:58:08.244Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 78,
+        "lead_id": "23784119",
+        "message_id": 42,
+        "event_type": "message_received",
+        "event_time": "2025-05-02T17:58:02.068Z",
+        "current_status_name": "1º ATENDIMENTO(TARDE)",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-02T17:58:02.068Z",
+    "ultimo_contato": "2025-05-03T11:13:57.567Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "3° ATENDIMENTO",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554198863809": {
+    "telefone": "554198863809",
+    "nome": "Americo Uno",
+    "mensagens": [43],
+    "rastreamentos": [75, 104, 126],
+    "leads": [
+      "23786993"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6681969001721",
+        "adset_name": "CJ 51 - 17/02 [Poco X6 Pro] - Stories/Reels [vídeo víew 75%] homens - 25 a 45 [S/A]",
+        "ad_name": "AD08 - 10/04 - generalista v2",
+        "message_id": 43,
+        "date_time": "2025-05-02T22:11:43.657Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 126,
+        "lead_id": "23786993",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T09:35:18.957Z",
+        "current_status_name": "1° ATENDIMENTO(MANHÃ)",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 104,
+        "lead_id": "23786993",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T01:23:11.975Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 75,
+        "lead_id": "23786993",
+        "message_id": 43,
+        "event_type": "message_received",
+        "event_time": "2025-05-02T22:11:43.657Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-02T22:11:43.657Z",
+    "ultimo_contato": "2025-05-03T09:35:18.957Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "1° ATENDIMENTO(MANHÃ)",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554188729242": {
+    "telefone": "554188729242",
+    "nome": "Solange",
+    "mensagens": [44],
+    "rastreamentos": [76, 77, 119, 174],
+    "leads": [
+      "23787409"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6681969001721",
+        "adset_name": "CJ 51 - 17/02 [Poco X6 Pro] - Stories/Reels [vídeo víew 75%] homens - 25 a 45 [S/A]",
+        "ad_name": "AD08 - 10/04 - generalista v2",
+        "message_id": 44,
+        "date_time": "2025-05-02T23:07:38.254Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 174,
+        "lead_id": "23787409",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T13:20:08.090Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 119,
+        "lead_id": "23787409",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T09:08:14.799Z",
+        "current_status_name": "1° ATENDIMENTO(MANHÃ)",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 77,
+        "lead_id": "23787409",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-02T23:07:40.322Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 76,
+        "lead_id": "23787409",
+        "message_id": 44,
+        "event_type": "message_received",
+        "event_time": "2025-05-02T23:07:38.254Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-02T23:07:38.254Z",
+    "ultimo_contato": "2025-05-03T13:20:08.090Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "2° ATENDIMENTO",
+    "responsavel": "Gustavo Paessens",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554788913233": {
+    "telefone": "554788913233",
+    "nome": "Fernando",
+    "mensagens": [33],
+    "rastreamentos": [83, 94],
+    "leads": [
+      "23773051"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6729776128321",
+        "adset_name": "CJ 24 - 10/04 - teste mc - stories/reels -  [IG] xiaomi + redmi - 19 - 45 - S/A",
+        "ad_name": "AD04 - 10/04 - generalista apresentado — Cópia",
+        "message_id": 33,
+        "date_time": "2025-05-02T11:40:35.065Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 94,
+        "lead_id": "23773051",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T01:21:12.341Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": "DESQUALIFICADO",
+        "price": null
+      },
+      {
+        "id": 83,
+        "lead_id": "23773051",
+        "message_id": 33,
+        "event_type": "message_received",
+        "event_time": "2025-05-02T11:40:35.065Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": null,
+        "lead_situation": "DESQUALIFICADO",
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-02T11:40:35.065Z",
+    "ultimo_contato": "2025-05-03T01:21:12.341Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Matheus",
+    "descartes": [
+      {
+        "lead_id": "23773051",
+        "event_time": "2025-05-03T01:21:12.341Z",
+        "motivo": "DESQUALIFICADO",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      },
+      {
+        "lead_id": "23773051",
+        "event_time": "2025-05-02T11:40:35.065Z",
+        "motivo": "DESQUALIFICADO",
+        "message_id": 33,
+        "responsible_user_name": null,
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "ad_name": "AD04 - 10/04 - generalista apresentado — Cópia"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "DESQUALIFICADO",
+    "total_descartes": 2
+  },
+  "554899811037": {
+    "telefone": "554899811037",
+    "nome": "Flávio",
+    "mensagens": [32],
+    "rastreamentos": [84, 103, 111, 156],
+    "leads": [
+      "23772749"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6647997141521",
+        "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+        "ad_name": "AD16 - 05/03 - note 14 pro plus",
+        "message_id": 32,
+        "date_time": "2025-05-02T11:22:38.107Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 156,
+        "lead_id": "23772749",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T12:18:22.646Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": "NÃO RESPONDEU PRIMEIRO CONTATO",
+        "price": null
+      },
+      {
+        "id": 111,
+        "lead_id": "23772749",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T08:55:59.754Z",
+        "current_status_name": "3° ATENDIMENTO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 103,
+        "lead_id": "23772749",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T01:22:59.184Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 84,
+        "lead_id": "23772749",
+        "message_id": 32,
+        "event_type": "message_received",
+        "event_time": "2025-05-02T11:22:38.107Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-02T11:22:38.107Z",
+    "ultimo_contato": "2025-05-03T12:18:22.646Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Matheus",
+    "descartes": [
+      {
+        "lead_id": "23772749",
+        "event_time": "2025-05-03T12:18:22.646Z",
+        "motivo": "NÃO RESPONDEU PRIMEIRO CONTATO",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "NÃO RESPONDEU PRIMEIRO CONTATO",
+    "total_descartes": 1
+  },
+  "554198230012": {
+    "telefone": "554198230012",
+    "nome": "Bevilacqua",
+    "mensagens": [24],
+    "rastreamentos": [87, 97, 144],
+    "leads": [
+      "23769497"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6681969001721",
+        "adset_name": "CJ 51 - 17/02 [Poco X6 Pro] - Stories/Reels [vídeo víew 75%] homens - 25 a 45 [S/A]",
+        "ad_name": "AD08 - 10/04 - generalista v2",
+        "message_id": 24,
+        "date_time": "2025-05-02T06:45:58.423Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 144,
+        "lead_id": "23769497",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T11:14:01.326Z",
+        "current_status_name": "3° ATENDIMENTO",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 97,
+        "lead_id": "23769497",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T01:22:27.622Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 87,
+        "lead_id": "23769497",
+        "message_id": 24,
+        "event_type": "message_received",
+        "event_time": "2025-05-02T06:45:58.423Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-02T06:45:58.423Z",
+    "ultimo_contato": "2025-05-03T11:14:01.326Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "3° ATENDIMENTO",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554192115837": {
+    "telefone": "554192115837",
+    "nome": "👩🏽‍⚕️",
+    "mensagens": [25],
+    "rastreamentos": [88, 98],
+    "leads": [
+      "23769757"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6647997141521",
+        "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+        "ad_name": "AD16 - 05/03 - note 14 pro plus",
+        "message_id": 25,
+        "date_time": "2025-05-02T07:35:02.433Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 98,
+        "lead_id": "23769757",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T01:22:36.405Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": "DESQUALIFICADO",
+        "price": null
+      },
+      {
+        "id": 88,
+        "lead_id": "23769757",
+        "message_id": 25,
+        "event_type": "message_received",
+        "event_time": "2025-05-02T07:35:02.433Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": null,
+        "lead_situation": "DESQUALIFICADO",
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-02T07:35:02.433Z",
+    "ultimo_contato": "2025-05-03T01:22:36.405Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Matheus",
+    "descartes": [
+      {
+        "lead_id": "23769757",
+        "event_time": "2025-05-03T01:22:36.405Z",
+        "motivo": "DESQUALIFICADO",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      },
+      {
+        "lead_id": "23769757",
+        "event_time": "2025-05-02T07:35:02.433Z",
+        "motivo": "DESQUALIFICADO",
+        "message_id": 25,
+        "responsible_user_name": null,
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "ad_name": "AD16 - 05/03 - note 14 pro plus"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "DESQUALIFICADO",
+    "total_descartes": 2
+  },
+  "554187150596": {
+    "telefone": "554187150596",
+    "nome": "Amanda",
+    "mensagens": [26],
+    "rastreamentos": [89, 99, 114, 159],
+    "leads": [
+      "23769935"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6647997141521",
+        "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+        "ad_name": "AD16 - 05/03 - note 14 pro plus",
+        "message_id": 26,
+        "date_time": "2025-05-02T08:00:51.942Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 159,
+        "lead_id": "23769935",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T12:19:47.257Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": "PAROU DE RESPONDER",
+        "price": null
+      },
+      {
+        "id": 114,
+        "lead_id": "23769935",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T08:56:55.545Z",
+        "current_status_name": "3° ATENDIMENTO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 99,
+        "lead_id": "23769935",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T01:22:41.080Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 89,
+        "lead_id": "23769935",
+        "message_id": 26,
+        "event_type": "message_received",
+        "event_time": "2025-05-02T08:00:51.942Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-02T08:00:51.942Z",
+    "ultimo_contato": "2025-05-03T12:19:47.257Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Matheus",
+    "descartes": [
+      {
+        "lead_id": "23769935",
+        "event_time": "2025-05-03T12:19:47.257Z",
+        "motivo": "PAROU DE RESPONDER",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "PAROU DE RESPONDER",
+    "total_descartes": 1
+  },
+  "554184673738": {
+    "telefone": "554184673738",
+    "nome": "SF4 FILMES",
+    "mensagens": [27],
+    "rastreamentos": [90, 100, 143],
+    "leads": [
+      "23770121"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6647997141521",
+        "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+        "ad_name": "AD16 - 05/03 - note 14 pro plus",
+        "message_id": 27,
+        "date_time": "2025-05-02T08:21:28.261Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 143,
+        "lead_id": "23770121",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T11:14:00.163Z",
+        "current_status_name": "3° ATENDIMENTO",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 100,
+        "lead_id": "23770121",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T01:22:44.999Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 90,
+        "lead_id": "23770121",
+        "message_id": 27,
+        "event_type": "message_received",
+        "event_time": "2025-05-02T08:21:28.261Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-02T08:21:28.261Z",
+    "ultimo_contato": "2025-05-03T11:14:00.163Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "3° ATENDIMENTO",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554191976224": {
+    "telefone": "554191976224",
+    "nome": "Carlos",
+    "mensagens": [28],
+    "rastreamentos": [91, 101, 113, 116],
+    "leads": [
+      "23771133"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6681969001721",
+        "adset_name": "CJ 51 - 17/02 [Poco X6 Pro] - Stories/Reels [vídeo víew 75%] homens - 25 a 45 [S/A]",
+        "ad_name": "AD08 - 10/04 - generalista v2",
+        "message_id": 28,
+        "date_time": "2025-05-02T09:53:03.255Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 116,
+        "lead_id": "23771133",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T08:57:23.647Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": "DESQUALIFICADO",
+        "price": null
+      },
+      {
+        "id": 113,
+        "lead_id": "23771133",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T08:56:37.784Z",
+        "current_status_name": "3° ATENDIMENTO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 101,
+        "lead_id": "23771133",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T01:22:49.781Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 91,
+        "lead_id": "23771133",
+        "message_id": 28,
+        "event_type": "message_received",
+        "event_time": "2025-05-02T09:53:03.255Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-02T09:53:03.255Z",
+    "ultimo_contato": "2025-05-03T08:57:23.647Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Matheus",
+    "descartes": [
+      {
+        "lead_id": "23771133",
+        "event_time": "2025-05-03T08:57:23.647Z",
+        "motivo": "DESQUALIFICADO",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "DESQUALIFICADO",
+    "total_descartes": 1
+  },
+  "554198919139": {
+    "telefone": "554198919139",
+    "nome": "andreazeredo100",
+    "mensagens": [30],
+    "rastreamentos": [93, 102, 112, 158],
+    "leads": [
+      "23772105"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6729776128321",
+        "adset_name": "CJ 24 - 10/04 - teste mc - stories/reels -  [IG] xiaomi + redmi - 19 - 45 - S/A",
+        "ad_name": "AD04 - 10/04 - generalista apresentado — Cópia",
+        "message_id": 30,
+        "date_time": "2025-05-02T10:46:15.341Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 158,
+        "lead_id": "23772105",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T12:19:23.749Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": "PAROU DE RESPONDER",
+        "price": null
+      },
+      {
+        "id": 112,
+        "lead_id": "23772105",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T08:56:14.403Z",
+        "current_status_name": "3° ATENDIMENTO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 102,
+        "lead_id": "23772105",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T01:22:54.458Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 93,
+        "lead_id": "23772105",
+        "message_id": 30,
+        "event_type": "message_received",
+        "event_time": "2025-05-02T10:46:15.341Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-02T10:46:15.341Z",
+    "ultimo_contato": "2025-05-03T12:19:23.749Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Matheus",
+    "descartes": [
+      {
+        "lead_id": "23772105",
+        "event_time": "2025-05-03T12:19:23.749Z",
+        "motivo": "PAROU DE RESPONDER",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "PAROU DE RESPONDER",
+    "total_descartes": 1
+  },
+  "554197542531": {
+    "telefone": "554197542531",
+    "nome": "🫡",
+    "mensagens": [45],
+    "rastreamentos": [105, 110, 166, 186],
+    "leads": [
+      "23789477"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6681969001721",
+        "adset_name": "CJ 51 - 17/02 [Poco X6 Pro] - Stories/Reels [vídeo víew 75%] homens - 25 a 45 [S/A]",
+        "ad_name": "AD08 - 10/04 - generalista v2",
+        "message_id": 45,
+        "date_time": "2025-05-03T06:40:20.491Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 166,
+        "lead_id": "23789477",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T12:25:27.676Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 110,
+        "lead_id": "23789477",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T08:54:10.763Z",
+        "current_status_name": "1° ATENDIMENTO(MANHÃ)",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 105,
+        "lead_id": "23789477",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T06:40:28.634Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 186,
+        "lead_id": "23789477",
+        "message_id": 45,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T06:40:20.491Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-03T06:40:20.491Z",
+    "ultimo_contato": "2025-05-03T12:25:27.676Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "2° ATENDIMENTO",
+    "responsavel": "Matheus",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554188573325": {
+    "telefone": "554188573325",
+    "nome": "Bruno José",
+    "mensagens": [46],
+    "rastreamentos": [106, 125, 187],
+    "leads": [
+      "23789617"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6729776128321",
+        "adset_name": "CJ 24 - 10/04 - teste mc - stories/reels -  [IG] xiaomi + redmi - 19 - 45 - S/A",
+        "ad_name": "AD04 - 10/04 - generalista apresentado — Cópia",
+        "message_id": 46,
+        "date_time": "2025-05-03T07:19:30.679Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 125,
+        "lead_id": "23789617",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T09:31:34.364Z",
+        "current_status_name": "1° ATENDIMENTO(MANHÃ)",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 106,
+        "lead_id": "23789617",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T07:19:36.214Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 187,
+        "lead_id": "23789617",
+        "message_id": 46,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T07:19:30.679Z",
+        "current_status_name": "1° ATENDIMENTO(MANHÃ)",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-03T07:19:30.679Z",
+    "ultimo_contato": "2025-05-03T09:31:34.364Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "1° ATENDIMENTO(MANHÃ)",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554196930343": {
+    "telefone": "554196930343",
+    "nome": "Aline",
+    "mensagens": [47],
+    "rastreamentos": [107, 108, 109, 123, 173],
+    "leads": [
+      "23790159"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6647997141521",
+        "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+        "ad_name": "AD17 - 05/03 - note 14 pro plus",
+        "message_id": 47,
+        "date_time": "2025-05-03T08:42:26.820Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 173,
+        "lead_id": "23790159",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T13:18:38.528Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 123,
+        "lead_id": "23790159",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T09:15:24.226Z",
+        "current_status_name": "1° ATENDIMENTO(MANHÃ)",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 108,
+        "lead_id": "23790159",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T08:42:28.710Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 107,
+        "lead_id": "23790159",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T08:42:28.657Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 109,
+        "lead_id": "23790159",
+        "message_id": 47,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T08:42:26.820Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-03T08:42:26.820Z",
+    "ultimo_contato": "2025-05-03T13:18:38.528Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "2° ATENDIMENTO",
+    "responsavel": "Gustavo Paessens",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554184967813": {
+    "telefone": "554184967813",
+    "nome": "Josias",
+    "mensagens": [48],
+    "rastreamentos": [127, 128, 165, 188],
+    "leads": [
+      "23791291"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6758183774121",
+        "adset_name": "CJ 29 - 23/04 - poco x7 pro - stories/reels -  [IG] mix vídeo/envolvimento - 20 - 45 - S/A",
+        "ad_name": "AD04 - 29/04 - poco x7 pro",
+        "message_id": 48,
+        "date_time": "2025-05-03T09:46:03.728Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 165,
+        "lead_id": "23791291",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T12:24:57.948Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 128,
+        "lead_id": "23791291",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T09:47:43.373Z",
+        "current_status_name": "1° ATENDIMENTO(MANHÃ)",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 127,
+        "lead_id": "23791291",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T09:46:08.607Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 188,
+        "lead_id": "23791291",
+        "message_id": 48,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T09:46:03.728Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-03T09:46:03.728Z",
+    "ultimo_contato": "2025-05-03T12:24:57.948Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "2° ATENDIMENTO",
+    "responsavel": "Matheus",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554199527940": {
+    "telefone": "554199527940",
+    "nome": "Cleyton",
+    "mensagens": [49],
+    "rastreamentos": [129, 130, 131, 164],
+    "leads": [
+      "23791567"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6681969001721",
+        "adset_name": "CJ 51 - 17/02 [Poco X6 Pro] - Stories/Reels [vídeo víew 75%] homens - 25 a 45 [S/A]",
+        "ad_name": "AD08 - 10/04 - generalista v2",
+        "message_id": 49,
+        "date_time": "2025-05-03T10:09:34.580Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 164,
+        "lead_id": "23791567",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T12:24:47.224Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 131,
+        "lead_id": "23791567",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T10:20:05.022Z",
+        "current_status_name": "1° ATENDIMENTO(MANHÃ)",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 129,
+        "lead_id": "23791567",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T10:09:35.807Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 130,
+        "lead_id": "23791567",
+        "message_id": 49,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T10:09:34.580Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-03T10:09:34.580Z",
+    "ultimo_contato": "2025-05-03T12:24:47.224Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "2° ATENDIMENTO",
+    "responsavel": "Matheus",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554198282767": {
+    "telefone": "554198282767",
+    "nome": "Beto",
+    "mensagens": [50],
+    "rastreamentos": [132, 133, 134, 135, 157, 215, 216],
+    "leads": [
+      "23792241"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6758188836321",
+        "adset_name": "CJ 30 - 23/04 - note 14 pro plus - stories/reels -  [IG] mix vídeo/envolvimento - 22 - 45 - S/A",
+        "ad_name": "AD06 - 29/04 - note 14 pro plus",
+        "message_id": 50,
+        "date_time": "2025-05-03T10:55:52.473Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 216,
+        "lead_id": "23792241",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T01:56:07.136Z",
+        "current_status_name": "LEAD CONVERTIDO",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": "COMPROU",
+        "price": "2090.00"
+      },
+      {
+        "id": 215,
+        "lead_id": "23792241",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T01:56:04.588Z",
+        "current_status_name": "Teste",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": "COMPROU",
+        "price": "2090.00"
+      },
+      {
+        "id": 157,
+        "lead_id": "23792241",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T12:18:28.559Z",
+        "current_status_name": "LEAD CONVERTIDO",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": "COMPROU",
+        "price": null
+      },
+      {
+        "id": 135,
+        "lead_id": "23792241",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T11:06:10.899Z",
+        "current_status_name": "1° ATENDIMENTO(MANHÃ)",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 133,
+        "lead_id": "23792241",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T10:55:53.244Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 132,
+        "lead_id": "23792241",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T10:55:53.159Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 134,
+        "lead_id": "23792241",
+        "message_id": 50,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T10:55:52.473Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [
+      {
+        "lead_id": "23792241",
+        "event_time": "2025-05-03T12:18:28.559Z",
+        "price": 0,
+        "message_id": null,
+        "responsible_user_name": "Felipe Quichaba"
+      },
+      {
+        "lead_id": "23792241",
+        "event_time": "2025-05-04T01:56:04.588Z",
+        "price": 2090,
+        "message_id": null,
+        "responsible_user_name": "Felipe Quichaba"
+      },
+      {
+        "lead_id": "23792241",
+        "event_time": "2025-05-04T01:56:07.136Z",
+        "price": 2090,
+        "message_id": null,
+        "responsible_user_name": "Felipe Quichaba"
+      }
+    ],
+    "primeiro_contato": "2025-05-03T10:55:52.473Z",
+    "ultimo_contato": "2025-05-04T01:56:07.136Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": true,
+    "ultimo_status": "LEAD CONVERTIDO",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554199947474": {
+    "telefone": "554199947474",
+    "nome": "Andréa Barbosa 🌸",
+    "mensagens": [51, 52],
+    "rastreamentos": [138, 140, 172, 189, 190],
+    "leads": [
+      "23792423"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6729776128321",
+        "adset_name": "CJ 24 - 10/04 - teste mc - stories/reels -  [IG] xiaomi + redmi - 19 - 45 - S/A",
+        "ad_name": "AD04 - 10/04 - generalista apresentado — Cópia",
+        "message_id": 51,
+        "date_time": "2025-05-03T11:08:09.693Z"
+      },
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6729776128321",
+        "adset_name": "CJ 24 - 10/04 - teste mc - stories/reels -  [IG] xiaomi + redmi - 19 - 45 - S/A",
+        "ad_name": "AD04 - 10/04 - generalista apresentado — Cópia",
+        "message_id": 52,
+        "date_time": "2025-05-03T11:08:10.172Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 172,
+        "lead_id": "23792423",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T13:16:41.366Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 140,
+        "lead_id": "23792423",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T11:09:37.667Z",
+        "current_status_name": "1° ATENDIMENTO(MANHÃ)",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 138,
+        "lead_id": "23792423",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T11:08:14.456Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 190,
+        "lead_id": "23792423",
+        "message_id": 52,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T11:08:10.172Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 189,
+        "lead_id": "23792423",
+        "message_id": 51,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T11:08:09.693Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-03T11:08:09.693Z",
+    "ultimo_contato": "2025-05-03T13:16:41.366Z",
+    "total_mensagens": 2,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "2° ATENDIMENTO",
+    "responsavel": "Gustavo Paessens",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554195391624": {
+    "telefone": "554195391624",
+    "nome": "EuSouReniltonRibeiro👽",
+    "mensagens": [53],
+    "rastreamentos": [149, 150, 152, 163, 191],
+    "leads": [
+      "23792799"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6681969001721",
+        "adset_name": "CJ 51 - 17/02 [Poco X6 Pro] - Stories/Reels [vídeo víew 75%] homens - 25 a 45 [S/A]",
+        "ad_name": "AD08 - 10/04 - generalista v2",
+        "message_id": 53,
+        "date_time": "2025-05-03T11:34:04.388Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 163,
+        "lead_id": "23792799",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T12:23:23.656Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": "DESQUALIFICADO",
+        "price": null
+      },
+      {
+        "id": 152,
+        "lead_id": "23792799",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T11:36:31.637Z",
+        "current_status_name": "1° ATENDIMENTO(MANHÃ)",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 150,
+        "lead_id": "23792799",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T11:34:09.974Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 149,
+        "lead_id": "23792799",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T11:34:09.785Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 191,
+        "lead_id": "23792799",
+        "message_id": 53,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T11:34:04.388Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": null,
+        "lead_situation": "DESQUALIFICADO",
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-03T11:34:04.388Z",
+    "ultimo_contato": "2025-05-03T12:23:23.656Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Matheus",
+    "descartes": [
+      {
+        "lead_id": "23792799",
+        "event_time": "2025-05-03T12:23:23.656Z",
+        "motivo": "DESQUALIFICADO",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      },
+      {
+        "lead_id": "23792799",
+        "event_time": "2025-05-03T11:34:04.388Z",
+        "motivo": "DESQUALIFICADO",
+        "message_id": 53,
+        "responsible_user_name": null,
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "ad_name": "AD08 - 10/04 - generalista v2"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "DESQUALIFICADO",
+    "total_descartes": 2
+  },
+  "554195653883": {
+    "telefone": "554195653883",
+    "nome": "valeriocirne",
+    "mensagens": [54],
+    "rastreamentos": [151, 153, 171, 192],
+    "leads": [
+      "23792821"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6758188836321",
+        "adset_name": "CJ 30 - 23/04 - note 14 pro plus - stories/reels -  [IG] mix vídeo/envolvimento - 22 - 45 - S/A",
+        "ad_name": "AD06 - 29/04 - note 14 pro plus",
+        "message_id": 54,
+        "date_time": "2025-05-03T11:36:19.471Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 171,
+        "lead_id": "23792821",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T13:16:40.511Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 153,
+        "lead_id": "23792821",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T11:37:30.286Z",
+        "current_status_name": "1° ATENDIMENTO(MANHÃ)",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 151,
+        "lead_id": "23792821",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T11:36:24.667Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 192,
+        "lead_id": "23792821",
+        "message_id": 54,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T11:36:19.471Z",
+        "current_status_name": "2° ATENDIMENTO",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-03T11:36:19.471Z",
+    "ultimo_contato": "2025-05-03T13:16:40.511Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "2° ATENDIMENTO",
+    "responsavel": "Gustavo Paessens",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554187815117": {
+    "telefone": "554187815117",
+    "nome": "Iara",
+    "mensagens": [55],
+    "rastreamentos": [154, 155, 193],
+    "leads": [
+      "23793295"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6647997141521",
+        "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+        "ad_name": "AD17 - 05/03 - note 14 pro plus",
+        "message_id": 55,
+        "date_time": "2025-05-03T12:06:11.535Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 155,
+        "lead_id": "23793295",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T12:09:24.439Z",
+        "current_status_name": "1º ATENDIMENTO(TARDE)",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 154,
+        "lead_id": "23793295",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T12:06:16.101Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 193,
+        "lead_id": "23793295",
+        "message_id": 55,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T12:06:11.535Z",
+        "current_status_name": "1º ATENDIMENTO(TARDE)",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-03T12:06:11.535Z",
+    "ultimo_contato": "2025-05-03T12:09:24.439Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "1º ATENDIMENTO(TARDE)",
+    "responsavel": "Matheus",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554188060892": {
+    "telefone": "554188060892",
+    "nome": "Guilherme Gonçalves",
+    "mensagens": [56],
+    "rastreamentos": [167, 168, 169],
+    "leads": [
+      "23794101"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6681969001721",
+        "adset_name": "CJ 51 - 17/02 [Poco X6 Pro] - Stories/Reels [vídeo víew 75%] homens - 25 a 45 [S/A]",
+        "ad_name": "AD08 - 10/04 - generalista v2",
+        "message_id": 56,
+        "date_time": "2025-05-03T13:01:39.287Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 169,
+        "lead_id": "23794101",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T13:11:44.595Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": "DESQUALIFICADO",
+        "price": null
+      },
+      {
+        "id": 167,
+        "lead_id": "23794101",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T13:01:41.135Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 168,
+        "lead_id": "23794101",
+        "message_id": 56,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T13:01:39.287Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-03T13:01:39.287Z",
+    "ultimo_contato": "2025-05-03T13:11:44.595Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Gustavo Paessens",
+    "descartes": [
+      {
+        "lead_id": "23794101",
+        "event_time": "2025-05-03T13:11:44.595Z",
+        "motivo": "DESQUALIFICADO",
+        "message_id": null,
+        "responsible_user_name": "Gustavo Paessens"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "DESQUALIFICADO",
+    "total_descartes": 1
+  },
+  "554384398266": {
+    "telefone": "554384398266",
+    "nome": "ROBSON",
+    "mensagens": [57],
+    "rastreamentos": [175, 176, 178],
+    "leads": [
+      "23794641"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6647997141521",
+        "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+        "ad_name": "AD17 - 05/03 - note 14 pro plus",
+        "message_id": 57,
+        "date_time": "2025-05-03T13:40:26.292Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 178,
+        "lead_id": "23794641",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T13:48:47.807Z",
+        "current_status_name": "1º ATENDIMENTO(TARDE)",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 175,
+        "lead_id": "23794641",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T13:40:27.417Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 176,
+        "lead_id": "23794641",
+        "message_id": 57,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T13:40:26.292Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-03T13:40:26.292Z",
+    "ultimo_contato": "2025-05-03T13:48:47.807Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "1º ATENDIMENTO(TARDE)",
+    "responsavel": "Gustavo Paessens",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554197931038": {
+    "telefone": "554197931038",
+    "nome": "Mateus Luiz",
+    "mensagens": [59, 58],
+    "rastreamentos": [177, 179, 183, 194],
+    "leads": [
+      "23794723"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6758183774121",
+        "adset_name": "CJ 29 - 23/04 - poco x7 pro - stories/reels -  [IG] mix vídeo/envolvimento - 20 - 45 - S/A",
+        "ad_name": "AD04 - 29/04 - poco x7 pro",
+        "message_id": 59,
+        "date_time": "2025-05-03T13:51:29.451Z"
+      },
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6758183774121",
+        "adset_name": "CJ 29 - 23/04 - poco x7 pro - stories/reels -  [IG] mix vídeo/envolvimento - 20 - 45 - S/A",
+        "ad_name": "AD04 - 29/04 - poco x7 pro",
+        "message_id": 58,
+        "date_time": "2025-05-03T13:46:49.028Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 183,
+        "lead_id": "23794723",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T13:57:08.336Z",
+        "current_status_name": "1º ATENDIMENTO(TARDE)",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 179,
+        "lead_id": "23794723",
+        "message_id": 59,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T13:51:29.451Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 177,
+        "lead_id": "23794723",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T13:46:53.672Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 194,
+        "lead_id": "23794723",
+        "message_id": 58,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T13:46:49.028Z",
+        "current_status_name": "1º ATENDIMENTO(TARDE)",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-03T13:46:49.028Z",
+    "ultimo_contato": "2025-05-03T13:57:08.336Z",
+    "total_mensagens": 2,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "1º ATENDIMENTO(TARDE)",
+    "responsavel": "Matheus",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554196623036": {
+    "telefone": "554196623036",
+    "nome": "Eder Leonardo Gonçalves",
+    "mensagens": [60],
+    "rastreamentos": [180, 181, 182],
+    "leads": [
+      "23794801"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6758188836321",
+        "adset_name": "CJ 30 - 23/04 - note 14 pro plus - stories/reels -  [IG] mix vídeo/envolvimento - 22 - 45 - S/A",
+        "ad_name": "AD06 - 29/04 - note 14 pro plus",
+        "message_id": 60,
+        "date_time": "2025-05-03T13:52:36.520Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 182,
+        "lead_id": "23794801",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T13:56:58.906Z",
+        "current_status_name": "1º ATENDIMENTO(TARDE)",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 181,
+        "lead_id": "23794801",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T13:52:38.311Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 180,
+        "lead_id": "23794801",
+        "message_id": 60,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T13:52:36.520Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-03T13:52:36.520Z",
+    "ultimo_contato": "2025-05-03T13:56:58.906Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "1º ATENDIMENTO(TARDE)",
+    "responsavel": "Matheus",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554196657433": {
+    "telefone": "554196657433",
+    "nome": "Anderson Machado",
+    "mensagens": [61],
+    "rastreamentos": [184, 185, 195],
+    "leads": [
+      "23794873"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6729776128321",
+        "adset_name": "CJ 24 - 10/04 - teste mc - stories/reels -  [IG] xiaomi + redmi - 19 - 45 - S/A",
+        "ad_name": "AD04 - 10/04 - generalista apresentado — Cópia",
+        "message_id": 61,
+        "date_time": "2025-05-03T13:57:27.036Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 195,
+        "lead_id": "23794873",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T14:46:05.703Z",
+        "current_status_name": "1º ATENDIMENTO(TARDE)",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 184,
+        "lead_id": "23794873",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T13:57:28.035Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 185,
+        "lead_id": "23794873",
+        "message_id": 61,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T13:57:27.036Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-03T13:57:27.036Z",
+    "ultimo_contato": "2025-05-03T14:46:05.703Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "1º ATENDIMENTO(TARDE)",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554195042164": {
+    "telefone": "554195042164",
+    "nome": "Diego De Oliveira",
+    "mensagens": [62],
+    "rastreamentos": [198, 213],
+    "leads": [
+      "23795921"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6758183774121",
+        "adset_name": "CJ 29 - 23/04 - poco x7 pro - stories/reels -  [IG] mix vídeo/envolvimento - 20 - 45 - S/A",
+        "ad_name": "AD04 - 29/04 - poco x7 pro",
+        "message_id": 62,
+        "date_time": "2025-05-03T15:16:16.428Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 213,
+        "lead_id": "23795921",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T00:38:10.712Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 198,
+        "lead_id": "23795921",
+        "message_id": 62,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T15:16:16.428Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-03T15:16:16.428Z",
+    "ultimo_contato": "2025-05-04T00:38:10.712Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Gustavo Paessens",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554199574214": {
+    "telefone": "554199574214",
+    "nome": "Dr Alfredo  Lopes Junior",
+    "mensagens": [63],
+    "rastreamentos": [199, 200, 201],
+    "leads": [
+      "23796333"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6681969001721",
+        "adset_name": "CJ 51 - 17/02 [Poco X6 Pro] - Stories/Reels [vídeo víew 75%] homens - 25 a 45 [S/A]",
+        "ad_name": "AD10 - 29/04 - note 14",
+        "message_id": 63,
+        "date_time": "2025-05-03T15:45:56.223Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 200,
+        "lead_id": "23796333",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T15:45:57.694Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 199,
+        "lead_id": "23796333",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T15:45:57.650Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 201,
+        "lead_id": "23796333",
+        "message_id": 63,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T15:45:56.223Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-03T15:45:56.223Z",
+    "ultimo_contato": "2025-05-03T15:45:57.694Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554198799799": {
+    "telefone": "554198799799",
+    "nome": "Luh 😎",
+    "mensagens": [64],
+    "rastreamentos": [202, 203, 204],
+    "leads": [
+      "23798543"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6647997141521",
+        "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+        "ad_name": "AD17 - 05/03 - note 14 pro plus",
+        "message_id": 64,
+        "date_time": "2025-05-03T18:57:14.081Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 203,
+        "lead_id": "23798543",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T18:57:15.966Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 202,
+        "lead_id": "23798543",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T18:57:15.922Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 204,
+        "lead_id": "23798543",
+        "message_id": 64,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T18:57:14.081Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-03T18:57:14.081Z",
+    "ultimo_contato": "2025-05-03T18:57:15.966Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554191071634": {
+    "telefone": "554191071634",
+    "nome": "🍁 Adriana M Kichel 🍁",
+    "mensagens": [65],
+    "rastreamentos": [205, 206],
+    "leads": [
+      "23799463"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6647997141521",
+        "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+        "ad_name": "AD17 - 05/03 - note 14 pro plus",
+        "message_id": 65,
+        "date_time": "2025-05-03T20:59:12.432Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 205,
+        "lead_id": "23799463",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T20:59:13.502Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 206,
+        "lead_id": "23799463",
+        "message_id": 65,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T20:59:12.432Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-03T20:59:12.432Z",
+    "ultimo_contato": "2025-05-03T20:59:13.502Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554188570499": {
+    "telefone": "554188570499",
+    "nome": "Paty",
+    "mensagens": [66],
+    "rastreamentos": [207, 208],
+    "leads": [
+      "23799641"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6681969001721",
+        "adset_name": "CJ 51 - 17/02 [Poco X6 Pro] - Stories/Reels [vídeo víew 75%] homens - 25 a 45 [S/A]",
+        "ad_name": "AD08 - 10/04 - generalista v2",
+        "message_id": 66,
+        "date_time": "2025-05-03T21:21:48.898Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 207,
+        "lead_id": "23799641",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T21:21:49.685Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 208,
+        "lead_id": "23799641",
+        "message_id": 66,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T21:21:48.898Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-03T21:21:48.898Z",
+    "ultimo_contato": "2025-05-03T21:21:49.685Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554195120461": {
+    "telefone": "554195120461",
+    "nome": "analeticia9708",
+    "mensagens": [67],
+    "rastreamentos": [209, 214],
+    "leads": [
+      "23328189"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6681969001721",
+        "adset_name": "CJ 51 - 17/02 [Poco X6 Pro] - Stories/Reels [vídeo víew 75%] homens - 25 a 45 [S/A]",
+        "ad_name": "AD11 - 29/04 - note 14",
+        "message_id": 67,
+        "date_time": "2025-05-03T22:10:28.040Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 214,
+        "lead_id": "23328189",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T00:38:52.091Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 209,
+        "lead_id": "23328189",
+        "message_id": 67,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T22:10:28.040Z",
+        "current_status_name": "LEAD DESCARTADO",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-03T22:10:28.040Z",
+    "ultimo_contato": "2025-05-04T00:38:52.091Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "LEAD DESCARTADO",
+    "responsavel": "Matheus",
+    "descartes": [
+      {
+        "lead_id": "23328189",
+        "event_time": "2025-05-04T00:38:52.091Z",
+        "motivo": "Não especificado",
+        "message_id": null,
+        "responsible_user_name": "Matheus"
+      },
+      {
+        "lead_id": "23328189",
+        "event_time": "2025-05-03T22:10:28.040Z",
+        "motivo": "Não especificado",
+        "message_id": 67,
+        "responsible_user_name": null,
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "ad_name": "AD11 - 29/04 - note 14"
+      }
+    ],
+    "descartado": true,
+    "motivo_descarte": "Não especificado",
+    "total_descartes": 2
+  },
+  "554199754485": {
+    "telefone": "554199754485",
+    "nome": "@VaiCorinthians",
+    "mensagens": [68],
+    "rastreamentos": [210, 211, 212],
+    "leads": [
+      "23800609"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6758183774121",
+        "adset_name": "CJ 29 - 23/04 - poco x7 pro - stories/reels -  [IG] mix vídeo/envolvimento - 20 - 45 - S/A",
+        "ad_name": "AD04 - 29/04 - poco x7 pro",
+        "message_id": 68,
+        "date_time": "2025-05-03T23:07:41.464Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 211,
+        "lead_id": "23800609",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T23:07:46.876Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 210,
+        "lead_id": "23800609",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-03T23:07:46.378Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 212,
+        "lead_id": "23800609",
+        "message_id": 68,
+        "event_type": "message_received",
+        "event_time": "2025-05-03T23:07:41.464Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-03T23:07:41.464Z",
+    "ultimo_contato": "2025-05-03T23:07:46.876Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554192430668": {
+    "telefone": "554192430668",
+    "nome": "Anderson Barbosa",
+    "mensagens": [70, 69],
+    "rastreamentos": [218, 219, 220, 246],
+    "leads": [
+      "23803179"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6729776128321",
+        "adset_name": "CJ 24 - 10/04 - teste mc - stories/reels -  [IG] xiaomi + redmi - 19 - 45 - S/A",
+        "ad_name": "AD04 - 10/04 - generalista apresentado — Cópia",
+        "message_id": 70,
+        "date_time": "2025-05-04T07:39:07.424Z"
+      },
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6729776128321",
+        "adset_name": "CJ 24 - 10/04 - teste mc - stories/reels -  [IG] xiaomi + redmi - 19 - 45 - S/A",
+        "ad_name": "AD04 - 10/04 - generalista apresentado — Cópia",
+        "message_id": 69,
+        "date_time": "2025-05-04T07:33:05.176Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 220,
+        "lead_id": "23803179",
+        "message_id": 70,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T07:39:07.424Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 219,
+        "lead_id": "23803179",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T07:33:10.628Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 218,
+        "lead_id": "23803179",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T07:33:10.289Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 246,
+        "lead_id": "23803179",
+        "message_id": 69,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T07:33:05.176Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-04T07:33:05.176Z",
+    "ultimo_contato": "2025-05-04T07:39:07.424Z",
+    "total_mensagens": 2,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554197622856": {
+    "telefone": "554197622856",
+    "nome": "thaisjoelise",
+    "mensagens": [71],
+    "rastreamentos": [221, 245],
+    "leads": [
+      "23803917"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6647997141521",
+        "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+        "ad_name": "AD17 - 05/03 - note 14 pro plus",
+        "message_id": 71,
+        "date_time": "2025-05-04T09:33:33.827Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 221,
+        "lead_id": "23803917",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T09:33:40.491Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 245,
+        "lead_id": "23803917",
+        "message_id": 71,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T09:33:33.827Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-04T09:33:33.827Z",
+    "ultimo_contato": "2025-05-04T09:33:40.491Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554188299049": {
+    "telefone": "554188299049",
+    "nome": "Lauro",
+    "mensagens": [72],
+    "rastreamentos": [222, 244],
+    "leads": [
+      "23804951"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6694169304921",
+        "adset_name": "CJ 53 - 05/03 [Note 14 Pro] - Stories/Reels [vídeo víew 75%] 22 a 50 [S/A]",
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 72,
+        "date_time": "2025-05-04T11:19:50.311Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 222,
+        "lead_id": "23804951",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T11:19:56.290Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 244,
+        "lead_id": "23804951",
+        "message_id": 72,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T11:19:50.311Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-04T11:19:50.311Z",
+    "ultimo_contato": "2025-05-04T11:19:56.290Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554191732134": {
+    "telefone": "554191732134",
+    "nome": "Saúl Hernández",
+    "mensagens": [73],
+    "rastreamentos": [223, 224],
+    "leads": [
+      "23805033"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6647997141521",
+        "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+        "ad_name": "AD17 - 05/03 - note 14 pro plus",
+        "message_id": 73,
+        "date_time": "2025-05-04T11:27:51.710Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 223,
+        "lead_id": "23805033",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T11:27:52.924Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 224,
+        "lead_id": "23805033",
+        "message_id": 73,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T11:27:51.710Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-04T11:27:51.710Z",
+    "ultimo_contato": "2025-05-04T11:27:52.924Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554388120867": {
+    "telefone": "554388120867",
+    "nome": "Desconhecido",
+    "mensagens": [74, 75],
+    "rastreamentos": [225, 226, 227, 228],
+    "leads": [
+      "23805191"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6758188836321",
+        "adset_name": "CJ 30 - 23/04 - note 14 pro plus - stories/reels -  [IG] mix vídeo/envolvimento - 22 - 45 - S/A",
+        "ad_name": "AD05 - 29/04 - note 14 pro plus",
+        "message_id": 74,
+        "date_time": "2025-05-04T11:44:24.560Z"
+      },
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6758188836321",
+        "adset_name": "CJ 30 - 23/04 - note 14 pro plus - stories/reels -  [IG] mix vídeo/envolvimento - 22 - 45 - S/A",
+        "ad_name": "AD05 - 29/04 - note 14 pro plus",
+        "message_id": 75,
+        "date_time": "2025-05-04T11:49:46.376Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 228,
+        "lead_id": "23805191",
+        "message_id": 75,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T11:49:46.376Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 227,
+        "lead_id": "23805191",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T11:44:28.647Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 226,
+        "lead_id": "23805191",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T11:44:28.513Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 225,
+        "lead_id": "23805191",
+        "message_id": 74,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T11:44:24.560Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-04T11:44:24.560Z",
+    "ultimo_contato": "2025-05-04T11:49:46.376Z",
+    "total_mensagens": 2,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "559288476154": {
+    "telefone": "559288476154",
+    "nome": "Desconhecido",
+    "mensagens": [76, 77],
+    "rastreamentos": [229, 230, 231, 232],
+    "leads": [
+      "23805525"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6694169304921",
+        "adset_name": "CJ 53 - 05/03 [Note 14 Pro] - Stories/Reels [vídeo víew 75%] 22 a 50 [S/A]",
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 76,
+        "date_time": "2025-05-04T12:10:26.636Z"
+      },
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6694169304921",
+        "adset_name": "CJ 53 - 05/03 [Note 14 Pro] - Stories/Reels [vídeo víew 75%] 22 a 50 [S/A]",
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 77,
+        "date_time": "2025-05-04T12:11:46.736Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 232,
+        "lead_id": "23805525",
+        "message_id": 77,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T12:11:46.736Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 231,
+        "lead_id": "23805525",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T12:10:30.320Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 230,
+        "lead_id": "23805525",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T12:10:30.107Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 229,
+        "lead_id": "23805525",
+        "message_id": 76,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T12:10:26.636Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-04T12:10:26.636Z",
+    "ultimo_contato": "2025-05-04T12:11:46.736Z",
+    "total_mensagens": 2,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554197918324": {
+    "telefone": "554197918324",
+    "nome": "Anderson",
+    "mensagens": [78],
+    "rastreamentos": [233, 234, 235],
+    "leads": [
+      "23806087"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6647997141521",
+        "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+        "ad_name": "AD17 - 05/03 - note 14 pro plus",
+        "message_id": 78,
+        "date_time": "2025-05-04T13:02:50.276Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 235,
+        "lead_id": "23806087",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T13:02:53.328Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 234,
+        "lead_id": "23806087",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T13:02:53.266Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 233,
+        "lead_id": "23806087",
+        "message_id": 78,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T13:02:50.276Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-04T13:02:50.276Z",
+    "ultimo_contato": "2025-05-04T13:02:53.328Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554196251126": {
+    "telefone": "554196251126",
+    "nome": "Maiara Santos",
+    "mensagens": [79],
+    "rastreamentos": [236, 243],
+    "leads": [
+      "23806939"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6694169304921",
+        "adset_name": "CJ 53 - 05/03 [Note 14 Pro] - Stories/Reels [vídeo víew 75%] 22 a 50 [S/A]",
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 79,
+        "date_time": "2025-05-04T14:12:39.036Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 236,
+        "lead_id": "23806939",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T14:12:41.486Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 243,
+        "lead_id": "23806939",
+        "message_id": 79,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T14:12:39.036Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-04T14:12:39.036Z",
+    "ultimo_contato": "2025-05-04T14:12:41.486Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554199373510": {
+    "telefone": "554199373510",
+    "nome": "Kellen",
+    "mensagens": [80],
+    "rastreamentos": [237, 238],
+    "leads": [
+      "23807181"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6647997141521",
+        "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+        "ad_name": "AD17 - 05/03 - note 14 pro plus",
+        "message_id": 80,
+        "date_time": "2025-05-04T14:37:02.159Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 238,
+        "lead_id": "23807181",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T14:37:04.140Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 237,
+        "lead_id": "23807181",
+        "message_id": 80,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T14:37:02.159Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-04T14:37:02.159Z",
+    "ultimo_contato": "2025-05-04T14:37:04.140Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554185019733": {
+    "telefone": "554185019733",
+    "nome": "Janylson",
+    "mensagens": [81],
+    "rastreamentos": [239, 242],
+    "leads": [
+      "23807223"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6758183774121",
+        "adset_name": "CJ 29 - 23/04 - poco x7 pro - stories/reels -  [IG] mix vídeo/envolvimento - 20 - 45 - S/A",
+        "ad_name": "AD04 - 29/04 - poco x7 pro",
+        "message_id": 81,
+        "date_time": "2025-05-04T14:40:04.172Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 242,
+        "lead_id": "23807223",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T16:14:59.363Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 239,
+        "lead_id": "23807223",
+        "message_id": 81,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T14:40:04.172Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-04T14:40:04.172Z",
+    "ultimo_contato": "2025-05-04T16:14:59.363Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Gustavo Paessens",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "559184397736": {
+    "telefone": "559184397736",
+    "nome": "elemmelo007",
+    "mensagens": [82],
+    "rastreamentos": [240, 241],
+    "leads": [
+      "23808025"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6758183774121",
+        "adset_name": "CJ 29 - 23/04 - poco x7 pro - stories/reels -  [IG] mix vídeo/envolvimento - 20 - 45 - S/A",
+        "ad_name": "AD04 - 29/04 - poco x7 pro",
+        "message_id": 82,
+        "date_time": "2025-05-04T15:57:29.349Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 241,
+        "lead_id": "23808025",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T15:57:31.749Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 240,
+        "lead_id": "23808025",
+        "message_id": 82,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T15:57:29.349Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-04T15:57:29.349Z",
+    "ultimo_contato": "2025-05-04T15:57:31.749Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Matheus",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554199195472": {
+    "telefone": "554199195472",
+    "nome": "Adriano França",
+    "mensagens": [83],
+    "rastreamentos": [247, 248, 249],
+    "leads": [
+      "23808285"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6694169304921",
+        "adset_name": "CJ 53 - 05/03 [Note 14 Pro] - Stories/Reels [vídeo víew 75%] 22 a 50 [S/A]",
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 83,
+        "date_time": "2025-05-04T16:24:30.473Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 249,
+        "lead_id": "23808285",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T16:24:33.012Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 248,
+        "lead_id": "23808285",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T16:24:32.818Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 247,
+        "lead_id": "23808285",
+        "message_id": 83,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T16:24:30.473Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-04T16:24:30.473Z",
+    "ultimo_contato": "2025-05-04T16:24:33.012Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554198108773": {
+    "telefone": "554198108773",
+    "nome": "anderson carlos",
+    "mensagens": [85, 84],
+    "rastreamentos": [250, 251, 252],
+    "leads": [
+      "23808353"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6694169304921",
+        "adset_name": "CJ 53 - 05/03 [Note 14 Pro] - Stories/Reels [vídeo víew 75%] 22 a 50 [S/A]",
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 85,
+        "date_time": "2025-05-04T16:39:17.258Z"
+      },
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6694169304921",
+        "adset_name": "CJ 53 - 05/03 [Note 14 Pro] - Stories/Reels [vídeo víew 75%] 22 a 50 [S/A]",
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 84,
+        "date_time": "2025-05-04T16:30:40.158Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 251,
+        "lead_id": "23808353",
+        "message_id": 85,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T16:39:17.258Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 250,
+        "lead_id": "23808353",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T16:30:45.429Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 252,
+        "lead_id": "23808353",
+        "message_id": 84,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T16:30:40.158Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-04T16:30:40.158Z",
+    "ultimo_contato": "2025-05-04T16:39:17.258Z",
+    "total_mensagens": 2,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554288720965": {
+    "telefone": "554288720965",
+    "nome": "Valeria Lucas",
+    "mensagens": [86],
+    "rastreamentos": [253, 255],
+    "leads": [
+      "23808705"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6758188836321",
+        "adset_name": "CJ 30 - 23/04 - note 14 pro plus - stories/reels -  [IG] mix vídeo/envolvimento - 22 - 45 - S/A",
+        "ad_name": "AD06 - 29/04 - note 14 pro plus",
+        "message_id": 86,
+        "date_time": "2025-05-04T17:05:08.091Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 255,
+        "lead_id": "23808705",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T18:14:38.184Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 253,
+        "lead_id": "23808705",
+        "message_id": 86,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T17:05:08.091Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-04T17:05:08.091Z",
+    "ultimo_contato": "2025-05-04T18:14:38.184Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554197780840": {
+    "telefone": "554197780840",
+    "nome": "✨",
+    "mensagens": [87],
+    "rastreamentos": [254, 256],
+    "leads": [
+      "23809373"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6647997141521",
+        "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+        "ad_name": "AD17 - 05/03 - note 14 pro plus",
+        "message_id": 87,
+        "date_time": "2025-05-04T18:12:36.901Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 256,
+        "lead_id": "23809373",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T18:14:41.364Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 254,
+        "lead_id": "23809373",
+        "message_id": 87,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T18:12:36.901Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-04T18:12:36.901Z",
+    "ultimo_contato": "2025-05-04T18:14:41.364Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Gustavo Paessens",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554196159220": {
+    "telefone": "554196159220",
+    "nome": "claricekravetz❤️",
+    "mensagens": [88],
+    "rastreamentos": [257, 258, 259],
+    "leads": [
+      "23809907"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6647997141521",
+        "adset_name": "CJ 33 - 21/08 [Note 14 Pro+] -[IG] Stories/Feed - [possui Xiaomi - produtos de alto valor] 19 a 24 [S/A]",
+        "ad_name": "AD17 - 05/03 - note 14 pro plus",
+        "message_id": 88,
+        "date_time": "2025-05-04T19:06:35.603Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 259,
+        "lead_id": "23809907",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T19:06:37.891Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 258,
+        "lead_id": "23809907",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T19:06:37.721Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 257,
+        "lead_id": "23809907",
+        "message_id": 88,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T19:06:35.603Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-04T19:06:35.603Z",
+    "ultimo_contato": "2025-05-04T19:06:37.891Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554199506945": {
+    "telefone": "554199506945",
+    "nome": "Carlos Tulio",
+    "mensagens": [89],
+    "rastreamentos": [260, 261, 262],
+    "leads": [
+      "23810505"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6758183774121",
+        "adset_name": "CJ 29 - 23/04 - poco x7 pro - stories/reels -  [IG] mix vídeo/envolvimento - 20 - 45 - S/A",
+        "ad_name": "AD04 - 29/04 - poco x7 pro",
+        "message_id": 89,
+        "date_time": "2025-05-04T20:04:29.386Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 262,
+        "lead_id": "23810505",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T20:04:31.568Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 261,
+        "lead_id": "23810505",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T20:04:31.522Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 260,
+        "lead_id": "23810505",
+        "message_id": 89,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T20:04:29.386Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-04T20:04:29.386Z",
+    "ultimo_contato": "2025-05-04T20:04:31.568Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554196431910": {
+    "telefone": "554196431910",
+    "nome": "BARBOSA DO FRETE",
+    "mensagens": [90],
+    "rastreamentos": [263, 264],
+    "leads": [
+      "23811373"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6694169304921",
+        "adset_name": "CJ 53 - 05/03 [Note 14 Pro] - Stories/Reels [vídeo víew 75%] 22 a 50 [S/A]",
+        "ad_name": "AD03 - 05/03 - note 14 pro",
+        "message_id": 90,
+        "date_time": "2025-05-04T21:33:30.928Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 263,
+        "lead_id": "23811373",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T21:33:39.165Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Matheus",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 264,
+        "lead_id": "23811373",
+        "message_id": 90,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T21:33:30.928Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-04T21:33:30.928Z",
+    "ultimo_contato": "2025-05-04T21:33:39.165Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Matheus",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554196832685": {
+    "telefone": "554196832685",
+    "nome": "Emerson Rafael",
+    "mensagens": [91],
+    "rastreamentos": [265, 273],
+    "leads": [
+      "23812101"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6635625411721",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - ABO - 14/09/2024 [ESCALA]",
+        "adset_id": "6758188836321",
+        "adset_name": "CJ 30 - 23/04 - note 14 pro plus - stories/reels -  [IG] mix vídeo/envolvimento - 22 - 45 - S/A",
+        "ad_name": "AD06 - 29/04 - note 14 pro plus",
+        "message_id": 91,
+        "date_time": "2025-05-04T22:58:11.126Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 265,
+        "lead_id": "23812101",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-04T22:58:26.089Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Felipe Quichaba",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 273,
+        "lead_id": "23812101",
+        "message_id": 91,
+        "event_type": "message_received",
+        "event_time": "2025-05-04T22:58:11.126Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-04T22:58:11.126Z",
+    "ultimo_contato": "2025-05-04T22:58:26.089Z",
+    "total_mensagens": 1,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Felipe Quichaba",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  },
+  "554198976922": {
+    "telefone": "554198976922",
+    "nome": "Desconhecido",
+    "mensagens": [99, 100],
+    "rastreamentos": [274, 275, 276],
+    "leads": [
+      "23813031"
+    ],
+    "anuncios": [
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6681969001721",
+        "adset_name": "CJ 51 - 17/02 [Poco X6 Pro] - Stories/Reels [vídeo víew 75%] homens - 25 a 45 [S/A]",
+        "ad_name": "AD10 - 29/04 - note 14",
+        "message_id": 99,
+        "date_time": "2025-05-05T00:56:34.938Z"
+      },
+      {
+        "campaign_id": "6488356802321",
+        "campaign_name": "UP - MENSAGEM - XIAOMI - 18/10/2023",
+        "adset_id": "6681969001721",
+        "adset_name": "CJ 51 - 17/02 [Poco X6 Pro] - Stories/Reels [vídeo víew 75%] homens - 25 a 45 [S/A]",
+        "ad_name": "AD10 - 29/04 - note 14",
+        "message_id": 100,
+        "date_time": "2025-05-05T01:16:46.119Z"
+      }
+    ],
+    "eventos": [
+      {
+        "id": 275,
+        "lead_id": "23813031",
+        "message_id": null,
+        "event_type": "lead_status_changed",
+        "event_time": "2025-05-05T01:23:53.594Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": "Gustavo Paessens",
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 276,
+        "lead_id": "23813031",
+        "message_id": 100,
+        "event_type": "message_received",
+        "event_time": "2025-05-05T01:16:46.119Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      },
+      {
+        "id": 274,
+        "lead_id": "23813031",
+        "message_id": 99,
+        "event_type": "message_received",
+        "event_time": "2025-05-05T00:56:34.938Z",
+        "current_status_name": "etapa de leads reorganizados",
+        "responsible_user_name": null,
+        "lead_situation": null,
+        "price": null
+      }
+    ],
+    "conversoes": [],
+    "primeiro_contato": "2025-05-05T00:56:34.938Z",
+    "ultimo_contato": "2025-05-05T01:23:53.594Z",
+    "total_mensagens": 2,
+    "total_leads": 1,
+    "total_anuncios": 1,
+    "convertido": false,
+    "ultimo_status": "etapa de leads reorganizados",
+    "responsavel": "Gustavo Paessens",
+    "descartes": [],
+    "descartado": false,
+    "motivo_descarte": null,
+    "total_descartes": 0
+  }
+}

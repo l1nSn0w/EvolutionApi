@@ -1,7 +1,7 @@
 const LeadTracking = require('../models/LeadTracking');
 const WebhookMessage = require('../models/WebhookMessage');
 const KommoToken = require('../models/KommoToken');
-const { searchLeadByPhone, getPipelineDetails } = require('./KommoService');
+const { searchLeadByPhone, getPipelineDetails, createLeadStageTracking } = require('./KommoService');
 
 class LeadTrackingService {
   /**
@@ -180,6 +180,76 @@ class LeadTrackingService {
     } catch (error) {
       console.error('Erro ao buscar rastreamentos:', error);
       throw error;
+    }
+  }
+
+  /**
+   * Criar um rastreamento manual de estágio (status) no Kommo
+   * @param {object} options - Opções para criar o rastreamento
+   * @param {number} options.leadId - ID do lead no Kommo (opcional)
+   * @param {string} options.phone - Telefone do lead (opcional)
+   * @param {number} options.messageId - ID da mensagem (opcional)
+   */
+  async createManualStageTracking({ leadId, phone, messageId }) {
+    try {
+      // Se não temos o ID do lead, precisamos ter um telefone ou um ID de mensagem
+      if (!leadId && !phone && !messageId) {
+        return {
+          status: 'error',
+          message: 'É necessário fornecer o ID do lead, o telefone ou o ID da mensagem'
+        };
+      }
+
+      // Se temos o ID da mensagem mas não temos o telefone, buscamos a mensagem para obter o telefone
+      if (messageId && !phone) {
+        const message = await WebhookMessage.findByPk(messageId);
+        if (!message) {
+          return {
+            status: 'error',
+            message: 'Mensagem não encontrada'
+          };
+        }
+        phone = message.telefone;
+      }
+
+      // Verificar se já existe um rastreamento de estágio para este telefone
+      let existingQuery = {};
+      
+      if (leadId) {
+        existingQuery = {
+          lead_id: leadId.toString(),
+          event_type: 'lead_status_changed'
+        };
+      } else if (phone) {
+        existingQuery = {
+          phone: phone,
+          event_type: 'lead_status_changed'
+        };
+      }
+
+      if (Object.keys(existingQuery).length > 0) {
+        const existingStageTracking = await LeadTracking.findOne({
+          where: existingQuery
+        });
+
+        if (existingStageTracking) {
+          return {
+            status: 'error',
+            message: 'Este lead já possui um rastreamento de estágio'
+          };
+        }
+      }
+
+      // Chamar o serviço do Kommo para criar o rastreamento
+      // Passamos o leadId (se existir) e o phone para que o serviço possa buscar o lead pelo telefone
+      const result = await createLeadStageTracking(leadId || null, phone);
+      return result;
+    } catch (error) {
+      console.error('❌ Erro ao criar rastreamento manual de estágio:', error);
+      return {
+        status: 'error',
+        message: `Erro ao criar rastreamento de estágio: ${error.message}`
+      };
     }
   }
 }

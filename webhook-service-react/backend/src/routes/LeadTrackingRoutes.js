@@ -13,5 +13,6 @@ router.get('/all', LeadTrackingController.getTrackings);
 
 // Criar rastreamento manualmente
 router.post('/create-manual', LeadTrackingController.createManualTracking);
+router.post('/create-manual-stage', LeadTrackingController.createManualStageTracking);
 
 module.exports = router; 
